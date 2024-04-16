@@ -5,7 +5,7 @@
 
 <template>
 
-    <div class="clipboard w-full h-full  bg-red-600 rounded-lg shadow-md"></div>
+    <div class="projects w-full h-full  bg-red-600 rounded-lg shadow-md">Projects</div>
 
 
 </template>

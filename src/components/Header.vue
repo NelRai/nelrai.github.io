@@ -2,7 +2,7 @@
 
 <template>
   <header
-    class="flex justify-between items-center p-4 bg-slate-500 h-16 w-full fixed top-0 left-0 shadow-md"
+    class="flex justify-between items-center p-4 bg-slate-500 h-16 w-full fixed top-0 left-0 shadow-md  md:relative md:rounded-lg"
   >
     <button class="bg-white h-8 w-8 rounded-md"></button>
     <button class="bg-white h-8 w-8 rounded-md"></button>
