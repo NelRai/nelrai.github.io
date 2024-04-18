@@ -28,7 +28,7 @@ function second() {
 </script>
 
 <template>
-  <div class="flex justify-between items-center p-4 bg-slate-500 h-16 w-full fixed bottom-0 left-0 shadow-md md:relative md:rounded-lg">
+  <div class="flex justify-between items-center p-4 bg-slate-500 h-16 w-full fixed bottom-0 left-0 shadow-md lg:relative lg:rounded-lg">
     <button class="bg-blue-400 h-8 w-8 rounded-md" @click="first"></button>
     <button class="bg-red-400 h-8 w-8 rounded-md" @click="second"></button>
 

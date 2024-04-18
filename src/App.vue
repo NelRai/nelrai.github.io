@@ -43,15 +43,13 @@ function showSecond() {
 
 <template>
 
-  <div class="tablet hidden md:flex  ">
+  <div class="tablet hidden lg:flex  ">
 
-    <div class="whatever flex w-1/3 fixed lg:max-w-md">
+    <div class="whatever flex max-w-md w-full fixed lg:max-w-md">
       <div class="sidebar md:min-w-md  w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-400 gap-4">
         <Header />
         <Clipboard />
-
         <MobileNavBottom @clicked="increaseCount" @showSecond="showSecond" />
-
       </div>
 
       <div class="ausklappbar w-full p-4 bg-neutral-400 absolute left-full top-0 h-full 2xl:hidden" v-show="showProjects">
@@ -62,7 +60,7 @@ function showSecond() {
 
     </div>
 
-    <div class="flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[1000px] md:ml-[calc(33%+32px)] 2xl:mx-[480px] 2xl:w-full ">
+    <div class="flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[1000px] md:ml-[480px] 2xl:mx-[480px] 2xl:w-full ">
 
       <Navigation />
 
@@ -80,7 +78,7 @@ function showSecond() {
   </div>
 
 
-  <div class="w-dvw h-dvh  bg-neutral-100 md:hidden">
+  <div class="w-dvw h-dvh  bg-neutral-100 lg:hidden">
     <Header />
 
     <main class="w-dvw h-dvh py-16 ">
