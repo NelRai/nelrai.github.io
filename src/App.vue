@@ -86,7 +86,7 @@ function sidebarHide() {
 
     </div>
 
-    <div class="flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[1000px] md:ml-[480px] 2xl:mx-[480px] 2xl:w-full "
+    <div class="flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[2000px] md:ml-[480px] 2xl:mx-[480px] 2xl:w-full "
     :class="{'md:w-full md:ml-0 2xl:ml-0' : !sidebarVisible ,   'md:w-full md:mr-0 2xl:mr-0' : !visibleProjects } "
     >
 
