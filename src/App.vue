@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Header from './components/Header.vue'
+import { ref } from "vue";
+import Header from "./components/Header.vue";
 // import Navigation from './components/Navigation.vue'
-import Content from './components/Content.vue'
-import Clipboard from './components/Clipboard.vue'
-import Projects from './components/Projects.vue'
-import Navigation from './components/Navigation.vue'
+import Content from "./components/Content.vue";
+import Clipboard from "./components/Clipboard.vue";
+import Projects from "./components/Projects.vue";
+import Navigation from "./components/Navigation.vue";
 
-import MobileNavBottom from './components/MobileNavBottom.vue'
-
+import MobileNavBottom from "./components/MobileNavBottom.vue";
 
 let hideContent = ref(true);
 console.log(hideContent);
@@ -17,7 +16,33 @@ let option1 = ref(false);
 console.log(option1);
 
 let visibleProjects = ref(false);
-console.log(showProjects);
+console.log(visibleProjects);
+
+if (window.matchMedia("(min-width: 1536px)").matches) {
+  visibleProjects.value = true;
+
+console.log(visibleProjects);
+
+}
+
+// function myFunction(x) {
+//   if (x.matches) { // If media query matches
+//     console.log('11112');
+//   } else {
+//     console.log('asdasdasd');
+//   }
+// }
+
+// // Create a MediaQueryList object
+// var x = window.matchMedia("(min-width: 700px)")
+
+// // Call listener function at run time
+// myFunction(x);
+
+// // Attach listener function on state changes
+// x.addEventListener("change", function() {
+//   myFunction(x);
+// });
 
 function showClipboard() {
   option1.value = !option1.value;
@@ -27,8 +52,6 @@ function showClipboard() {
   console.log(option1);
 }
 
-
-
 function showProjects() {
   visibleProjects.value = !visibleProjects.value;
   option1.value = false;
@@ -37,103 +60,116 @@ function showProjects() {
   console.log(showProjects);
 }
 
-
 let sidebarVisible = ref(true);
 
 function sidebarHide() {
   sidebarVisible.value = !sidebarVisible.value;
 }
 
-// let sidebarVisible = ref(true);
+// let projectVisible = ref(true);
 
-// function sidebarHide() {
-//   sidebarVisible.value = !sidebarVisible.value;
-// }
-
-
+function projectHide() {
+  visibleProjects.value = !visibleProjects.value;
+}
 </script>
 
 <template>
-
-  <div class="tablet hidden lg:flex  ">
-
+  <div class="tablet hidden lg:flex">
     <div class="whatever flex max-w-md w-full h-full fixed lg:max-w-md">
-      <div class="sidebar md:min-w-md  w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-400 gap-4" v-if="sidebarVisible">
-        <Header @showProjectsBTN="showProjects"  />
+      <div
+        class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-400 gap-4"
+        v-if="sidebarVisible"
+      >
+        <Header @showProjectsBTN="showProjects" />
         <Clipboard />
-        <MobileNavBottom @showClipboardBTN="showClipboard" @showProjectsBTN="showProjects"  />
-    </div>
-
-    <button class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hidden lg:flex" 
-    @click="sidebarHide"  :class="{  'right-auto left-0 rotate-180' : !sidebarVisible, 'md:hidden lg:hidden 2xl:flex' : visibleProjects }" 
-    >
-      <img src="./assets/chevron-left.svg" alt="" class="w-4 h-4" />
-    </button>
-
-
-      <div class="ausklappbar w-full p-4 bg-neutral-400 absolute left-full top-0 h-full 2xl:hidden" v-show="visibleProjects">
-
-        <Projects />
-
+        <MobileNavBottom
+          @showClipboardBTN="showClipboard"
+          @showProjectsBTN="showProjects"
+        />
       </div>
-<!-- 
-      <button class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hidden lg:flex" 
-    @click="projectsHide" v-if="!showProjects" :class="showProjects ? 'myFirstClass' : 'right-auto left-0 rotate-180'"
-    >
-      <img src="./assets/chevron-left.svg" alt="" class="w-4 h-4" />
-    </button> -->
 
+      <button
+        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hidden lg:flex"
+        @click="sidebarHide"
+        :class="{
+          'right-auto left-0 rotate-180': !sidebarVisible,
+          'md:hidden lg:hidden 2xl:flex': visibleProjects,
+        }"
+      >
+        <img src="./assets/chevron-left.svg" alt="" class="w-4 h-4" />
+      </button>
 
+      <div
+        class="ausklappbar w-full p-4 bg-neutral-400 absolute left-full top-0 h-full 2xl:hidden"
+        v-show="visibleProjects"
+      >
+        <Projects />
+      </div>
+  
     </div>
 
-    <div class="flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[2000px] md:ml-[480px] 2xl:mx-[480px] 2xl:w-full "
-    :class="{'md:w-full md:ml-0 2xl:ml-0' : !sidebarVisible ,   'md:w-full md:mr-0 2xl:mr-0' : !visibleProjects } "
+    <div
+      class="small-desktop-content flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[2000px] md:ml-[480px] 2xl:mx-[480px] 2xl:w-full max-w-[960px]"
+      :class="{
+        'md:w-full md:ml-auto md:mr-auto md 2xl:ml-8 2xl:mr-[480px] 2xl:max-w-none':
+          !sidebarVisible,
+        '2xl:w-full 2xl:max-w-none 2xl:mr-8': !visibleProjects,
+        '2xl:!mr-8 2xl:!ml-8': !visibleProjects && !sidebarVisible,
+      }"
     >
-
       <Navigation />
 
       <Content />
-
     </div>
 
-  
+ 
 
-    <div class="sidebar-right hidden 2xl:block w-1/3 fixed right-0 h-dvh 2xl:max-w-md bg-neutral-400"  v-show="visibleProjects">
+<div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md">
+
+  <div
+      class="sidebar-right-desktop bg-neutral-400 p-4 h-dvh"
+      v-show="visibleProjects"
+    >
       <Projects />
     </div>
-  
+
+  <button 
+        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -left-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hidden lg:flex z-50 rotate-180"
+        @click="projectHide"
+        :class="{
+          'left-auto right-0 rotate-0': !visibleProjects,
+          'md:hidden lg:hidden 2xl:flex': visibleProjects,
+        }"
+      >
+        <img src="./assets/chevron-left.svg" alt="" class="w-4 h-4" />
+      </button>
+</div>
 
   </div>
 
-
-  <div class="w-dvw h-dvh  bg-neutral-100 lg:hidden">
+  <div class="w-dvw h-dvh bg-neutral-100 lg:hidden">
     <Header />
 
-    <main class="w-dvw h-dvh py-16 ">
+    <main class="w-dvw h-dvh py-16">
       <!-- <Navigation />  -->
 
-      <div class="p-4 w-full h-full " v-show="option1">
+      <div class="p-4 w-full h-full" v-show="option1">
         <Clipboard />
       </div>
-      <div class="p-4 w-full h-full " v-show="visibleProjects">
+      <div class="p-4 w-full h-full" v-show="visibleProjects">
         <Projects />
       </div>
 
       <div class="p-4 w-full h-full" v-show="hideContent">
         <Content />
       </div>
-
     </main>
 
-
-
-    <MobileNavBottom @showClipboardBTN="showClipboard" @showProjectsBTN="showProjects" />
-
+    <MobileNavBottom
+      @showClipboardBTN="showClipboard"
+      @showProjectsBTN="showProjects"
+    />
   </div>
 </template>
-
-
-
-
 
 <style scoped></style>
