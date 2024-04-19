@@ -6,7 +6,7 @@ import Card from './Card.vue';
 
 <template>
 
-    <div id="clipboard" class="clipboard w-full h-full flex flex-col gap-4 p-4 bg-neutral-50 rounded-lg shadow-md md:w-full  overflow-scroll">
+    <div id="clipboard" class="clipboard w-full h-full flex flex-col gap-4 p-4 bg-neutral-50 rounded-lg shadow-md md:w-full  overflow-y-scroll">
         <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
         <Card headline="Apple already uses Apple GPT internally" linked-in  />
         <Card headline="Earth Virtualization Engines are the future of climate research" url />

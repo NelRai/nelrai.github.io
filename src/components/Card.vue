@@ -20,15 +20,15 @@ defineProps({
 
         <div class="card-tag p-2  border border-solid border-neutral-200 rounded-lg text-xs font-normal" v-if="fileUpload || linkedIn || url">
 
-        <div class="flex gap-1 justify-center items-center" v-if="fileUpload"> <img src="" alt=""><span>File Upload</span></div>
-        <div class="flex gap-1 justify-center items-center" v-if="linkedIn"><img src="" alt=""><span>linkedIn</span></div>
-        <div class="flex gap-1 justify-center items-center" v-if="url"><img src="" alt=""><span>URL</span></div>
+        <div class="flex gap-1 justify-center items-center" v-if="fileUpload"> <img src="../assets/arrow-up-tray.svg" alt="" class="w-4 h-4"><span>File Upload</span></div>
+        <div class="flex gap-1 justify-center items-center" v-if="linkedIn"><img src="../assets/document-text.svg" alt="" class="w-4 h-4"><span>LinkedIn Post</span></div>
+        <div class="flex gap-1 justify-center items-center" v-if="url"><img src="../assets/link.svg" alt="" class="w-4 h-4"><span>URL</span></div>
    
 
 
         </div>
 
-        <span class="text-xs font-normal text-neutral-500">{{timeText}}</span>
+        <span class="text-xs font-normal text-neutral-500" v-if="timeText">{{timeText}}</span>
         
     </div>
 
