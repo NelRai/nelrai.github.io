@@ -30,7 +30,7 @@ const items = ref(
                     <img src="../assets/plus-circle-mini.svg" alt="" class="w-4 h-4" /><span>New Content</span>
                 </div>
             </div>
-
+<!-- @ts-ignore -->
             <div class="w-full" v-for="item in items">
                 <Result />
             </div>

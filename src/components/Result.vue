@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 import Animation from './Animation.vue';
+
+const showResult = ref(false);
 
 </script>
 
@@ -58,31 +62,40 @@ import Animation from './Animation.vue';
                 </button>
             </div>
 
-            <div class="result_item-content w-full border border-neutral-200 rounded-lg p-4 pb-10 relative break-words">
+            <div class="result_item-content w-full border border-neutral-200 rounded-lg p-4 pb-10 relative break-words relative"
+          
+            >
+
+            <div class="result_item-content"   
+                :class="{ resultItemContentShow : showResult }"
+                >
                 <p>
-                    💡 Google launches "AI Opportunity Initiative for Europe" to boost AI knowledge in the European workforce with a €25 million investment.
+                    💡 Google launches "AI Opportunity Initiative for Europe" to boost AI knowledge in the European workforce with a €25 million investment. <br><br>
 
-🌍 Empowering European workers
-Google's initiative allocates €10 million of the total €25 million from Google.org to equip workers with essential skills to prevent them from being "left behind."
-In collaboration with the Centre for Public Impact, Google is specifically seeking applications from social enterprises, non-profit organizations, and "vulnerable" communities.
+                    🌍 Empowering European workers<br> Google's initiative allocates €10 million of the total €25 million from Google.org to equip workers with essential skills to prevent them from being "left behind."<br>
+                    In collaboration with the Centre for Public Impact, Google is specifically seeking applications from social enterprises, non-profit organizations, and "vulnerable" communities.<br><br>
 
-🚀 Google for Start-ups Growth Academies
-The initiative includes a new series of "Google for Start-ups Growth Academies" across Europe, the Middle East, and Africa.
-These academies focus on start-ups using AI to address major societal challenges in health, education, and cybersecurity.
-Google launches "Growth Academy: AI for Health," now accepting applications.
+                    🚀 Google for Start-ups Growth Academies<br> 
+                    The initiative includes a new series of "Google for Start-ups Growth Academies" across Europe, the Middle East, and Africa.<br>
+                    These academies focus on start-ups using AI to address major societal challenges in health, education, and cybersecurity.<br>
+                    Google launches "Growth Academy: AI for Health," now accepting applications.<br><br>
 
-🔚 Investing in Europe's AI future
-Google's "AI Opportunity Initiative for Europe" aims to strengthen the European workforce's AI knowledge and foster innovation. While benefiting from Google's resources, it's essential to remember the value of networking and seeking knowledge from various sources. The future is AI, and Europe is getting ready.
-
-More: [URL]
-
-🔔 Follow me for more updates: https://www.linkedin.com/in/benjamin-danneberg/
+                    🔚 Investing in Europe's AI future<br>
+                    Google's "AI Opportunity Initiative for Europe" aims to strengthen the European workforce's AI knowledge and foster innovation. While benefiting from Google's resources, it's essential to remember the value of networking and seeking knowledge from various sources. The future is AI, and Europe is getting ready.
+                    <br><br>
+                    More: [URL]
+                    <br><br>
+                    🔔 Follow me for more updates: https://www.linkedin.com/in/benjamin-danneberg/
                 </p>
-
+            </div>
                 
             <div class="result_item-close">
                 <button
-                    class="sidebar-close-btn w-8 h-8 absolute -bottom-4 left-[calc(50%-16px)]  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40 rotate-90">
+                    class="sidebar-close-btn w-8 h-8 absolute -bottom-4 left-[calc(50%-16px)]  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40 rotate-90"
+                    @click="showResult = !showResult"
+                    :class="{ '!-rotate-90' : showResult }"
+
+                    >
                     <img src="../assets/chevron-left.svg" alt="" class="w-4 h-4" />
                 </button>
             </div>
