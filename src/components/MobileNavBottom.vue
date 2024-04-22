@@ -25,7 +25,7 @@ function showProjectsBTN() {
 
 <template>
   <div
-    class="flex justify-between items-center p-4 bg-slate-500 h-16 w-full fixed bottom-0 left-0 shadow-md lg:relative lg:rounded-lg"
+    class="flex justify-between items-center p-4 bg-slate-500 h-16 w-full fixed bottom-0 left-0 shadow-md lg:relative lg:rounded-lg z-50"
   >
     <!-- <button class="bg-blue-400 h-8 w-8 rounded-md" ></button> -->
     <!-- <button class="bg-red-400 h-8 w-8 rounded-md" @click="second"></button> -->

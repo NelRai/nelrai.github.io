@@ -109,7 +109,7 @@ function projectHide() {
     </div>
 
     <div
-      class="small-desktop-content flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[2000px] md:ml-[480px] 2xl:mx-[480px] 2xl:w-full max-w-[960px]"
+      class="small-desktop-content flex flex-col items-center gap-8 md:w-2/3 md:mx-8 md:mt-8 md:h-[2000px] md:ml-[480px] 2xl:mx-[480px] 2xl:w-full max-w-[960px] 2xl:max-w-none"	
       :class="{
         'md:w-full md:ml-auto md:mr-auto md 2xl:ml-8 2xl:mr-[480px] 2xl:max-w-none':
           !sidebarVisible,
