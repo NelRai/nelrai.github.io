@@ -46,7 +46,7 @@ const showResult = ref(false);
 
         <div class="result_item w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4  bg-transparent  rounded-lg rounded-t-none p-4 md:p-8 relative overflow-hidden">
 
-            <div class="icons flex md:flex-co gap-2 md:gap-4">
+            <div class="icons flex md:flex-col gap-2 md:gap-4">
                 <button
                     class="sidebar-close-btn w-8 h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
                     <img src="../assets/chevron-left.svg" alt="" class="w-4 h-4" />

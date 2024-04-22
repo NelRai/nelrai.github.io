@@ -75,7 +75,7 @@ function projectHide() {
 
 <template>
   <div class="tablet hidden lg:flex">
-    <div class="whatever flex max-w-md w-full h-full fixed lg:max-w-md">
+    <div class="whatever flex max-w-md w-full h-full fixed lg:max-w-md z-50">
       <div
         class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-400 gap-4"
         v-if="sidebarVisible"
@@ -100,7 +100,7 @@ function projectHide() {
       </button>
 
       <div
-        class="ausklappbar w-full p-4 bg-neutral-400 absolute left-full top-0 h-full 2xl:hidden"
+        class="ausklappbar w-full p-4 bg-neutral-400 absolute left-full top-0 h-full 2xl:hidden z-[90]"
         v-show="visibleProjects"
       >
         <Projects />
