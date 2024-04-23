@@ -77,7 +77,7 @@ function projectHide() {
   <div class="tablet hidden lg:flex">
     <div class="whatever flex max-w-md w-full h-full fixed lg:max-w-md z-50">
       <div
-        class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-400 gap-4"
+        class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-50 gap-4 md:shadow-xl"
         v-if="sidebarVisible"
       >
         <Header @showProjectsBTN="showProjects" />
@@ -153,14 +153,14 @@ function projectHide() {
     <main class="w-dvw h-dvh py-16">
       <!-- <Navigation />  -->
 
-      <div class="p-4 w-full h-full" v-show="option1">
+      <div class="px-4 my-4 w-full h-full" v-show="option1">
         <Clipboard />
       </div>
-      <div class="p-4 w-full h-full" v-show="visibleProjects">
+      <div class="px-4 my-4 w-full h-full" v-show="visibleProjects">
         <Projects />
       </div>
 
-      <div class="p-4 w-full h-full" v-show="hideContent">
+      <div class="px-4 my-4 w-full h-full" v-show="hideContent">
         <Content />
       </div>
     </main>
@@ -168,6 +168,8 @@ function projectHide() {
     <MobileNavBottom
       @showClipboardBTN="showClipboard"
       @showProjectsBTN="showProjects"
+      :clipboardVisible="option1"
+      :projectsVisible="visibleProjects"
     />
   </div>
 </template>

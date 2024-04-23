@@ -33,7 +33,7 @@ const showResult = ref(false);
             <div class="result_header-icons flex gap-2 z-20">
 
                 <Icon :image="('/src/assets/cube-transparent.svg')"/>
-                <Icon :image="('/src/assets/ellipsis-horizontal.svg')"/>
+                <Icon :image="('/src/assets/ellipsis-horizontal.svg')" class="hidden md:flex"/>
 <!-- 
                 <button
                     class="  w-10 h-10 md:w-8 md:h-8  items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40">
@@ -126,12 +126,12 @@ const showResult = ref(false);
         </div>
 
         <div class="result-close">
-            <Icon :image="('/src/assets/x-mark.svg')"/>
-<!-- 
+            <!-- <Icon :image="('/src/assets/x-mark.svg')"/> -->
+
                 <button
                     class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
                     <img src="../assets/x-mark.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button> -->
+                </button>
             </div>
 
 
