@@ -1,12 +1,33 @@
 <script setup lang="ts">
 
 import Card from './Card.vue';
+import Icon from './Icon.vue';
 
 </script>
 
 <template>
 
-    <div class="projects w-full h-full flex flex-col gap-4 p-4 bg-neutral-50  rounded-lg shadow-md 2xl:h-full 2xl:w-auto overflow-y-scroll">
+    <div class="projects w-full h-full flex flex-col gap-4 md:p-4 bg-neutral-50  rounded-lg md:shadow-md 2xl:h-full 2xl:w-auto overflow-y-scroll">
+        <div class="clipboard_header flex justify-between items-center">
+
+<div class="icons flex md:flex-col gap-2 md:gap-4">
+    <Icon :image="('/src/assets/chevron-left.svg')"/>
+
+    <!-- <button
+        class="sidebar-close-btn w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
+        <img src="../assets/chevron-left.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
+    </button> -->
+
+</div>
+
+<div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
+    <div class="flex gap-1 justify-center items-center">
+        <img src="../assets/document-text.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4"><span>New Project</span>
+    </div>
+</div>
+</div>
+
+
         <Card headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago"  />
         <Card headline="Apple already uses Apple GPT internally" time-text="17 hours ago"  />
         <Card headline="Google launches generative AI search" time-text="2 days ago"  />

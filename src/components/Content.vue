@@ -23,11 +23,11 @@ function addItem() {
 </script>
 
 <template>
-    <div class="content w-full h-auto border border-neutral-200 rounded-xl pt-1 pb-16 shadow-inner">
+    <div class="content w-full h-auto md:border border-neutral-200 rounded-xl pt-1 pb-16 md:shadow-inner">
         <div
-            class="content-inner flex flex-col justify-start items-start gap-4 md:gap-8 m-4 md:m-8 rounded-xl h-[calc(100%-64px)]">
+            class="content-inner flex flex-col justify-start items-start gap-4 md:gap-8 md:m-8 rounded-xl h-[calc(100%-64px)]">
             <div  @click="addItem"
-                class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
+                class="card-tag p-2 bg-neutral-50 border border-solid md:border-neutral-200 rounded-lg text-xs font-normal z-20">
                 <div class="flex gap-1 justify-center items-center">
                     <img src="../assets/plus-circle-mini.svg" alt="" class="w-4 h-4" /><span>New Content</span>
                 </div>

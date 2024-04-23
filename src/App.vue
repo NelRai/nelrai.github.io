@@ -127,7 +127,7 @@ function projectHide() {
 <div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md">
 
   <div
-      class="sidebar-right-desktop bg-neutral-400 p-4 h-dvh"
+      class="sidebar-right-desktop bg-neutral-50 p-4 h-dvh"
       v-show="visibleProjects"
     >
       <Projects />
@@ -147,7 +147,7 @@ function projectHide() {
 
   </div>
 
-  <div class="w-dvw h-dvh bg-neutral-100 lg:hidden">
+  <div class="w-dvw h-dvh bg-neutral-50 lg:hidden">
     <Header />
 
     <main class="w-dvw h-dvh py-16">

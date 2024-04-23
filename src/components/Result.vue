@@ -2,6 +2,8 @@
 import { ref } from "vue";
 
 import Animation from './Animation.vue';
+import Icon from './Icon.vue';
+
 
 const showResult = ref(false);
 
@@ -22,21 +24,25 @@ const showResult = ref(false);
 
                 <div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
                     <div class="flex gap-1 justify-center items-center">
-                        <img src="../assets/document-text.svg" alt="" class="w-4 h-4"><span>Ben >> LinkedIn >> All</span>
+                        <img src="../assets/document-text.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4"><span>Ben >> LinkedIn >> All</span>
                     </div>
                 </div>
 
             </div>
 
             <div class="result_header-icons flex gap-2 z-20">
+
+                <Icon :image="('/src/assets/cube-transparent.svg')"/>
+                <Icon :image="('/src/assets/ellipsis-horizontal.svg')"/>
+<!-- 
                 <button
-                    class=" w-8 h-8   items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40">
-                    <img src="../assets/cube-transparent.svg" alt="" class="w-4 h-4" />
+                    class="  w-10 h-10 md:w-8 md:h-8  items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40">
+                    <img src="../assets/cube-transparent.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
                 </button>
                 <button
-                    class=" w-8 h-8   items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200  z-40 hidden md:flex">
-                    <img src="../assets/ellipsis-horizontal.svg" alt="" class="w-4 h-4" />
-                </button>
+                    class="  w-10 h-10 md:w-8 md:h-8  items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200  z-40 hidden md:flex">
+                    <img src="../assets/ellipsis-horizontal.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
+                </button> -->
             </div>
 
             <Animation />
@@ -47,22 +53,26 @@ const showResult = ref(false);
         <div class="result_item w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4  bg-transparent  rounded-lg rounded-t-none p-4 md:p-8 relative overflow-hidden">
 
             <div class="icons flex md:flex-col gap-2 md:gap-4">
-                <button
-                    class="sidebar-close-btn w-8 h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
-                    <img src="../assets/chevron-left.svg" alt="" class="w-4 h-4" />
+                <Icon :image="('/src/assets/chevron-left.svg')"/>
+                <Icon :image="('/src/assets/chat-bubble-left-right.svg')"/>
+                <Icon :image="('/src/assets/ellipsis-horizontal.svg')"/>
+
+                <!-- <button
+                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
+                    <img src="../assets/chevron-left.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
                 </button>
                 <button
-                    class="sidebar-close-btn w-8 h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
-                    <img src="../assets/chat-bubble-left-right.svg" alt="" class="w-4 h-4" />
+                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
+                    <img src="../assets/chat-bubble-left-right.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
                 </button>
 
                 <button
-                    class="sidebar-close-btn w-8 h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
-                    <img src="../assets/ellipsis-horizontal.svg" alt="" class="w-4 h-4" />
-                </button>
+                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
+                    <img src="../assets/ellipsis-horizontal.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
+                </button> -->
             </div>
 
-            <div class="result_item-content w-full border border-neutral-200 rounded-lg p-4 pb-10 relative break-words relative"
+            <div class="result_item-content w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative"
           
             >
 
@@ -91,20 +101,23 @@ const showResult = ref(false);
                 
             <div class="result_item-close">
                 <button
-                    class="sidebar-close-btn w-8 h-8 absolute -bottom-4 left-[calc(50%-16px)]  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40 rotate-90"
+                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 absolute -bottom-4 left-[calc(50%-16px)]  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40 rotate-90"
                     @click="showResult = !showResult"
                     :class="{ '!-rotate-90' : showResult }"
 
                     >
-                    <img src="../assets/chevron-left.svg" alt="" class="w-4 h-4" />
+                    <img src="../assets/chevron-left.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
                 </button>
             </div>
 
             <div class="result_item-copy">
-                <button
-                    class="sidebar-close-btn w-8 h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
-                    <img src="../assets/clipboard-document.svg" alt="" class="w-4 h-4" />
-                </button>
+                <Icon :image="('/src/assets/clipboard-document.svg')"/>
+
+                <!-- <button
+                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
+                    <img src="../assets/clipboard-document.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
+                </button> -->
+
             </div>
 
             </div>
@@ -113,10 +126,12 @@ const showResult = ref(false);
         </div>
 
         <div class="result-close">
+            <Icon :image="('/src/assets/x-mark.svg')"/>
+<!-- 
                 <button
-                    class="sidebar-close-btn w-8 h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
-                    <img src="../assets/x-mark.svg" alt="" class="w-4 h-4" />
-                </button>
+                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
+                    <img src="../assets/x-mark.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
+                </button> -->
             </div>
 
 

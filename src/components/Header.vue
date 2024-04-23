@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import Icon from './Icon.vue';
+
 const emit = defineEmits(["showProjectsBTN"]);
 
 
@@ -15,15 +17,19 @@ function showProjectsBTN() {
   <header
     class="flex justify-between items-center p-4 bg-slate-500 h-16 w-full fixed top-0 left-0 shadow-md  lg:relative lg:rounded-lg z-50"
   >
-    <button class="bg-white h-8 w-8 rounded-md"></button>
-    <button
+    <img src="../assets/dcio-logo.svg" alt="">
+
+    <Icon :image="('/src/assets/bars-2.svg')"/>
+    <!-- <Icon :image="('/src/assets/adjustment-horizontal.svg')" > -->
+
+    <!-- <button
       class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal lg:hidden"
     >
       <div class="flex gap-1 justify-center items-center">
         <img src="../assets/bars-2.svg" alt="" class="w-4 h-4" />
         
       </div>
-    </button>
+    </button> -->
 
     <button
       class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal hidden lg:block"  @click="showProjectsBTN"

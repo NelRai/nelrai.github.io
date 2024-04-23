@@ -32,6 +32,10 @@ function showProjectsBTN() {
 
     <button
       class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal lg:hidden "  @click="showClipboardBTN"
+      :class="{
+          'right-auto left-0 rotate-180': !sidebarVisible,
+          'md:hidden lg:hidden 2xl:flex': visibleProjects,
+        }"
     >
       <div class="flex gap-1 justify-center items-center">
         <img src="../assets/clipboard.svg" alt="" class="w-4 h-4" /><span
