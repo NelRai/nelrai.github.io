@@ -126,10 +126,10 @@ function projectHide() {
 
  
 
-<div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md md:shadow-xl">
+<div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md ">
 
   <div
-      class="sidebar-right-desktop bg-neutral-50 h-dvh"
+      class="sidebar-right-desktop bg-neutral-50 h-dvh md:shadow-xl"
       v-show="visibleProjects"
     >
       <Projects />
