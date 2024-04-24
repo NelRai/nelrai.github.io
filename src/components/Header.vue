@@ -1,6 +1,8 @@
 <script setup lang="ts">
 
 import Icon from './Icon.vue';
+import Animation from './Animation.vue';
+
 
 const emit = defineEmits(["showProjectsBTN"]);
 
@@ -15,12 +17,15 @@ function showProjectsBTN() {
 
 <template>
   <header
-    class="flex justify-between items-center p-4 bg-neutral-50 h-16 w-full fixed top-0 left-0 shadow-lg md:shadow-none md:bg-red-400   lg:relative lg:rounded-lg z-50 "
+    class="flex justify-between items-center p-4 bg-neutral-50 h-16 w-full fixed top-0 left-0 shadow-lg md:shadow-none    lg:relative lg:rounded-lg z-50  overflow-hidden"
   >
     <img src="../assets/dcio-logo.svg" alt="">
 
     <Icon :image="('/src/assets/bars-2.svg')" class="md:hidden"/>
     <Icon :image="('/src/assets/adjustment-horizontal.svg')" class="hidden lg:flex"  @click="showProjectsBTN" />
+
+    <Animation />
+
 
     <!-- <button
       class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal lg:hidden"
