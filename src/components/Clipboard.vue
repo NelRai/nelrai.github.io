@@ -46,13 +46,13 @@ import Icon from './Icon.vue';
     
         <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
         <Card headline="Apple already uses Apple GPT internally" linked-in  />
-        <Card headline="Earth Virtualization Engines are the future of climate research" url />
+        <Card headline="Earth Virtualization Engines are the future of climate research" url image />
         <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  />
     
         <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
         <Card headline="Apple already uses Apple GPT internally" linked-in  />
         <Card headline="Earth Virtualization Engines are the future of climate research" url />
-        <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  />
+        <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url image  />
 
         <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
         <Card headline="Apple already uses Apple GPT internally" linked-in  />

@@ -3,6 +3,12 @@
 import Icon from './Icon.vue';
 import Animation from './Animation.vue';
 
+defineProps({
+  clipboardVisible: Boolean,
+  projectsVisible: Boolean
+})
+
+
 
 const emit = defineEmits(["showProjectsBTN"]);
 
@@ -19,10 +25,18 @@ function showProjectsBTN() {
   <header
     class="flex justify-between items-center p-4 bg-neutral-50 h-16 w-full fixed top-0 left-0 shadow-lg md:shadow-none    lg:relative lg:rounded-lg z-50  overflow-hidden"
   >
-    <img src="../assets/dcio-logo.svg" alt="">
+    <img src="../assets/dcio-logo.svg" alt="" class="z-50">
 
-    <Icon :image="('/src/assets/bars-2.svg')" class="md:hidden"/>
-    <Icon :image="('/src/assets/adjustment-horizontal.svg')" class="hidden lg:flex"  @click="showProjectsBTN" />
+    <Icon :image="('/src/assets/bars-2.svg')" class="md:hidden z-50"/>
+    <Icon 
+    :image="('/src/assets/adjustment-horizontal.svg')" 
+    class="hidden lg:flex z-50"  
+    @click="showProjectsBTN" 
+    :class="{
+          'text-red-400 border-red-400': projectsVisible
+        }"
+    
+    />
 
     <Animation />
 

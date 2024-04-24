@@ -5,7 +5,8 @@ defineProps({
   linkedIn: Boolean,
   url: Boolean,
   timeText: String,
-  bgImage: String
+  bgImage: String,
+  image: Boolean
 })
 
 </script>
@@ -28,7 +29,7 @@ defineProps({
 
         <span class="text-xs font-normal text-neutral-500 z-10" v-if="timeText">{{timeText}}</span>
  
-        <img src="../assets/bg-image-01.png" alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg ">
+        <img src="../assets/bg-image-01.png" v-if="image" alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg ">
         
     </div>
 

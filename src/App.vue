@@ -80,7 +80,9 @@ function projectHide() {
         class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-50 gap-4 md:shadow-xl"
         v-if="sidebarVisible"
       >
-        <Header @showProjectsBTN="showProjects" />
+        <Header @showProjectsBTN="showProjects"
+        :projectsVisible="visibleProjects"
+        />
         <Clipboard />
         <MobileNavBottom
           @showClipboardBTN="showClipboard"
@@ -100,7 +102,7 @@ function projectHide() {
       </button>
 
       <div
-        class="ausklappbar w-full p-4 bg-neutral-400 absolute left-full top-0 h-full 2xl:hidden z-[90]"
+        class="ausklappbar w-full  bg-neutral-50 absolute left-full top-0 h-full 2xl:hidden z-[90]"
         v-show="visibleProjects"
       >
         <Projects />
@@ -124,10 +126,10 @@ function projectHide() {
 
  
 
-<div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md">
+<div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md md:shadow-xl">
 
   <div
-      class="sidebar-right-desktop bg-neutral-50 p-4 h-dvh"
+      class="sidebar-right-desktop bg-neutral-50 h-dvh"
       v-show="visibleProjects"
     >
       <Projects />

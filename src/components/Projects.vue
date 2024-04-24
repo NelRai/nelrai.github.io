@@ -8,7 +8,7 @@ import Icon from './Icon.vue';
 <template>
 
     <div
-        class="projects w-full h-full flex flex-col gap-4 md:p-4 bg-neutral-50  rounded-lg md:shadow-md 2xl:h-full 2xl:w-auto overflow-y-scroll">
+        class="projects w-full h-full flex flex-col gap-4 md:p-4 bg-neutral-50  rounded-lg md:rounded-none md:pt-7 md:shadow-md 2xl:h-full 2xl:w-auto overflow-y-scroll">
         <div class="projects_header flex justify-between items-center">
 
             <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
@@ -36,11 +36,11 @@ import Icon from './Icon.vue';
         </div>
 
 
-        <Card headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" />
+        <Card headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" image />
         <Card headline="Apple already uses Apple GPT internally" time-text="17 hours ago" />
         <Card headline="Google launches generative AI search" time-text="2 days ago" />
         <Card headline="Innovative Technology Too Expensive - Report on Meta's AR Glasses" time-text="2 days ago" />
-        <Card headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" />
+        <Card headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" image />
         <Card headline="Apple already uses Apple GPT internally" time-text="17 hours ago" />
         <Card headline="Google launches generative AI search" time-text="2 days ago" />
         <Card headline="Innovative Technology Too Expensive - Report on Meta's AR Glasses" time-text="2 days ago" />

@@ -15,7 +15,6 @@
 defineProps({
   clipboardVisible: Boolean,
   projectsVisible: Boolean
-
 })
 
 // import { option1 } from "/App.vue";  
