@@ -18,9 +18,9 @@ import Icon from './Icon.vue';
         </div>
 
         <div class="icons flex  gap-2 2xl:gap-4">
-            <Icon :image="('/src/assets/bars-3.svg')"/>
-            <Icon :image="('/src/assets/link.svg')"/>
-            <Icon :image="('/src/assets/arrow-up-tray.svg')"/>
+            <Icon bars30 />
+            <Icon linkSVG2 />
+            <Icon svgArrowUpTray_show />
 <!-- 
             <button
                 class="sidebar-close-btn w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
