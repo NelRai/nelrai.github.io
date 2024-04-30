@@ -53,7 +53,7 @@ const showResult = ref(false);
         </div>
 
 
-        <div class="result_item w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4  bg-transparent  rounded-lg rounded-t-none p-4 md:p-8 relative overflow-hidden">
+        <div class="result_item w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4  bg-neutral-50  rounded-lg rounded-t-none p-4 md:p-8 relative overflow-hidden">
 
             <div class="icons flex md:flex-col gap-2 md:gap-4">
                 <Icon chevronLeft_icon />
@@ -113,7 +113,7 @@ const showResult = ref(false);
                 </button>
             </div>
 
-            <div class="result_item-copy absolute -top-1 -right-1 invisible group-hover/closeBTN:visible">
+            <div class="result_item-copy absolute -top-1 -right-1 opacity-0 group-hover/closeBTN:opacity-100  transition-all ">
                 <Icon clipboardDocument_icon />
 
                 <!-- <button
@@ -128,7 +128,7 @@ const showResult = ref(false);
 
         </div>
 
-        <div class="result-close invisible group-hover/closeBTN:visible group/icon ">
+        <div class="result-close opacity-0  group-hover/closeBTN:opacity-100 group/icon transition-all  ">
             <button
                 class="sidebar-close-btn  w-10 h-10 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-neutral-100 flex z-40">
                 <xMark  alt=""  class="w-6 h-6" />
