@@ -3,6 +3,9 @@ import { ref } from "vue";
 
 import Animation from './Animation.vue';
 import Icon from './Icon.vue';
+import documentText from './svg/document-text.vue'
+import chevronLeft from './svg/chevron-left.vue'
+import xMark from './svg/x-mark.vue'
 
 
 const showResult = ref(false);
@@ -11,7 +14,7 @@ const showResult = ref(false);
 
 <template>
 
-    <div class="result_wrapper w-full  h-auto bg-white border border-solid border-neutral-200  rounded-xl shadow-xl relative ">
+    <div class="result_wrapper w-full  h-auto bg-white border border-solid border-neutral-200  rounded-xl shadow-xl relative  group/closeBTN">
 
 
         <div class="result_header flex justify-between items-center  !mb-0   rounded-lg rounded-b-none p-4 md:p-8 relative overflow-hidden z-20">
@@ -24,7 +27,7 @@ const showResult = ref(false);
 
                 <div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
                     <div class="flex gap-1 justify-center items-center">
-                        <img src="../assets/document-text.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4"><span>Ben >> LinkedIn >> All</span>
+                        <documentText alt=""  class="w-5 h-5 md:w-4 md:h-4" /><span>Ben >> LinkedIn >> All</span>
                     </div>
                 </div>
 
@@ -32,8 +35,8 @@ const showResult = ref(false);
 
             <div class="result_header-icons flex gap-2 z-20">
 
-                <Icon :image="('/src/assets/cube-transparent.svg')"/>
-                <Icon :image="('/src/assets/ellipsis-horizontal.svg')" class="hidden md:flex"/>
+                <Icon cubeTransparent_icon />
+                <Icon ellipsisHorizontal_icon  class="hidden md:flex"/>
 <!-- 
                 <button
                     class="  w-10 h-10 md:w-8 md:h-8  items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40">
@@ -53,9 +56,9 @@ const showResult = ref(false);
         <div class="result_item w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4  bg-transparent  rounded-lg rounded-t-none p-4 md:p-8 relative overflow-hidden">
 
             <div class="icons flex md:flex-col gap-2 md:gap-4">
-                <Icon :image="('/src/assets/chevron-left.svg')"/>
-                <Icon :image="('/src/assets/chat-bubble-left-right.svg')"/>
-                <Icon :image="('/src/assets/ellipsis-horizontal.svg')"/>
+                <Icon chevronLeft_icon />
+                <Icon chatBubbleLeftRight_icon />
+                <Icon ellipsisHorizontal_icon />
 
                 <!-- <button
                     class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
@@ -106,12 +109,12 @@ const showResult = ref(false);
                     :class="{ '!-rotate-90' : showResult }"
 
                     >
-                    <img src="../assets/chevron-left.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
+                    <chevronLeft  alt=""  class="w-5 h-5 md:w-4 md:h-4" />
                 </button>
             </div>
 
-            <div class="result_item-copy">
-                <Icon :image="('/src/assets/clipboard-document.svg')"/>
+            <div class="result_item-copy absolute -top-1 -right-1 invisible group-hover/closeBTN:visible">
+                <Icon clipboardDocument_icon />
 
                 <!-- <button
                     class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
@@ -125,14 +128,12 @@ const showResult = ref(false);
 
         </div>
 
-        <div class="result-close">
-            <!-- <Icon :image="('/src/assets/x-mark.svg')"/> -->
-
-                <button
-                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
-                    <img src="../assets/x-mark.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button>
-            </div>
+        <div class="result-close invisible group-hover/closeBTN:visible group/icon ">
+            <button
+                class="sidebar-close-btn  w-10 h-10 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-neutral-100 flex z-40">
+                <xMark  alt=""  class="w-6 h-6" />
+            </button>
+        </div>
 
 
     </div>

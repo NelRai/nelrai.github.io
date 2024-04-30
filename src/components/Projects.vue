@@ -2,6 +2,9 @@
 
 import Card from './Card.vue';
 import Icon from './Icon.vue';
+import bookmarkSquare from './svg/bookmark-square.vue'
+import plusCircleMini from './svg/plus-circle-mini.vue'
+
 
 </script>
 
@@ -12,13 +15,13 @@ import Icon from './Icon.vue';
         <div class="projects_header flex justify-between items-center">
 
             <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
-            <img src="../assets/bookmark-square.svg" alt="" class="w-5 h-5 md:w-4 md:h-4" >
+            <bookmarkSquare alt="" class="w-6 h-6 " />
             <h4>Projects</h4>
 
         </div>
 
             <div class="icons flex md:flex-col gap-2 md:gap-4">
-                <Icon :image="('/src/assets/magnifying-glass.svg')" />
+                <Icon magnifyingGlass_icon />
 
                 <!-- <button
         class="sidebar-close-btn w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
@@ -28,9 +31,9 @@ import Icon from './Icon.vue';
             </div>
 
             <div
-                class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
+                class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:border-neutral-100 hover:cursor-pointer hover:text-neutral-500 group/icon">
                 <div class="flex gap-1 justify-center items-center">
-                    <img src="../assets/plus-circle-mini.svg" alt="" class="w-5 h-5 md:w-4 md:h-4"><span>New Project</span>
+                    <plusCircleMini  alt="" class="w-5 h-5" /><span>New Project</span>
                 </div>
             </div>
         </div>

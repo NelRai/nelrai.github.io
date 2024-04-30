@@ -98,7 +98,7 @@ function projectHide() {
           'md:hidden lg:hidden 2xl:flex': visibleProjects,
         }"
       >
-        <img src="./assets/chevron-left.svg" alt="" class="w-4 h-4" />
+        <img src="./assets/chevron-left.svg" alt="" class="w-5 h-5" />
       </button>
 
       <div
@@ -143,7 +143,7 @@ function projectHide() {
           'md:hidden lg:hidden 2xl:flex': visibleProjects,
         }"
       >
-        <img src="./assets/chevron-left.svg" alt="" class="w-4 h-4" />
+        <img src="./assets/chevron-left.svg" alt="" class="w-5 h-5" />
       </button>
 </div>
 

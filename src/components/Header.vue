@@ -27,13 +27,13 @@ function showProjectsBTN() {
   >
     <img src="../assets/dcio-logo.svg" alt="" class="z-50">
 
-    <Icon :image="('/src/assets/bars-2.svg')" class="md:hidden z-50"/>
+    <Icon bars2_icon class="md:hidden z-50"/>
     <Icon 
-    :image="('/src/assets/adjustment-horizontal.svg')" 
+    adjustmentHorizontal_icon
     class="hidden lg:flex z-50"  
     @click="showProjectsBTN" 
     :class="{
-          'text-red-400 border-red-400': projectsVisible
+          'text-red-400 border-red-400 hover:border-red-400 *:!stroke-red-400': projectsVisible
         }"
     
     />
