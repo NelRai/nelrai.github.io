@@ -21,7 +21,11 @@ import plusCircleMini from './svg/plus-circle-mini.vue'
         </div>
 
             <div class="icons flex md:flex-col gap-2 md:gap-4">
-                <Icon magnifyingGlass_icon />
+
+                <span class="tooltip  z-index-999">
+                    <Icon magnifyingGlass_icon /> <span class="tooltiptext z-index-999 text-xs">Search </span>
+          </span>  
+               
 
                 <!-- <button
         class="sidebar-close-btn w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">

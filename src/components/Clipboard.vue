@@ -10,7 +10,7 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
 
 <template>
 
-    <div id="clipboard" class="clipboard w-full h-full flex flex-col gap-4 md:p-4 bg-neutral-50 rounded-lg md:shadow-none md:w-full  overflow-y-scroll">
+    <div id="clipboard" class="clipboard w-full h-full flex flex-col gap-4 md:p-4  bg-neutral-50 rounded-lg md:shadow-none md:w-full " >
 
     <div class="clipboard_header flex justify-between items-center">
 
@@ -23,7 +23,9 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
         <div class="icons flex  gap-2 2xl:gap-4">
             <Icon bars3_icon />
             <Icon linkSVG_icon />
-            <Icon arrowUpTray_icon />
+          <span class="tooltip  z-index-999">
+            <Icon arrowUpTray_icon /> <span class="tooltiptext z-index-999 text-xs">File Upload </span>
+          </span>  
 <!-- 
             <button
                 class="sidebar-close-btn w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
@@ -47,6 +49,8 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
         </div>
     </div>
     
+    <div class="w-full h-full flex flex-col pr-4 gap-4 overflow-y-scroll">
+    
         <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
         <Card headline="Apple already uses Apple GPT internally" linked-in  />
         <Card headline="Earth Virtualization Engines are the future of climate research" url image />
@@ -61,6 +65,8 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
         <Card headline="Apple already uses Apple GPT internally" linked-in  />
         <Card headline="Earth Virtualization Engines are the future of climate research" url />
         <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  />
+
+    </div>
 
 
     </div>
