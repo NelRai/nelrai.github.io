@@ -32,7 +32,7 @@ function showProjectsBTN() {
 
 <template>
   <div
-    class="flex justify-between items-center p-4 bg-neutral-50 h-16 w-full fixed bottom-0 left-0 shadow-mdInvert md:shadow-none  lg:relative lg:rounded-lg z-50"
+    class="flex justify-between items-center p-4 bg-neutral-50 h-16 w-full fixed bottom-0 left-0 shadow-mdInvert md:shadow-none  lg:relative lg:rounded-lg z-50 lg:hidden"
   >
     <!-- <button class="bg-blue-400 h-8 w-8 rounded-md" ></button> -->
     <!-- <button class="bg-red-400 h-8 w-8 rounded-md" @click="second"></button> -->

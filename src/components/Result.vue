@@ -5,7 +5,7 @@ import Animation from "./Animation.vue";
 import Icon from "./Icon.vue";
 import documentText from "./svg/document-text.vue";
 import chevronLeft from "./svg/chevron-left.vue";
-import xMark from "./svg/x-mark.vue";
+import Trash from "./svg/trash.vue";
 
 const showResult = ref(true);
 console.log(showResult.value);
@@ -215,7 +215,7 @@ onMounted(addClassOnClick);
       <button
         class="sidebar-close-btn w-10 h-10 absolute -top-1 -right-1 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-neutral-100 flex z-40"
       >
-        <xMark alt="" class="w-6 h-6" />
+        <Trash alt="" class="w-6 h-6" />
       </button>
     </div>
 
