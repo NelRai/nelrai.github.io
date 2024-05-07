@@ -31,7 +31,7 @@ import plusCircleMini from './svg/plus-circle-mini.vue'
             </div>
 
             <div
-                class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:border-neutral-100 hover:cursor-pointer hover:text-neutral-500 active:border-red-400  group/icon">
+                class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:border-red-100 hover:cursor-pointer hover:text-red-200 active:border-red-400  group/icon transition-0-3s ">
                 <div class="flex gap-1 justify-center items-center">
                     <plusCircleMini  alt="" class="w-5 h-5" /><span>New Project</span>
                 </div>

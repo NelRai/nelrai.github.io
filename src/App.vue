@@ -8,6 +8,8 @@ import Projects from "./components/Projects.vue";
 import Navigation from "./components/Navigation.vue";
 
 import MobileNavBottom from "./components/MobileNavBottom.vue";
+import chevronLeft from "./components/svg/chevron-left.vue";
+
 
 let hideContent = ref(true);
 console.log(hideContent);
@@ -91,14 +93,18 @@ function projectHide() {
       </div>
 
       <button
-        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hidden lg:flex"
+        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border  border-neutral-200 hover:border-red-100 hidden lg:flex transition-0-3s group/icon  " 
         @click="sidebarHide"
         :class="{
           'right-auto left-0 rotate-180': !sidebarVisible,
           'md:hidden lg:hidden 2xl:flex': visibleProjects,
         }"
       >
-        <img src="./assets/chevron-left.svg" alt="" class="w-5 h-5" />
+      <chevronLeft class=" w-5 h-5"  />
+
+        <!-- <img src="./assets/chevron-left.svg" alt="" class="w-5 h-5" /> -->
+
+        
       </button>
 
       <div
@@ -136,14 +142,14 @@ function projectHide() {
     </div>
 
   <button 
-        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -left-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hidden lg:flex z-50 rotate-180"
+        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -left-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200  hover:border-red-100 hidden lg:flex z-50 rotate-180 transition-0-3s group/icon"
         @click="projectHide"
         :class="{
-          'left-auto right-0 rotate-0': !visibleProjects,
+          'left-auto right-0 !rotate-0': !visibleProjects,
           'md:hidden lg:hidden 2xl:flex': visibleProjects,
         }"
       >
-        <img src="./assets/chevron-left.svg" alt="" class="w-5 h-5" />
+      <chevronLeft class=" w-5 h-5"  />
       </button>
 </div>
 
