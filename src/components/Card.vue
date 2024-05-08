@@ -54,7 +54,7 @@ const isActive = ref(false);
     </div>
         <div class="result-close  opacity-0 group-hover/card:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
             <button
-                class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 flex z-40 transition-0-3s ">
+                class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s ">
                 <Trash  alt=""  class="w-6 h-6" />
             </button>
         </div>
