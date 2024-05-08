@@ -81,7 +81,7 @@ function projectHide() {
   <div class="tablet hidden lg:flex bg-neutral-50">
     <div class="whatever flex max-w-md w-full h-full fixed lg:max-w-md z-50">
       <div
-        class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh p-4 bg-neutral-50 gap-4 md:shadow-xl"
+        class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh max-h-dvh p-4 bg-neutral-50 gap-4 md:shadow-xl"
         v-if="sidebarVisible"
       >
         <Header @showProjectsBTN="showProjects"
