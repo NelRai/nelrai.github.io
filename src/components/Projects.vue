@@ -2,8 +2,8 @@
 
 import Card from './Card.vue';
 import Icon from './Icon.vue';
+import IconBox from './IconBox.vue';
 import bookmarkSquare from './svg/bookmark-square.vue'
-import plusCircleMini from './svg/plus-circle-mini.vue'
 
 
 </script>
@@ -27,19 +27,10 @@ import plusCircleMini from './svg/plus-circle-mini.vue'
           </span>  
                
 
-                <!-- <button
-        class="sidebar-close-btn w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
-        <img src="../assets/chevron-left.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-    </button> -->
-
             </div>
 
-            <div
-                class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:bg-neutral-100 hover:cursor-pointer  active:border-dc-400 active:text-dc-400  group/icon transition-0-3s ">
-                <div class="flex gap-1 justify-center items-center">
-                    <plusCircleMini  alt="" class="w-5 h-5" /><span>New Project</span>
-                </div>
-            </div>
+            <IconBox plus-circle-mini_icon text="New Project" />
+
             
         </div>
 
