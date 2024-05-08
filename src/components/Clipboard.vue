@@ -49,7 +49,7 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
             </div>
         </div>
         
-        <div class="w-full  h-full flex flex-col pr-4 gap-4 overflow-y-scroll">
+        <div class="w-full  h-full flex flex-col lg:pr-4 gap-4 lg:overflow-y-scroll">
         
             <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
             <Card headline="Apple already uses Apple GPT internally" linked-in  />

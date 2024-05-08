@@ -158,10 +158,10 @@ function projectHide() {
 
   </div>
 
-  <div class="w-dvw h-dvh bg-neutral-50 lg:hidden">
+  <div class="w-dvw h-dvh bg-neutral-50 lg:hidden overflow-y-scroll">
     <Header />
 
-    <main class="w-dvw h-dvh py-16">
+    <main class="w-dvw h-full py-16">
       <!-- <Navigation />  -->
 
       <div class="px-4 my-4 w-full h-full" v-show="option1">
