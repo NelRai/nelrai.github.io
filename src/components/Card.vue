@@ -5,10 +5,14 @@ import arrowUpTray from './svg/arrow-up-tray.vue'
 import documentText from './svg/document-text.vue'
 import linkSVG from './svg/link.vue'
 import Trash from './svg/trash.vue'
+import IconBox from './IconBox.vue';
+
+import { defineProps } from 'vue';
 
 
 
-defineProps({
+const props = defineProps({
+    id: String,
     headline: String,
     fileUpload: Boolean,
     linkedIn: Boolean,
@@ -16,11 +20,29 @@ defineProps({
     timeText: String,
     bgImage: String,
     image: Boolean,
-    projectContentActive: Boolean
+    projectContentActive: Boolean,
+    cardRed: Boolean
 })
 
+let activeIconBox = ref('iconBox1');
 
-const isActive = ref(false);
+const emit = defineEmits(["activeProject"]);
+
+const cardClicked = () => {
+   
+emit('activeProject', props.id)
+}
+
+// function activeProject() {
+//   emit("activeProject");
+// }
+
+
+function iconBoxActive(id) {
+    activeIconBox.value = id;
+    console.log('iconBoxActive', id);
+}
+
 
 </script>
 
@@ -28,16 +50,25 @@ const isActive = ref(false);
 
     <div 
     class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-dc-400 hover:shadow-lg group/card  relative transition-0-3s  "
-    :class="{ 'border-dc-400': isActive }"
-    @click="isActive = !isActive" >
+    :class="{ 'border-dc-400': cardRed }"
+    @click="cardClicked"
+    >
 
         <div class="card-headline text-base font-normal z-10 pr-[40%] ">
            <h4>{{ headline }}</h4>
         </div> 
 
-        <div class="project_content" v-if="isActive">
-            Test
-        
+        <div class="project_content flex flex-col gap-2 " v-if="cardRed">
+            <div class="flex gap-2 align-top">
+                <img src="../assets/card_winkel.svg" alt="">
+                <IconBox id="iconBox1"  document-text_icon text="Ben - LinkedIn Post - All" @click="iconBoxActive('iconBox1')"  :class="{ 'border-dc-400': activeIconBox === 'iconBox1'}"/>
+            </div>
+            <div class="flex gap-2 align-top">
+                <img src="../assets/card_winkel.svg" alt="">
+                <IconBox id="iconBox2"  document-text_icon text="Matthias - LinkedIn Post - All" @click="iconBoxActive('iconBox2')" :class="{ 'border-dc-400': activeIconBox === 'iconBox2' }"  />
+            </div>
+
+
         </div>
 
         <div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 group-hover/card:border-neutral-300 group-hover/card:bg-neutral-100  rounded-lg  text-xs font-normal z-10  transition-0-3s " v-if="fileUpload || linkedIn || url">

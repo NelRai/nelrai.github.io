@@ -1,10 +1,41 @@
 <script setup lang="ts">
+import { ref } from "vue";
 
 import Card from './Card.vue';
 import Icon from './Icon.vue';
 import IconBox from './IconBox.vue';
 import bookmarkSquare from './svg/bookmark-square.vue'
 
+let isActive = ref(false);
+let activeCard = ref(null);
+// function cardActive() {
+//     isActive.value = !isActive.value;
+//     console.log('cardActive');
+
+// }
+
+function cardActive(id) {
+    activeCard.value = id;
+    console.log('cardActive', id);
+    
+}
+
+let cards = ref([
+    { id: 'card1', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: true },
+    { id: 'card2', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: false },
+    { id: 'card3', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
+    { id: 'card4', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
+    { id: 'card5', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: true },
+    { id: 'card6', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
+    { id: 'card7', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: true },
+    { id: 'card8', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: true },
+    { id: 'card2', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: false },
+    { id: 'card9', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
+    { id: 'card10', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
+    { id: 'card11', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: true },
+    { id: 'card12', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
+    { id: 'card13', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: true },
+]);
 
 </script>
 
@@ -27,6 +58,7 @@ import bookmarkSquare from './svg/bookmark-square.vue'
           </span>  
                
 
+
             </div>
 
             <IconBox plus-circle-mini_icon text="New Project" />
@@ -34,10 +66,12 @@ import bookmarkSquare from './svg/bookmark-square.vue'
             
         </div>
 
+        <Card v-for="card in cards" :key="card.id" :id="card.id" :headline="card.headline" :time-text="card.timeText" :image="card.image" @activeProject="cardActive" :cardRed="activeCard === card.id" />
 
-        <Card headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" image />
-        <Card headline="Apple already uses Apple GPT internally" time-text="17 hours ago" />
-        <Card headline="Google launches generative AI search" time-text="2 days ago" />
+<!--         
+        <Card id="card1" headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" image  @activeProject="cardActive"  :cardRed="activeCard === 'card1'"  />
+        <Card id="card2" headline="Apple already uses Apple GPT internally" time-text="17 hours ago"            @activeProject="cardActive"  :cardRed="activeCard === 'card2'" />
+        <Card id="card3" headline="Google launches generative AI search" time-text="2 days ago"     @activeProject="cardActive"  :cardRed="activeCard === 'card3'" />
         <Card headline="Innovative Technology Too Expensive - Report on Meta's AR Glasses" time-text="2 days ago" />
         <Card headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" image />
         <Card headline="Apple already uses Apple GPT internally" time-text="17 hours ago" />
@@ -52,7 +86,7 @@ import bookmarkSquare from './svg/bookmark-square.vue'
         <Card headline="Innovative Technology Too Expensive - Report on Meta's AR Glasses" time-text="2 days ago" />
         <Card headline="Apple already uses Apple GPT internally" time-text="17 hours ago" />
         <Card headline="Google launches generative AI search" time-text="2 days ago" />
-        <Card headline="Innovative Technology Too Expensive - Report on Meta's AR Glasses" time-text="2 days ago" />
+        <Card headline="Innovative Technology Too Expensive - Report on Meta's AR Glasses" time-text="2 days ago" /> -->
 
     </div>
 

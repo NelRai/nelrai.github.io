@@ -31,6 +31,7 @@ import xMark from './svg/x-mark.vue'
 
 
 defineProps({
+  id: String,
   text: String,
   adjustmentHorizontal_icon: Boolean,
   archiveBoxMini_icon: Boolean,
@@ -58,7 +59,7 @@ defineProps({
 
 <template>
   
-  <div class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:cursor-pointer hover:bg-neutral-100 active:border-dc-400   group/icon transition-0-3s  ">
+  <div class="card-tag flex px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:cursor-pointer hover:bg-neutral-100 active:border-dc-400   group/icon transition-0-3s  ">
     <div class="flex gap-1 justify-center items-center">
       <adjustmentHorizontal  v-if="adjustmentHorizontal_icon" class="svgIconBox " />
       <archiveBoxMini  v-if="archiveBoxMini_icon" class="svgIconBox " />
