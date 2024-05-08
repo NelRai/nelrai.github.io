@@ -209,21 +209,15 @@ onMounted(addClassOnClick);
       </div>
     </div>
 
-    <div
-      class="result-close opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s"
-    >
-      <button
-        class="sidebar-close-btn w-10 h-10 absolute -top-1 -right-1 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-neutral-100 flex z-40"
-      >
-        <Trash alt="" class="w-6 h-6" />
-      </button>
+    <div class="result-close opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s">
+      <Icon Trash_icon class="absolute -top-1 -right-1" />
     </div>
 
 
   </div>
   <div class="result_item-close group/icon">
           <button
-            class="result_item-close-btn w-10 h-10 md:w-8 md:h-8 absolute bottom-4 left-[calc(50%-16px)] items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-neutral-100 transition-0-3s flex z-40 -rotate-90 "
+            class="result_item-close-btn w-10 h-10 md:w-8 md:h-8 absolute bottom-4 left-[calc(50%-16px)] items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-neutral-100 hover:bg-neutral-100 transition-0-3s flex z-40 -rotate-90 "
      
           >
             <chevronLeft alt="" class="w-5 h-5 md:w-4 md:h-4" />
