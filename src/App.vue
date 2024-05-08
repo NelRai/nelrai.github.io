@@ -96,7 +96,7 @@ function projectHide() {
       </div>
 
       <button
-        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border  border-neutral-200 hover:border-red-100 hidden lg:flex transition-0-3s group/icon  " 
+        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border  border-neutral-200 hover:border-dc-100 hidden lg:flex transition-0-3s group/icon  " 
         @click="sidebarHide"
         :class="{
           'right-auto left-0 rotate-180': !sidebarVisible,
@@ -145,7 +145,7 @@ function projectHide() {
     </div>
 
   <button 
-        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -left-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200  hover:border-red-100 hidden lg:flex z-50 rotate-180 transition-0-3s group/icon"
+        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -left-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200  hover:border-dc-100 hidden lg:flex z-50 rotate-180 transition-0-3s group/icon"
         @click="projectHide"
         :class="{
           'left-auto right-0 !rotate-0': !visibleProjects,

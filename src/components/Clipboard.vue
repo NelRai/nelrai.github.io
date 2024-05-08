@@ -42,12 +42,12 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
                 </button> -->
             </div>
 
-            <div class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:border-red-100 hover:cursor-pointer hover:text-red-200 active:border-red-400  active:text-red-400 group/icon transition-0-3s  ">
+            <div class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:cursor-pointer hover:bg-neutral-100 active:border-dc-400   group/icon transition-0-3s  ">
                 <div class="flex gap-1 justify-center items-center">
                     <archiveBoxMini  alt=""  class="w-5 h-5" /><span>Clear</span>
                 </div>
             </div>
-            
+
         </div>
         
         <div class="w-full  h-full flex flex-col lg:pr-4 gap-4 lg:overflow-y-scroll">

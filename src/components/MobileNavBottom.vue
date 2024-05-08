@@ -35,12 +35,12 @@ function showProjectsBTN() {
     class="flex justify-between items-center p-4 bg-neutral-50 h-16 w-full fixed bottom-0 left-0 shadow-mdInvert md:shadow-none  lg:relative lg:rounded-lg z-50 lg:hidden"
   >
     <!-- <button class="bg-blue-400 h-8 w-8 rounded-md" ></button> -->
-    <!-- <button class="bg-red-400 h-8 w-8 rounded-md" @click="second"></button> -->
+    <!-- <button class="bg-dc-400 h-8 w-8 rounded-md" @click="second"></button> -->
 
     <button
       class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal lg:hidden "  @click="showClipboardBTN"
       :class="{
-          'text-red-400 border-red-400': clipboardVisible
+          'text-dc-400 border-dc-400': clipboardVisible
         }"
     >
       <div class="flex gap-1 justify-center items-center">
@@ -53,7 +53,7 @@ function showProjectsBTN() {
     <button 
       class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal lg:hidden"  @click="showProjectsBTN"
       :class="{
-          'text-red-400 border-red-400': projectsVisible
+          'text-dc-400 border-dc-400': projectsVisible
         }"
     >
       <div class="flex gap-1 justify-center items-center">

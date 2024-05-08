@@ -33,7 +33,7 @@ function showProjectsBTN() {
     class="hidden lg:flex z-50"  
     @click="showProjectsBTN" 
     :class="{
-          'text-red-400 border-red-400 hover:border-red-400 *:!stroke-red-400': projectsVisible
+          'text-dc-400 border-dc-400 hover:border-dc-400 *:!stroke-dc-400': projectsVisible
         }"
     
     />

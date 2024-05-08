@@ -34,7 +34,7 @@ function showProjectsBTN() {
 
 <template>
   <div
-    class="hidden lg:flex justify-between items-center p-4 gap-4 bg-red-50 w-full fixed bottom-0 left-0 shadow-mdInvert md:shadow-none  lg:relative lg:rounded-lg z-50"
+    class="hidden lg:flex justify-between items-center p-4 gap-4 bg-dc-50 w-full fixed bottom-0 left-0 shadow-mdInvert md:shadow-none  lg:relative lg:rounded-lg z-50"
   >
  <img src="/avatar-big.png" alt="">
 

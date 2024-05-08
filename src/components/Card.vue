@@ -10,12 +10,13 @@ import Trash from './svg/trash.vue'
 
 defineProps({
     headline: String,
-  fileUpload: Boolean,
-  linkedIn: Boolean,
-  url: Boolean,
-  timeText: String,
-  bgImage: String,
-  image: Boolean
+    fileUpload: Boolean,
+    linkedIn: Boolean,
+    url: Boolean,
+    timeText: String,
+    bgImage: String,
+    image: Boolean,
+    projectContentActive: Boolean
 })
 
 
@@ -26,13 +27,18 @@ const isActive = ref(false);
 <template>
 
     <div 
-    class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg top-0  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-red-400 hover:-top-1 hover:shadow-lg group/card  relative transition-0-3s  "
-    :class="{ 'border-red-400': isActive }"
+    class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-dc-400 hover:shadow-lg group/card  relative transition-0-3s  "
+    :class="{ 'border-dc-400': isActive }"
     @click="isActive = !isActive" >
 
         <div class="card-headline text-base font-normal z-10 pr-[40%] ">
            <h4>{{ headline }}</h4>
         </div> 
+
+        <div class="project_content" v-if="isActive">
+            Test
+        
+        </div>
 
         <div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 group-hover/card:border-neutral-300 group-hover/card:bg-neutral-100  rounded-lg  text-xs font-normal z-10  transition-0-3s " v-if="fileUpload || linkedIn || url">
 
@@ -48,7 +54,7 @@ const isActive = ref(false);
     </div>
         <div class="result-close  opacity-0 group-hover/card:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
             <button
-                class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-red-100 flex z-40 transition-0-3s ">
+                class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 flex z-40 transition-0-3s ">
                 <Trash  alt=""  class="w-6 h-6" />
             </button>
         </div>
