@@ -47,6 +47,7 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
                     <archiveBoxMini  alt=""  class="w-5 h-5" /><span>Clear</span>
                 </div>
             </div>
+            
         </div>
         
         <div class="w-full  h-full flex flex-col lg:pr-4 gap-4 lg:overflow-y-scroll">

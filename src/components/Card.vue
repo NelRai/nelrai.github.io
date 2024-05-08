@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 import arrowUpTray from './svg/arrow-up-tray.vue'
 import documentText from './svg/document-text.vue'
 import linkSVG from './svg/link.vue'
@@ -16,17 +18,23 @@ defineProps({
   image: Boolean
 })
 
+
+const isActive = ref(false);
+
 </script>
 
 <template>
 
-    <div class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg hover:border-red-100 hover:cursor-pointer hover:text-red-200 active:border-red-400 active:text-red-400  group/card  relative transition-0-3s  ">
+    <div 
+    class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg top-0  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-red-400 hover:-top-1 hover:shadow-lg group/card  relative transition-0-3s  "
+    :class="{ 'border-red-400': isActive }"
+    @click="isActive = !isActive" >
 
         <div class="card-headline text-base font-normal z-10 pr-[40%] ">
            <h4>{{ headline }}</h4>
         </div> 
 
-        <div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 group-hover/card:border-red-100 group-active/card:border-red-400 rounded-lg  text-xs font-normal z-10 " v-if="fileUpload || linkedIn || url">
+        <div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 group-hover/card:border-neutral-300 group-hover/card:bg-neutral-100  rounded-lg  text-xs font-normal z-10  transition-0-3s " v-if="fileUpload || linkedIn || url">
 
             <div class="flex gap-1 justify-center items-center z-10" v-if="fileUpload"> <arrowUpTray class="w-4 h-4"  /> <span>File Upload</span></div>
             <div class="flex gap-1 justify-center items-center z-10" v-if="linkedIn"><documentText class="w-4 h-4" /><span>LinkedIn Post</span></div>
@@ -34,7 +42,7 @@ defineProps({
 
         </div>
 
-        <span class="text-xs font-normal text-neutral-500 group-hover/card:text-red-200 transition-0-3s  z-10" v-if="timeText">{{timeText}}</span>
+        <span class="text-xs font-normal text-neutral-500 group-hover/card:text-neutral-950 transition-0-3s  z-10" v-if="timeText">{{timeText}}</span>
         <div class="white_gradient">
         <img src="../assets/bg-image-01.png" v-if="image" alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% ">
     </div>

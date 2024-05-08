@@ -40,6 +40,7 @@ import plusCircleMini from './svg/plus-circle-mini.vue'
                     <plusCircleMini  alt="" class="w-5 h-5" /><span>New Project</span>
                 </div>
             </div>
+            
         </div>
 
 
