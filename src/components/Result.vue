@@ -5,6 +5,10 @@ import Animation from "./Animation.vue";
 import Icon from "./Icon.vue";
 import documentText from "./svg/document-text.vue";
 import chevronLeft from "./svg/chevron-left.vue";
+import chevronRight from "./svg/chevron-right.vue";
+import clipboardDocumentMini from "./svg/clipboard-document-mini.vue";
+import Sparkles from "./svg/sparkles.vue";
+
 import Trash from "./svg/trash.vue";
 
 const showResult = ref(true);
@@ -84,9 +88,74 @@ function addClassOnClick() {
 }
 
 onMounted(addClassOnClick);
+
+// let items =
+//     [
+//         'item 1',
+//         'item 1'
+//         ]
+// ;
+
+
+
+import TieredMenu from 'primevue/tieredmenu';
+import Button from 'primevue/button';
+import Square2Stack from "./svg/square-2-stack.vue";
+import ArrowDownTrayMini from "./svg/arrow-down-tray-mini.vue";
+
+const menu = ref(null);
+
+const menuItems = ref([
+
+  {
+    label: 'Copy to Clipboard',
+    component: clipboardDocumentMini,
+  },
+  {
+    label: 'Post Processing',
+    component: Sparkles,
+  },
+  {
+    label: 'Compare',
+    component: Square2Stack,
+  },
+  {
+    label: 'Save as',
+    component: ArrowDownTrayMini,
+    hasSubmenu: true,
+    items: [
+      {
+        label: 'PDF',
+        icon: 'pi pi-fw pi-copy',
+        command: () => {
+          console.log('Copy clicked');
+        }
+      },
+      {
+        label: 'Word',
+        icon: 'pi pi-fw pi-copy',
+        command: () => {
+          console.log('Copy clicked');
+        }
+      },
+      {
+        label: 'TXT',
+        icon: 'pi pi-fw pi-copy',
+        command: () => {
+          console.log('Copy clicked');
+        }
+      }
+    ]
+  }
+]);
+
+
+
 </script>
 
 <template>
+
+
     <div class="result-wrapper-wrapper relative  ">
   <div
     class="result_wrapper w-full h-auto bg-white border border-solid border-neutral-200 rounded-xl shadow-xl relative group/closeBTN top-0  cursor-pointer hover:-top-1 transition-0-3s"
@@ -107,6 +176,8 @@ onMounted(addClassOnClick);
             <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" /><span
               >Ben >> LinkedIn >> All</span
             >
+   
+
           </div>
         </div>
       </div>
@@ -134,7 +205,21 @@ onMounted(addClassOnClick);
       <div class="icons flex md:flex-col gap-2 md:gap-4">
         <Icon chevronLeft_icon />
         <Icon chatBubbleLeftRight_icon />
-        <Icon ellipsisHorizontal_icon />
+        <Icon ellipsisHorizontal_icon  v-on:click="menu.show($event)"/>
+
+        <TieredMenu  ref="menu" :model="menuItems" popup >
+    <template #item="{ item, props, hasSubmenu }">
+        <a  class="flex align-items-center" v-bind="props.action">
+          <component :is="item.component" />
+            <!-- <span  >{{item.icon}} </span>  -->
+            <span class="ml-2">{{ item.label }}</span>
+            <!-- <Badge v-if="item.badge" class="ml-auto" :value="item.badge" /> -->
+            <!-- <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span> -->
+            <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto"><chevronRight />  </i>
+        </a>
+    </template>
+</TieredMenu>
+
 
         <!-- <button
                     class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
@@ -159,6 +244,23 @@ onMounted(addClassOnClick);
         <div
           class="result_item-content"
         >
+
+        <!-- <Button type="button" label="Toggle" @click="toggle" aria-haspopup="true" aria-controls="overlay_tmenu" /> -->
+<!-- <TieredMenu ref="menu" id="overlay_tmenu" :model="menuItems" popup /> -->
+
+
+<!-- <TieredMenu :model="menuItems">
+    <template #item="{ item, props, hasSubmenu }">
+        <a v-ripple class="flex align-items-center" v-bind="props.action">
+            <span :class="item.icon" />
+            <span class="ml-2">{{ item.label }}</span>
+            <Badge v-if="item.badge" class="ml-auto" :value="item.badge" />
+            <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span>
+            <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto"></i>
+        </a>
+    </template>
+</TieredMenu> -->
+
           <p>
             💡 Google launches "AI Opportunity Initiative for Europe" to boost
             AI knowledge in the European workforce with a €25 million
