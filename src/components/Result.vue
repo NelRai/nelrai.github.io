@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
 
 import Animation from "./Animation.vue";
 import Icon from "./Icon.vue";
@@ -11,6 +11,11 @@ import Sparkles from "./svg/sparkles.vue";
 
 import Trash from "./svg/trash.vue";
 
+import Quill from 'quill';
+// // Or if you only need the core build
+// // import Quill from 'quill/core';
+
+// // const quill = new Quill('#editor');
 const showResult = ref(true);
 console.log(showResult.value);
 
@@ -57,6 +62,7 @@ function addClassOnClick() {
         resultWrapper.classList.remove("cursor-pointer", "hover:-top-1");
         if (contentWrapper) {
           contentWrapper.classList.remove("resultItemHidden");
+
         }
         if (closeButtons) {
           closeButtons.forEach(closeButton => {
@@ -87,7 +93,14 @@ function addClassOnClick() {
   }
 }
 
+
+
 onMounted(addClassOnClick);
+onMounted(() => {
+  const quill = new Quill('#editor', {
+      theme: 'snow'
+  });
+});
 
 // let items =
 //     [
@@ -151,6 +164,10 @@ const menuItems = ref([
 
 
 
+
+
+
+
 </script>
 
 <template>
@@ -208,17 +225,17 @@ const menuItems = ref([
         <Icon ellipsisHorizontal_icon  v-on:click="menu.show($event)"/>
 
         <TieredMenu  ref="menu" :model="menuItems" popup >
-    <template #item="{ item, props, hasSubmenu }">
-        <a  class="flex align-items-center" v-bind="props.action">
-          <component :is="item.component" />
-            <!-- <span  >{{item.icon}} </span>  -->
-            <span class="ml-2">{{ item.label }}</span>
-            <!-- <Badge v-if="item.badge" class="ml-auto" :value="item.badge" /> -->
-            <!-- <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span> -->
-            <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto"><chevronRight />  </i>
-        </a>
-    </template>
-</TieredMenu>
+          <template #item="{ item, props, hasSubmenu }">
+              <a  class="flex align-items-center" v-bind="props.action">
+                <component :is="item.component" />
+                  <!-- <span  >{{item.icon}} </span>  -->
+                  <span class="ml-2">{{ item.label }}</span>
+                  <!-- <Badge v-if="item.badge" class="ml-auto" :value="item.badge" /> -->
+                  <!-- <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span> -->
+                  <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto"><chevronRight />  </i>
+              </a>
+          </template>
+      </TieredMenu>
 
 
         <!-- <button
@@ -237,29 +254,13 @@ const menuItems = ref([
       </div>
 
       <div
-        class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative resultItemHidden"
+        class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative resultItemHidden quill"
        
 
       >
         <div
-          class="result_item-content"
+          class="result_item-content "  id="editor"
         >
-
-        <!-- <Button type="button" label="Toggle" @click="toggle" aria-haspopup="true" aria-controls="overlay_tmenu" /> -->
-<!-- <TieredMenu ref="menu" id="overlay_tmenu" :model="menuItems" popup /> -->
-
-
-<!-- <TieredMenu :model="menuItems">
-    <template #item="{ item, props, hasSubmenu }">
-        <a v-ripple class="flex align-items-center" v-bind="props.action">
-            <span :class="item.icon" />
-            <span class="ml-2">{{ item.label }}</span>
-            <Badge v-if="item.badge" class="ml-auto" :value="item.badge" />
-            <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span>
-            <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto"></i>
-        </a>
-    </template>
-</TieredMenu> -->
 
           <p>
             💡 Google launches "AI Opportunity Initiative for Europe" to boost

@@ -327,3 +327,9 @@ height: 105%;
 .z-index-999 {
   z-index: 999;
 }
+
+
+/* Quill */
+.quill > .ql-toolbar:first-child {
+  display: none !important;
+}

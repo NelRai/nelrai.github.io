@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import './style.css'
+import "quill/dist/quill.core.css";
 
 import PrimeVue from 'primevue/config';
 //@ts-ignore
