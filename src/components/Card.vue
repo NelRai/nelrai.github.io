@@ -8,6 +8,7 @@ import Trash from './svg/trash.vue'
 import IconBox from './IconBox.vue';
 
 import { defineProps } from 'vue';
+import ts from "typescript";
 
 
 
@@ -37,7 +38,7 @@ emit('activeProject', props.id)
 //   emit("activeProject");
 // }
 
-
+// @ts-ignore
 function iconBoxActive(id) {
     activeIconBox.value = id;
     console.log('iconBoxActive', id);

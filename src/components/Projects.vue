@@ -13,7 +13,7 @@ let activeCard = ref(null);
 //     console.log('cardActive');
 
 // }
-
+// @ts-ignore
 function cardActive(id) {
     activeCard.value = id;
     console.log('cardActive', id);

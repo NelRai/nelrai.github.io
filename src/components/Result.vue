@@ -222,7 +222,8 @@ const menuItems = ref([
       <div class="icons flex md:flex-col gap-2 md:gap-4">
         <Icon chevronLeft_icon />
         <Icon chatBubbleLeftRight_icon />
-        <Icon ellipsisHorizontal_icon  v-on:click="menu.show($event)"/>
+  <!-- @vue-ignore -->
+          <Icon ellipsisHorizontal_icon  v-on:click="menu.show($event)"/>
 
         <TieredMenu  ref="menu" :model="menuItems" popup >
           <template #item="{ item, props, hasSubmenu }">
