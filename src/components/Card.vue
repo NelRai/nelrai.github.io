@@ -49,13 +49,15 @@ function iconBoxActive(id) {
 
 <template>
 
+<div class="relative group/cardwrap">
+
     <div 
     class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-dc-400 hover:shadow-lg group/card  relative transition-0-3s  "
     :class="{ 'border-dc-400': cardRed }"
     @click="cardClicked"
     >
 
-        <div class="card-headline text-base font-normal z-10 pr-[40%] ">
+        <div class="card-headline text-base font-normal z-10  ">
            <h4>{{ headline }}</h4>
         </div> 
 
@@ -81,20 +83,40 @@ function iconBoxActive(id) {
         </div>
 
         <span class="text-xs font-normal text-neutral-500 group-hover/card:text-neutral-950 transition-0-3s  z-10" v-if="timeText">{{timeText}}</span>
+        
         <div class="white_gradient">
-        <img src="../assets/bg-image-01.png" v-if="image" alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% ">
+          <img src="../assets/bg-image-01.png" v-if="image" alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% ">
+        </div>
+
+    
     </div>
-        <div class="result-close  opacity-0 group-hover/card:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
+
+
+
+    <div class="result-close  opacity-0 group-hover/cardwrap:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
             <button
                 class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s ">
                 <Trash  alt=""  class="w-6 h-6" />
             </button>
         </div>
 
-        
+
     </div>
-
-
 </template>
 
-<style scoped></style>
+<style scoped>
+.white_gradient::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(252,252,253);
+    background: linear-gradient(90deg, rgba(252,252,253,1) 0%, rgba(252,252,253,0.9) 50%, rgba(252,252,253,0.4) 100%);
+    z-index: 0;
+    border-radius: 0.5rem;
+}
+
+
+</style>
