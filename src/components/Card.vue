@@ -6,6 +6,7 @@ import documentText from './svg/document-text.vue'
 import linkSVG from './svg/link.vue'
 import Trash from './svg/trash.vue'
 import IconBox from './IconBox.vue';
+import cardWinkel from "./svg/card-winkel.vue";
 
 import { defineProps } from 'vue';
 import ts from "typescript";
@@ -53,7 +54,7 @@ function iconBoxActive(id) {
 
     <div 
     class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-dc-400 hover:shadow-lg group/card  relative transition-0-3s  "
-    :class="{ 'border-dc-400': cardRed }"
+    :class="{ '!border-dc-400': cardRed }"
     @click="cardClicked"
     >
 
@@ -63,12 +64,12 @@ function iconBoxActive(id) {
 
         <div class="project_content flex flex-col gap-2 " v-if="cardRed">
             <div class="flex gap-2 align-top">
-                <img src="../assets/card_winkel.svg" alt="">
-                <IconBox id="iconBox1"  document-text_icon text="Ben - LinkedIn Post - All" @click="iconBoxActive('iconBox1')"  :class="{ 'border-dc-400': activeIconBox === 'iconBox1'}"/>
+            <cardWinkel  :class="{ 'cardWinkel-active': activeIconBox === 'iconBox1'}"  />
+                <IconBox id="iconBox1"  document-text_icon text="Ben - LinkedIn Post - All" @click="iconBoxActive('iconBox1')"  :class="{ '!border-dc-400 cardWinkel-active': activeIconBox === 'iconBox1'}"/>
             </div>
             <div class="flex gap-2 align-top">
-                <img src="../assets/card_winkel.svg" alt="">
-                <IconBox id="iconBox2"  document-text_icon text="Matthias - LinkedIn Post - All" @click="iconBoxActive('iconBox2')" :class="{ 'border-dc-400': activeIconBox === 'iconBox2' }"  />
+                <cardWinkel  :class="{ 'cardWinkel-active': activeIconBox === 'iconBox2'}"  />
+                <IconBox id="iconBox2"  document-text_icon text="Matthias - LinkedIn Post - All" @click="iconBoxActive('iconBox2')" :class="{ '!border-dc-400 cardWinkel-active': activeIconBox === 'iconBox2' }"  />
             </div>
 
 
@@ -84,7 +85,7 @@ function iconBoxActive(id) {
 
         <span class="text-xs font-normal text-neutral-500 group-hover/card:text-neutral-950 transition-0-3s  z-10" v-if="timeText">{{timeText}}</span>
         
-        <div class="white_gradient">
+        <div class="white_gradient" v-if="!cardRed">
           <img src="../assets/bg-image-01.png" v-if="image" alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% ">
         </div>
 
@@ -116,6 +117,10 @@ function iconBoxActive(id) {
     background: linear-gradient(90deg, rgba(252,252,253,1) 0%, rgba(252,252,253,0.9) 50%, rgba(252,252,253,0.4) 100%);
     z-index: 0;
     border-radius: 0.5rem;
+}
+
+.cardWinkel-active  * {
+    fill: #FF646F !important;
 }
 
 
