@@ -47,7 +47,7 @@ function addCard() {
 //     }
 // }
 
-function removeCard(id) {
+function removeCard(id: string) {
     cards.value = cards.value.filter(card => card.id !== id);
 }
 

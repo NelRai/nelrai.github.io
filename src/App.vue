@@ -84,7 +84,7 @@ function projectHide() {
 let modalAddLinkVisible = ref(false);
 
 
-function modalAddLinkFunction(id) {
+function modalAddLinkFunction() {
   modalAddLinkVisible.value = true;
     console.log('modalAddLinkVisible', modalAddLinkVisible.value);
     
