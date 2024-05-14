@@ -28,12 +28,18 @@ const props = defineProps({
 
 let activeIconBox = ref('iconBox1');
 
-const emit = defineEmits(["activeProject"]);
+const emit = defineEmits(["activeProject", "cardRemove"]);
 
 const cardClicked = () => {
    
 emit('activeProject', props.id)
 }
+
+const cardRemove = () => {
+   
+   emit('cardRemove', props.id)
+}
+   
 
 // function activeProject() {
 //   emit("activeProject");
@@ -96,7 +102,11 @@ function iconBoxActive(id) {
 
     <div class="result-close  opacity-0 group-hover/cardwrap:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
             <button
-                class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s ">
+                class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s "
+                @click="cardRemove"
+
+                
+                >
                 <Trash  alt=""  class="w-6 h-6" />
             </button>
         </div>

@@ -22,20 +22,34 @@ function cardActive(id) {
 
 let cards = ref([
     { id: 'card1', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: true },
-    { id: 'card2', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: false },
+    { id: 'card2', headline: 'Apple already uses Apple GPT internally Card02', timeText: '17 hours ago', image: false },
     { id: 'card3', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
     { id: 'card4', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
     { id: 'card5', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: true },
     { id: 'card6', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
     { id: 'card7', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: true },
     { id: 'card8', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: true },
-    { id: 'card2', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: false },
-    { id: 'card9', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
-    { id: 'card10', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
-    { id: 'card11', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: true },
-    { id: 'card12', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
-    { id: 'card13', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: true },
+    { id: 'card9', headline: 'Apple already uses Apple GPT internally ', timeText: '17 hours ago', image: false },
+    { id: 'card10', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
+    { id: 'card11', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
+    { id: 'card12', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: true },
+    { id: 'card13', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
+    { id: 'card14', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: true },
 ]);
+
+function addCard() {
+    cards.value.push({ id: `card${cards.value.length + 1}`, headline: 'New Card', timeText: 'Just now', image: false });
+}
+
+// function removeCard() {
+//     if (cards.value.length > 0) {
+//         cards.value.pop();
+//     }
+// }
+
+function removeCard(id) {
+    cards.value = cards.value.filter(card => card.id !== id);
+}
 
 </script>
 
@@ -61,12 +75,14 @@ let cards = ref([
 
             </div>
 
-            <IconBox plus-circle-mini_icon text="New Project" />
+            <IconBox plus-circle-mini_icon text="New Project" @click="addCard"  />
 
             
         </div>
 
-        <Card v-for="card in cards" :key="card.id" :id="card.id" :headline="card.headline" :time-text="card.timeText" :image="card.image" @activeProject="cardActive" :cardRed="activeCard === card.id" />
+        <Card v-for="card in cards" :key="card.id" :id="card.id" :headline="card.headline" :time-text="card.timeText" :image="card.image" @activeProject="cardActive" :cardRed="activeCard === card.id"
+        @cardRemove="() => removeCard(card.id)" />
+      
 
 <!--         
         <Card id="card1" headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" image  @activeProject="cardActive"  :cardRed="activeCard === 'card1'"  />
