@@ -58,7 +58,7 @@ defineProps({
 
 <template>
   <button
-    class="sidebar-close-btn  w-10 h-10 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 hover:border-neutral-200 hover:bg-neutral-100 active:border-dc-al400 group/icon transition-0-3s">
+    class="sidebar-close-btn  w-10 h-10 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 hover:border-neutral-200 hover:bg-neutral-100 active:border-dc-400 group/icon transition-0-3s">
     <!-- <img :src="image"  alt="" class="w-5 h-5 md:w-4 md:h-4" /> -->
 
 

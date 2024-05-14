@@ -11,6 +11,8 @@ import MobileNavBottom from "./components/MobileNavBottom.vue";
 import UserBox from "./components/UserBox.vue";
 
 import chevronLeft from "./components/svg/chevron-left.vue";
+import tag from "./components/atoms/tag.vue";
+import svgLink from "./components/svg/link.vue";
 
 
 let hideContent = ref(true);
@@ -75,6 +77,40 @@ function sidebarHide() {
 function projectHide() {
   visibleProjects.value = !visibleProjects.value;
 }
+
+
+
+//Show Modal Add Link
+let modalAddLinkVisible = ref(false);
+
+
+function modalAddLinkFunction(id) {
+  modalAddLinkVisible.value = true;
+    console.log('modalAddLinkVisible', modalAddLinkVisible.value);
+    
+}
+
+let modalAddlink_modeText = ref(false);
+let modalAddlink_modeHTML = ref(false);
+let modalAddlink_modeMarkdown = ref(false);
+
+function modalAddlink_modeText_function() {
+  modalAddlink_modeText.value = !modalAddlink_modeText.value;
+  modalAddlink_modeHTML.value = false;
+  modalAddlink_modeMarkdown.value = false;
+}
+
+function modalAddlink_modeHTML_function() {
+  modalAddlink_modeHTML.value = !modalAddlink_modeHTML.value;
+  modalAddlink_modeText.value = false;
+  modalAddlink_modeMarkdown.value = false;
+}
+
+function modalAddlink_modeMarkdown_function() {
+  modalAddlink_modeMarkdown.value = !modalAddlink_modeMarkdown.value;
+  modalAddlink_modeText.value = false;
+  modalAddlink_modeHTML.value = false;
+}
 </script>
 
 <template>
@@ -87,7 +123,7 @@ function projectHide() {
         <Header @showProjectsBTN="showProjects"
         :projectsVisible="visibleProjects"
         />
-        <Clipboard />
+        <Clipboard    @modalAddLink="modalAddLinkFunction" />
         <MobileNavBottom
           @showClipboardBTN="showClipboard"
           @showProjectsBTN="showProjects"
@@ -165,7 +201,7 @@ function projectHide() {
       <!-- <Navigation />  -->
 
       <div class="px-4 my-4 w-full h-full" v-show="option1">
-        <Clipboard />
+        <Clipboard   @modalAddLink="modalAddLinkFunction" />
       </div>
       <div class="px-4 my-4 w-full h-full" v-show="visibleProjects">
         <Projects />
@@ -183,6 +219,62 @@ function projectHide() {
       :projectsVisible="visibleProjects"
     />
   </div>
+
+
+
+  <div class="modal-addLink z-50" v-if="modalAddLinkVisible">
+
+    <div class="modal-addLink-content max-w-[928px] w-[calc(100%-64px)] bg-neutral-50 border-neutral-200 rounded-xl relative">
+      <button 
+       @click="modalAddLinkVisible = false"
+       class="absolute top-4 right-4 w-8 h-8 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 transition-0-3s"
+       >X</button>
+
+      <div class="modal-addLink-header  p-8 flex gap-2  ">
+      <svgLink class="w-6 h-6" />
+        <h2 class="text-lg" >Import URL</h2>
+        
+      </div>
+
+      <div class="modal-addLink-body  p-8 flex flex-col gap-4  ">
+        <input class="p-4 w-full border-neutral-200 border rounded-lg" type="text" placeholder="Enter URL" />
+        <!-- <button>Add</button> -->
+
+        <div class="tags">
+        <h3 class="text-neutral-500 text-xs mb-1">Mode</h3>
+        <div class="flex gap-2">
+          <tag text="Text" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeText}" @click="modalAddlink_modeText_function" />
+          <tag text="HTML" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeHTML}" @click="modalAddlink_modeHTML_function" />
+          <tag text="Markdown" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeMarkdown}" @click="modalAddlink_modeMarkdown_function" />
+
+        </div>
+      
+      </div>
+
+      </div>
+
+ 
+
+    </div>
+
+  </div>
+
+
 </template>
 
-<style scoped></style>
+<style scoped>
+.modal-addLink {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+</style>
