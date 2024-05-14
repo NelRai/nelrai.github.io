@@ -224,38 +224,44 @@ function modalAddlink_modeMarkdown_function() {
 
   <div class="modal-addLink z-50" v-if="modalAddLinkVisible">
 
-    <div class="modal-addLink-content max-w-[928px] w-[calc(100%-64px)] bg-neutral-50 border-neutral-200 rounded-xl relative">
+    <div class="modal-addLink-content max-w-[928px] w-[calc(100%-64px)]  relative rounded-xl shadow-xl z-50"
+    
+    >
       <button 
        @click="modalAddLinkVisible = false"
        class="absolute top-4 right-4 w-8 h-8 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 transition-0-3s"
        >X</button>
 
-      <div class="modal-addLink-header  p-8 flex gap-2  ">
-      <svgLink class="w-6 h-6" />
+      <div class="modal-addLink-header  p-8 flex gap-2  bg-neutral-50 border-neutral-200 border-x border-t rounded-t-xl  ">
+        <svgLink class="w-6 h-6" />
         <h2 class="text-lg" >Import URL</h2>
         
       </div>
 
-      <div class="modal-addLink-body  p-8 flex flex-col gap-4  ">
+      <div class="modal-addLink-body  p-8 flex flex-col gap-4 bg-neutral-50  border-neutral-200 border-x border-b rounded-b-xl   ">
         <input class="p-4 w-full border-neutral-200 border rounded-lg" type="text" placeholder="Enter URL" />
         <!-- <button>Add</button> -->
 
         <div class="tags">
-        <h3 class="text-neutral-500 text-xs mb-1">Mode</h3>
-        <div class="flex gap-2">
-          <tag text="Text" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeText}" @click="modalAddlink_modeText_function" />
-          <tag text="HTML" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeHTML}" @click="modalAddlink_modeHTML_function" />
-          <tag text="Markdown" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeMarkdown}" @click="modalAddlink_modeMarkdown_function" />
+          <h3 class="text-neutral-500 text-xs mb-1">Mode</h3>
+          <div class="flex gap-2">
+            <tag text="Text" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeText}" @click="modalAddlink_modeText_function" />
+            <tag text="HTML" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeHTML}" @click="modalAddlink_modeHTML_function" />
+            <tag text="Markdown" :class="{'!border-dc-400 text-dc-400' : modalAddlink_modeMarkdown}" @click="modalAddlink_modeMarkdown_function" />
 
-        </div>
+          </div>
       
-      </div>
+        </div>
 
       </div>
 
  
 
     </div>
+
+    <div 
+    @click="modalAddLinkVisible = false"
+    class="white-overlay"></div>
 
   </div>
 
@@ -269,12 +275,23 @@ function modalAddlink_modeMarkdown_function() {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(255, 255, 255, 0.5); */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* backdrop-filter: blur(10px); */
 }
 
+.white-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
 
 
 </style>
