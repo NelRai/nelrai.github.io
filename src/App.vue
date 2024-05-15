@@ -171,7 +171,11 @@ function modalAddlink_modeMarkdown_function() {
 
  
 
-<div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md ">
+<div class="projects fixed right-0 hidden 2xl:block w-1/3 h-dvh 2xl:max-w-md " 
+    :class="{
+      '!w-0': !visibleProjects
+    }"
+>
 
   <div
       class="sidebar-right-desktop bg-neutral-50 h-dvh md:shadow-xl"

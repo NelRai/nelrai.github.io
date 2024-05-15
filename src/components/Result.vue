@@ -300,8 +300,10 @@ const menuItems = ref([
 
 
 
-        <div
-          class="result_item-copy absolute -top-1 -right-1 opacity-0 group-hover/closeBTN:opacity-100 transition-0-3s"
+      </div>
+
+      <div
+          class="result_item-copy absolute top-3 right-3 opacity-0 group-hover/closeBTN:opacity-100 transition-0-3s"
         >
           <Icon clipboardDocument_icon />
 
@@ -310,7 +312,6 @@ const menuItems = ref([
                     <img src="../assets/clipboard-document.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
                 </button> -->
         </div>
-      </div>
     </div>
 
     <div class="result-close opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s">
