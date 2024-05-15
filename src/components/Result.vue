@@ -98,7 +98,7 @@ function addClassOnClick() {
 onMounted(addClassOnClick);
 onMounted(() => {
   const quill = new Quill('#editor', {
-      theme: 'snow'
+      theme: 'bubble'
   });
 });
 

@@ -1,6 +1,11 @@
+/* Quill import */
+@import url('styles/quill.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 /* blinker-regular - latin */
 @font-face {
@@ -285,6 +290,8 @@ height: 105%;
   stroke: #535bf2;
 } */
 
+
+/* Tooltips */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -330,6 +337,7 @@ height: 105%;
 
 
 /* Quill */
-.quill > .ql-toolbar:first-child {
+/* .quill > .ql-toolbar:first-child {
   display: none !important;
 }
+ */
