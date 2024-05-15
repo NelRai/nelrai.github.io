@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue"; 
 import Header from "./components/Header.vue";
 // import Navigation from './components/Navigation.vue'
 import Content from "./components/Content.vue";
@@ -111,6 +111,95 @@ function modalAddlink_modeMarkdown_function() {
   modalAddlink_modeText.value = false;
   modalAddlink_modeHTML.value = false;
 }
+
+
+
+//Results Open Close onClick
+function addClassOnClick() {
+  const elements = document.querySelectorAll(".result-wrapper-wrapper");
+
+  console.log('elements', elements);
+
+  for (let i = 0; i < elements.length; i++) {
+    const resultWrappers = elements[i].querySelectorAll(".result_wrapper");
+    const closeButtons = elements[i].querySelectorAll(".result_item-close-btn");
+    const resultWrapper = elements[i].querySelector(".result_wrapper");
+    const contentWrapper = elements[i].querySelector(".result_item-content-wrapper");
+
+
+
+    resultWrappers.forEach(resultWrapper => {
+      resultWrapper.addEventListener("click", function (event) {
+        const contentWrapper = (event.currentTarget as Element)?.querySelector(".result_item-content-wrapper");
+        resultWrapper.classList.remove("cursor-pointer");
+
+
+        if (contentWrapper) {
+          if (contentWrapper.classList.contains('resultItemHidden')) {
+            // contentWrapper has the resultItemHidden class
+            // Add your desired action here
+
+
+            contentWrapper.classList.remove("resultItemHidden");
+            console.log('contentWrapper.classList.contains(resultItemHidden ERSTER KRAM HIER)', contentWrapper.classList.contains('resultItemHidden'));
+
+            if (closeButtons) {
+              closeButtons.forEach(closeButton => {
+                closeButton.classList.add("!rotate-90");
+              });
+            }
+          }
+
+        }
+      });
+    });
+
+
+
+    closeButtons.forEach(closeButton => {
+      closeButton.addEventListener("click", function () {
+        if (closeButton.classList.contains('!rotate-90')) {
+          // The closeButton has the !rotate-90 class
+          console.log('closeButton.classList.contains(!rotate-90)', closeButton.classList.contains('!rotate-90'));
+
+
+          if (resultWrapper) {
+            resultWrapper.classList.add("cursor-pointer");
+          }
+
+          if (contentWrapper) {
+            contentWrapper.classList.add("resultItemHidden");
+          }
+          closeButton.classList.remove("!rotate-90");
+
+        }
+
+        else if (!closeButton.classList.contains('!rotate-90')) {
+          // The closeButton has the !rotate-90 class
+          console.log('closeButton.classList.contains(!rotate-90) ELSE IF TEEEST', closeButton.classList.contains('!rotate-90'));
+          if (resultWrapper) {
+            resultWrapper.classList.remove("cursor-pointer");
+          }
+
+          if (contentWrapper) {
+            contentWrapper.classList.remove("resultItemHidden");
+          }
+          closeButton.classList.add("!rotate-90");
+        }
+
+        else {
+          // The closeButton does not have the !rotate-90 class
+          console.log('closeButton.classList.contains(!rotate-90) ELSE', closeButton.classList.contains('!rotate-90'));
+        }
+      });
+    });
+
+  }
+}
+
+
+
+onMounted(addClassOnClick);
 </script>
 
 <template>
