@@ -21,20 +21,20 @@ function cardActive(id) {
 }
 
 let cards = ref([
-    { id: 'card1', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: true },
+    { id: 'card1', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: false },
     { id: 'card2', headline: 'Apple already uses Apple GPT internally Card02', timeText: '17 hours ago', image: false },
     { id: 'card3', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
     { id: 'card4', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
-    { id: 'card5', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: true },
+    { id: 'card5', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: false },
     { id: 'card6', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
-    { id: 'card7', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: true },
-    { id: 'card8', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: true },
+    { id: 'card7', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
+    { id: 'card8', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: false },
     { id: 'card9', headline: 'Apple already uses Apple GPT internally ', timeText: '17 hours ago', image: false },
     { id: 'card10', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
     { id: 'card11', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
-    { id: 'card12', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: true },
+    { id: 'card12', headline: 'Apple already uses Apple GPT internally', timeText: '17 hours ago', image: false },
     { id: 'card13', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
-    { id: 'card14', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: true },
+    { id: 'card14', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
 ]);
 
 function addCard() {

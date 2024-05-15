@@ -12,9 +12,9 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
 
 <template>
 
-    <div id="clipboard" class="clipboard w-full flex flex-col gap-4 md:p-4  bg-neutral-50 rounded-lg md:shadow-none md:w-full overflow-hidden" >
+    <div id="clipboard" class="clipboard w-full flex flex-col gap-4 md:p-4 md:pl-0  bg-neutral-50 rounded-lg md:shadow-none md:w-full overflow-hidden" >
 
-        <div class="clipboard_header flex justify-between items-center">
+        <div class="clipboard_header flex justify-between items-center md:pl-4">
 
             <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
                 <clipboardDocument  alt="" class="w-6 h-6 " />
@@ -42,7 +42,7 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
 
         </div>
         
-        <div class="w-full  h-full flex flex-col lg:pr-4 gap-4 lg:overflow-y-scroll">
+        <div class="w-full  h-full flex flex-col md:pl-4 lg:pr-4  gap-4 lg:overflow-y-scroll">
         
             <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
             <Card headline="Apple already uses Apple GPT internally" linked-in  />

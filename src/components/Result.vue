@@ -175,7 +175,7 @@ const menuItems = ref([
 
     <div class="result-wrapper-wrapper relative  ">
   <div
-    class="result_wrapper w-full h-auto bg-white border border-solid border-neutral-200 rounded-xl shadow-xl relative group/closeBTN top-0  cursor-pointer hover:-top-1 transition-0-3s"
+    class="result_wrapper w-full h-auto bg-white border border-solid border-neutral-200 rounded-xl shadow-xl relative group/closeBTN cursor-pointer transition-0-3s"
   
   >
     <div
