@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import Card from './Card.vue';
 import Icon from './Icon.vue';
 import IconBox from './IconBox.vue';
@@ -6,6 +7,21 @@ import IconBox from './IconBox.vue';
 import clipboardDocument from './svg/clipboard-document.vue'
 import archiveBoxMini from './svg/archive-box-mini.vue'
 
+// let cards = ref([
+//     { headline: 'OpenAI_App-Store_AI-models.pdf', type: 'file-upload', imagePath: '/path/to/image1.png' },
+//     { headline: 'Apple already uses Apple GPT internally', type: 'linked-in', imagePath: '/path/to/image2.png' },
+//     { headline: 'Earth Virtualization Engines are the future of climate research', type: 'url', imagePath: '/path/to/image3.png' },
+//     // Add more card data here...
+// ]);
+
+
+
+const emit = defineEmits(["modalAddLink"]);
+
+const onModalAddLink = () => {
+   
+emit('modalAddLink')
+}
 
 
 </script>
@@ -24,7 +40,7 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
 
             <div class="icons flex  gap-2 2xl:gap-4">
                 <Icon bars3_icon />
-                <Icon linkSVG_icon />
+                <Icon linkSVG_icon     @click="onModalAddLink" />
             <span class="tooltip  z-index-999">
                 <Icon arrowUpTray_icon /> <span class="tooltiptext z-index-999 text-xs">File Upload </span>
             </span>  
@@ -43,6 +59,8 @@ import archiveBoxMini from './svg/archive-box-mini.vue'
         </div>
         
         <div class="w-full  h-full flex flex-col md:pl-4 lg:pr-4  gap-4 lg:overflow-y-scroll">
+
+            <!-- <Card v-for="card in cards" :key="card.headline" :headline="card.headline" :type="card.type" :image-path="card.imagePath" /> -->
         
             <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
             <Card headline="Apple already uses Apple GPT internally" linked-in  />
