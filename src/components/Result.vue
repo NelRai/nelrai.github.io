@@ -191,7 +191,7 @@ const menuItems = ref([
         >
           <div class="flex gap-1 justify-center items-center">
             <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" /><span
-              >Ben >> LinkedIn >> All</span
+              >Ben - LinkedIn - All</span
             >
    
 
