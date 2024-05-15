@@ -341,3 +341,21 @@ height: 105%;
   display: none !important;
 }
  */
+/* Works on Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #ccc; 
+  box-shadow:  0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
