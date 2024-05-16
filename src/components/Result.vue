@@ -16,6 +16,7 @@ import Trash from "./svg/trash.vue";
 //PrimeVue OverlayPanel
 import OverlayPanel from 'primevue/overlaypanel';
 const op = ref();
+//@ts-ignore
 const toggle = (event) => {
     op.value.toggle(event);
 }
@@ -61,6 +62,8 @@ onMounted(() => {
   const editors = document.querySelectorAll('.editor');
   
   editors.forEach((editor) => {
+    //@ts-ignore
+
     const quill = new Quill(editor, {
       theme: 'bubble'
     });
@@ -190,7 +193,7 @@ const menuItems = ref([
           <Icon OpenaiSvgrepoCom_icon class="rounded-lg" @click="toggle" />
 
 
-          <OverlayPanel ref="op" @onHide="onHide" > 
+          <OverlayPanel ref="op" > 
             <div class=" gap-2 grid grid-cols-3  [&>*:nth-child(odd)]:text-right [&>*:nth-child(1)]:!text-left [&>*:nth-child(even)]:col-span-2  ">
             <p class="col-span-3 pb-2 border-b border-neutral-500">GPT-4 128K (Azure)</p>
             <p>Characters</p> <p>2049</p>
