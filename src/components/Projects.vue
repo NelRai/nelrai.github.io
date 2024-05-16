@@ -70,7 +70,7 @@ function removeCard(id: string) {
 
                 <div class="icons flex md:flex-col gap-2 md:gap-4" id="search">
                     <span class="  z-index-999 "   >
-                        <Icon magnifyingGlass_icon  /> 
+                        <Icon magnifyingGlass_icon v-tooltip.top="'Search'"   /> 
              
                         <!-- <span class="tooltiptext z-index-999 text-xs">Search </span> -->
 

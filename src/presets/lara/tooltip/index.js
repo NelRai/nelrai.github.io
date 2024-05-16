@@ -2,8 +2,8 @@ export default {
     root: ({ context, props }) => ({
         class: [
             // Position and Shadows
-            'absolute',
-            'shadow-md',
+            'absolute ',
+           
             'p-fadein',
             // Spacing
             {
@@ -23,12 +23,12 @@ export default {
             'h-0',
 
             // Shape
-            'border-transparent',
+            'border-transparent	',
             'border-solid',
             {
                 'border-y-[0.25rem] border-r-[0.25rem] border-l-0 border-r-neutral-600': context?.right || (!context?.right && !context?.left && !context?.top && !context?.bottom),
-                'border-y-[0.25rem] border-l-[0.25rem] border-r-0 border-l-neutral-600': context?.left,
-                'border-x-[0.25rem] border-t-[0.25rem] border-b-0 border-t-neutral-600': context?.top,
+                'border-y-[0.25rem] border-l-[0.25rem] border-r-0  border-l-neutral-600': context?.left,
+                'border-x-[0.25rem] border-t-[0.25rem] border-b-0 border-x-neutral-50 border-t-neutral-600': context?.top,
                 'border-x-[0.25rem] border-b-[0.25rem] border-t-0 border-b-neutral-600': context?.bottom
             },
 
@@ -41,6 +41,6 @@ export default {
         ]
     }),
     text: {
-        class: ['p-3', 'bg-neutral-600 dark:bg-surface-700', 'text-neutral-50', 'leading-none', 'rounded-md', 'whitespace-pre-line', 'break-words']
+        class: ['px-2 py-1', 'bg-neutral-600 dark:bg-surface-700', 'text-neutral-50', 'leading-none', 'rounded', 'whitespace-pre-line', 'break-words', '', 'text-xs']
     }
 };
