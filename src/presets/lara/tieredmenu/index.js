@@ -2,15 +2,18 @@ export default {
     root: {
         class: [
             // Shape
-            'rounded-md',
+            'rounded-lg shadow-lg',
 
             // Size
-            'min-w-[12rem]',
-            'py-1',
+            'min-w-[11rem]',
+            'py-0',
 
             // Colors
             'bg-surface-0 dark:bg-surface-700',
-            'border border-surface-200 dark:border-surface-700'
+            'border border-surface-200 dark:border-surface-700',
+
+            //Font
+            ' text-xs'
         ]
     },
     menu: {
@@ -18,8 +21,9 @@ export default {
             // Spacings and Shape
             'list-none',
             'm-0',
-            'p-0',
-            'outline-none'
+            'p-2',
+            'outline-none',
+            'flex flex-col gap-2 '
         ]
     },
     menuitem: {
@@ -31,7 +35,7 @@ export default {
     content: ({ context }) => ({
         class: [
             //Shape
-            'rounded-none',
+            'rounded-md',
 
             //  Colors
             {
@@ -60,8 +64,8 @@ export default {
             'items-center',
 
             // Spacing
-            'py-3',
-            'px-5',
+            'py-1',
+            'px-1',
 
             // Color
             'text-surface-700 dark:text-white/80',
@@ -94,16 +98,17 @@ export default {
     submenu: {
         class: [
             // Size
-            'w-full sm:w-48',
+            'w-auto',
 
             // Spacing
-            'py-1',
+            'p-2',
             'm-0',
             'list-none',
+            '!flex flex-col gap-2',
 
             // Shape
-            'shadow-none sm:shadow-md',
-            'border-0',
+            'shadow-lg',
+            'border border-neutral-200 rounded-lg',
 
             // Position
             'static sm:absolute',
@@ -114,6 +119,6 @@ export default {
         ]
     },
     separator: {
-        class: 'border-t border-surface-200 dark:border-surface-600 my-1'
+        class: 'border-t border-neutral-100 dark:border-surface-600 my-0'
     }
 };

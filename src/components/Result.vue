@@ -90,6 +90,9 @@ const menuItems = ref([
     component: clipboardDocumentMini,
   },
   {
+        separator: true
+    },
+  {
     label: 'Post Processing',
     component: Sparkles,
   },
@@ -97,6 +100,9 @@ const menuItems = ref([
     label: 'Compare',
     component: Square2Stack,
   },
+  {
+        separator: true
+    },
   {
     label: 'Save as',
     component: ArrowDownTrayMini,
@@ -187,18 +193,9 @@ const menuItems = ref([
           <OverlayPanel ref="op" @onHide="onHide" > 
             <div class=" gap-2 grid grid-cols-3  [&>*:nth-child(odd)]:text-right [&>*:nth-child(1)]:!text-left [&>*:nth-child(even)]:col-span-2  ">
             <p class="col-span-3 pb-2 border-b border-neutral-500">GPT-4 128K (Azure)</p>
-
             <p>Characters</p> <p>2049</p>
             <p>Characters excluding spaces</p> <p>1968</p>
             <p>Words</p> <p>153</p>
-              
-
-
-
-              <!-- <Button label="Copy to Clipboard" icon="pi pi-copy" />
-              <Button label="Post Processing" icon="pi pi-refresh" />
-              <Button label="Compare" icon="pi pi-chart-bar" />
-              <TieredMenu model="items" popup /> -->
             </div>
           </OverlayPanel>
 
@@ -207,23 +204,23 @@ const menuItems = ref([
           <div class="flex flex-col gap-2">
           
             <Icon chatBubbleLeftRight_icon />
-          <!-- @vue-ignore -->
-          <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
+           <!-- @vue-ignore -->
+            <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
 
-          <TieredMenu ref="menu" :model="menuItems" popup>
-            <template #item="{ item, props, hasSubmenu }">
-              <a class="flex align-items-center" v-bind="props.action">
-                <component :is="item.component" />
-                <!-- <span  >{{item.icon}} </span>  -->
-                <span class="ml-2">{{ item.label }}</span>
-                <!-- <Badge v-if="item.badge" class="ml-auto" :value="item.badge" /> -->
-                <!-- <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span> -->
-                <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto">
-                  <chevronRight />
-                </i>
-              </a>
-            </template>
-          </TieredMenu>
+            <TieredMenu ref="menu" :model="menuItems" popup>
+              <template #item="{ item, props, hasSubmenu }">
+                <a class="flex align-items-center font-body" v-bind="props.action">
+                  <component :is="item.component" />
+                  <!-- <span  >{{item.icon}} </span>  -->
+                  <span class="ml-1 font-body">{{ item.label }}</span>
+                  <!-- <Badge v-if="item.badge" class="ml-auto" :value="item.badge" /> -->
+                  <!-- <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span> -->
+                  <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto ">
+                    <chevronRight class="!w-5 !h-5" />
+                  </i>
+                </a>
+              </template>
+            </TieredMenu>
           
           </div>
 
