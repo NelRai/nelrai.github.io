@@ -292,20 +292,22 @@ height: 105%;
 
 
 /* Tooltips */
-.tooltip {
+/* .tooltip {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   position: relative;
   display: inline-block;
 }
 
 
 .tooltip .tooltiptext {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   visibility: hidden;
-  width: 120px;
-  background-color: #555;
+  width: auto;
+  background-color: #5C6070;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
+  border-radius: 4px;
+  padding: 0.25rem 1rem;
   position: absolute;
   z-index: 1;
   bottom: 125%;
@@ -313,6 +315,8 @@ height: 105%;
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
+  opacity: 1;
+  visibility: visible;
 }
 
 .tooltip .tooltiptext::after {
@@ -333,7 +337,7 @@ height: 105%;
 
 .z-index-999 {
   z-index: 999;
-}
+} */
 
 
 /* Quill */

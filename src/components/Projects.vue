@@ -6,6 +6,8 @@ import Icon from './Icon.vue';
 import IconBox from './IconBox.vue';
 import bookmarkSquare from './svg/bookmark-square.vue'
 
+
+
 let isActive = ref(false);
 let activeCard = ref(null);
 // function cardActive() {
@@ -62,19 +64,23 @@ function removeCard(id: string) {
             <div class="flex gap-2">
 
                 <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
-                    <bookmarkSquare alt="" class="w-6 h-6 " />
+                    <bookmarkSquare alt="" class="w-6 h-6 "  />
                     <h4>Projects</h4>
                 </div>
 
-                <div class="icons flex md:flex-col gap-2 md:gap-4">
-                    <span class="tooltip  z-index-999">
-                        <Icon magnifyingGlass_icon /> <span class="tooltiptext z-index-999 text-xs">Search </span>
+                <div class="icons flex md:flex-col gap-2 md:gap-4" id="search">
+                    <span class="  z-index-999 "   >
+                        <Icon magnifyingGlass_icon  /> 
+             
+                        <!-- <span class="tooltiptext z-index-999 text-xs">Search </span> -->
+
+
                     </span>  
                 </div>
 
             </div>
 
-            <IconBox plus-circle-mini_icon text="New Project" @click="addCard"  />
+            <IconBox plus-circle-mini_icon text="New Project" @click="addCard" v-tooltip.bottom="'Search'"  />
 
             
         </div>

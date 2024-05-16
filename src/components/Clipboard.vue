@@ -44,7 +44,8 @@ emit('modalAddLink')
                 <Icon bars3_icon />
                 <Icon linkSVG_icon     @click="onModalAddLink" />
                 <span class="tooltip  z-index-999">
-                    <Icon arrowUpTray_icon /> <span class="tooltiptext z-index-999 text-xs">File Upload </span>
+                    <Icon arrowUpTray_icon v-tooltip.top="'Search'" /> 
+                    <!-- <span class="tooltiptext z-index-999 text-xs">File Upload </span> -->
                 </span>  
             </div>
 
