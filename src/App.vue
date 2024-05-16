@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue"; 
+import { ref, onMounted, nextTick } from "vue"; 
 import Header from "./components/Header.vue";
 // import Navigation from './components/Navigation.vue'
 import Content from "./components/Content.vue";
@@ -200,6 +200,41 @@ function addClassOnClick() {
 
 
 onMounted(addClassOnClick);
+
+
+//Clipboard Scroll Mask Function
+onMounted(() => {
+  const el = document.querySelector('#asdf');
+  console.log(el, "asdasdasd");
+  console.log(el?.scrollHeight, el?.clientHeight, el?.scrollTop);
+
+  if (!el) {
+    console.error('Element with id "asdf" not found');
+    return;
+  }
+
+  function setClasses(el: HTMLElement) {
+      const isScrollable = el.scrollHeight > el.clientHeight;
+
+      if (!isScrollable) {
+        el.classList.remove('is-bottom-overflowing', 'is-top-overflowing');
+        console.log('isScrollable', isScrollable);
+        return;
+      }
+
+      const isScrolledToBottom = el.scrollHeight < el.clientHeight + el.scrollTop + 1;
+      const isScrolledToTop = isScrolledToBottom ? false : el.scrollTop === 0;
+      el.classList.toggle('is-bottom-overflowing', !isScrolledToBottom);
+      el.classList.toggle('is-top-overflowing', !isScrolledToTop);
+  }
+
+  el.addEventListener('scroll', (e) => {
+    const el = e.currentTarget as HTMLElement;
+    setClasses(el);
+  });
+
+  setClasses(el as HTMLElement);
+});
 </script>
 
 <template>

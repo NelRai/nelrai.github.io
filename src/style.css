@@ -363,3 +363,28 @@ height: 105%;
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+
+
+
+
+#asdf {
+  overflow-y: auto;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black var(--top-mask-size, 0), black calc(100% - var(--bottom-mask-size, 0)), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, black var(--top-mask-size, 0), black calc(100% - var(--bottom-mask-size, 0)), transparent 100%);
+  --top-mask-size: 0px;
+  --bottom-mask-size: 0px;
+  transition: all 0.3s;
+
+}
+
+.is-top-overflowing {
+  --top-mask-size: 48px !important;
+  transition: all 0.3s;
+}
+
+.is-bottom-overflowing {
+  --bottom-mask-size: 48px !important;
+  transition: all 0.3s;
+
+}
