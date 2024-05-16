@@ -56,8 +56,8 @@ function removeCard(id: string) {
 <template>
 
     <div
-        class="projects w-full h-full flex flex-col gap-4 md:p-4 bg-neutral-50  rounded-lg md:rounded-none md:pt-7 md:shadow-md 2xl:h-full 2xl:w-auto lg:overflow-y-scroll">
-        <div class="projects_header flex justify-between items-center">
+        class="projects w-full h-full flex flex-col gap-4 md:p-8 md:pl-4 bg-neutral-50  rounded-lg md:rounded-none md:pt-8 md:shadow-md 2xl:h-full 2xl:w-auto lg:overflow-y-scroll">
+        <div class="projects_header flex justify-between items-center md:pl-4">
 
             <div class="flex gap-2">
 
@@ -79,9 +79,13 @@ function removeCard(id: string) {
             
         </div>
 
+        <div class="w-full  h-full flex flex-col md:pl-4 lg:pr-4  gap-4 lg:overflow-y-scroll">
+
+
         <Card v-for="card in cards" :key="card.id" :id="card.id" :headline="card.headline" :time-text="card.timeText" :image="card.image" @activeProject="cardActive" :cardRed="activeCard === card.id"
         @cardRemove="() => removeCard(card.id)" />
       
+    </div>
 
 <!--         
         <Card id="card1" headline="Apple verwendet Apple GPT bereits intern" time-text="16 hours ago" image  @activeProject="cardActive"  :cardRed="activeCard === 'card1'"  />
