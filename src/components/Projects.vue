@@ -59,19 +59,18 @@ function removeCard(id: string) {
         class="projects w-full h-full flex flex-col gap-4 md:p-4 bg-neutral-50  rounded-lg md:rounded-none md:pt-7 md:shadow-md 2xl:h-full 2xl:w-auto lg:overflow-y-scroll">
         <div class="projects_header flex justify-between items-center">
 
-            <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
-            <bookmarkSquare alt="" class="w-6 h-6 " />
-            <h4>Projects</h4>
+            <div class="flex gap-2">
 
-        </div>
+                <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
+                    <bookmarkSquare alt="" class="w-6 h-6 " />
+                    <h4>Projects</h4>
+                </div>
 
-            <div class="icons flex md:flex-col gap-2 md:gap-4">
-
-                <span class="tooltip  z-index-999">
-                    <Icon magnifyingGlass_icon /> <span class="tooltiptext z-index-999 text-xs">Search </span>
-          </span>  
-               
-
+                <div class="icons flex md:flex-col gap-2 md:gap-4">
+                    <span class="tooltip  z-index-999">
+                        <Icon magnifyingGlass_icon /> <span class="tooltiptext z-index-999 text-xs">Search </span>
+                    </span>  
+                </div>
 
             </div>
 
