@@ -70,10 +70,11 @@ export default {
         800: '#A50F19',
         900: '#88141C',
       },
-
-
-      
-  },
+    },
+    fontFamily: {
+      body: ['Inter', 'system-ui', 'sans-serif'],
+      display: ['Blinker', 'system-ui', 'sans-serif'],
+    },
   },
   plugins: [],
   darkMode: 'selector',
