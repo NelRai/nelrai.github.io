@@ -80,7 +80,7 @@ function removeCard(id: string) {
 
             </div>
 
-            <IconBox plus-circle-mini_icon text="New Project" @click="addCard" v-tooltip.bottom="'Search'"  />
+            <IconBox plus-circle-mini_icon text="New Project" @click="addCard" />
 
             
         </div>

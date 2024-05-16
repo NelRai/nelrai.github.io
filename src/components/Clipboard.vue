@@ -44,10 +44,6 @@ emit('modalAddLink')
                 <Icon bars3_icon />
                 <Icon linkSVG_icon     @click="onModalAddLink" />
                 <Icon arrowUpTray_icon v-tooltip.top="'Upload File'" /> 
-
-                <span class="tooltip  z-index-999">
-                    <!-- <span class="tooltiptext z-index-999 text-xs">File Upload </span> -->
-                </span>  
             </div>
 
         </div>
