@@ -19,4 +19,8 @@
 
 </template>
 
-<style scoped></style>
+<style scoped>
+
+.heroAnimation {background-color: #F8F8FC;}
+
+</style>

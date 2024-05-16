@@ -87,7 +87,7 @@ function removeCard(id: string) {
             
         </div>
 
-        <div class="w-full h-full flex flex-col md:pl-4 lg:pr-4  gap-4 lg:overflow-y-scroll  ">
+        <div class="w-full h-full flex flex-col md:pl-4 lg:pr-4 pb-8   gap-4 lg:overflow-y-scroll  ">
 
 
         <Card v-for="card in cards" :key="card.id" :id="card.id" :headline="card.headline" :time-text="card.timeText" :image="card.image" @activeProject="cardActive" :cardRed="activeCard === card.id"

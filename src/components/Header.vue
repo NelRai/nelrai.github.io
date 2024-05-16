@@ -23,7 +23,7 @@ function showProjectsBTN() {
 
 <template>
   <header
-    class="flex justify-between items-center p-4  bg-[#F8F8FC] h-16 min-h-16 w-full fixed top-0 left-0 shadow-lg md:shadow-none lg:relative lg:rounded-lg z-50 overflow-hidden"
+    class="flex justify-between items-center p-4  bg-[#F8F8FC] w-full fixed top-0 left-0 shadow-lg md:shadow-none lg:relative lg:rounded-lg z-50 "
   >
     <img src="../assets/dcio-logo.svg" alt="" class="z-50">
 
@@ -38,7 +38,9 @@ function showProjectsBTN() {
     
     />
 
-    <Animation />
+    <div class="overflow-hidden absolute top-0 left-0 w-full h-full">
+      <Animation class="overflow-hidden"/>
+    </div>
 
 
     <!-- <button
