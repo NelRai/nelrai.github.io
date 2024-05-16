@@ -52,6 +52,9 @@ function iconBoxActive(id) {
 }
 
 
+const image2 = ref("https://picsum.photos/id/237/536/354");
+
+
 </script>
 
 <template>
@@ -59,9 +62,10 @@ function iconBoxActive(id) {
 <div class="relative group/cardwrap">
 
     <div 
-    class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-dc-400 hover:shadow-lg group/card  relative transition-0-3s  "
+    class="card w-full p-4 flex flex-col gap-2 items-start text-neutral-700 bg-neutral-50 border border-solid border-neutral-200 rounded-lg  hover:bg-neutral-100 hover:cursor-pointer hover:text-neutral-950 active:border-dc-400 hover:shadow-lg group/card  relative transition-0-3s bg-cover	  "
     :class="{ '!border-dc-400': cardRed }"
     @click="cardClicked"
+    v-bind:style="[image ?  { backgroundImage: 'url(' + image2 + ')' } : { backgroundImage: 'url(' + bgImage + ')' }]"
     >
 
         <div class="card-headline text-base font-normal z-10 pr-[30%]   ">
@@ -91,8 +95,11 @@ function iconBoxActive(id) {
 
         <span class="text-xs font-normal text-neutral-500 group-hover/card:text-neutral-950 transition-0-3s  z-10" v-if="timeText">{{timeText}}</span>
         
-        <div class="white_gradient" v-if="image">
-          <img src="../assets/bg-image-01.png"  alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% ">
+
+
+        <div class="white_gradient" v-if="image"
+>
+          <!-- <img src="../assets/bg-image-01.png"  alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% "> -->
         </div>
 
     
@@ -126,7 +133,7 @@ function iconBoxActive(id) {
     background: rgb(252,252,253);
     background: linear-gradient(90deg, rgba(252,252,253,1) 0%, rgba(252,252,253,0.9) 50%, rgba(252,252,253,0) 100%);
     z-index: 0;
-    border-radius: 0.5rem;
+    border-radius: 0.4rem;
 }
 
 .cardWinkel-active  * {
