@@ -10,8 +10,8 @@ export default {
             'z-40 transform origin-center',
 
             // Color
-            'bg-surface-0 dark:bg-surface-800',
-            'text-surface-700 dark:text-surface-0/80',
+            'bg-neutral-600 dark:bg-surface-800',
+            'text-neutral-50 dark:text-surface-0/80',
             'dark:border-surface-700',
 
             // Before: Triangle
@@ -25,11 +25,11 @@ export default {
             'after:w-0 after:h-0',
             'after:border-transparent after:border-solid',
             'after:border-x-[0.5rem] after:border-[0.5rem]',
-            'after:border-t-0 after:border-b-surface-0 dark:after:border-b-surface-800'
+            'after:border-t-0 after:border-b-neutral-600 dark:after:border-b-surface-800'
         ]
     },
     content: {
-        class: 'p-5 items-center flex'
+        class: 'p-2 items-center flex text-xs max-w-[12rem]' 
     },
     transition: {
         enterFromClass: 'opacity-0 scale-y-[0.8]',

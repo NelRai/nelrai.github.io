@@ -32,20 +32,23 @@ emit('modalAddLink')
 
         <div class="clipboard_header flex justify-between items-center md:pl-4">
 
+        <div class="flex gap-4">
+
             <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
                 <clipboardDocument  alt="" class="w-6 h-6 " />
                 <h4>Clipboard</h4>
 
             </div>
 
-            <div class="icons flex  gap-2 2xl:gap-4">
+            <div class="icons flex  gap-2 2xl:gap-2">
                 <Icon bars3_icon />
                 <Icon linkSVG_icon     @click="onModalAddLink" />
-            <span class="tooltip  z-index-999">
-                <Icon arrowUpTray_icon /> <span class="tooltiptext z-index-999 text-xs">File Upload </span>
-            </span>  
-     
+                <span class="tooltip  z-index-999">
+                    <Icon arrowUpTray_icon /> <span class="tooltiptext z-index-999 text-xs">File Upload </span>
+                </span>  
             </div>
+
+        </div>
 
             <IconBox archive-box-mini_icon text="Clear" />
 

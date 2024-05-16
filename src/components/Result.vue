@@ -8,8 +8,17 @@ import chevronLeft from "./svg/chevron-left.vue";
 import chevronRight from "./svg/chevron-right.vue";
 import clipboardDocumentMini from "./svg/clipboard-document-mini.vue";
 import Sparkles from "./svg/sparkles.vue";
+import openaiSvgrepoCom from "./svg/openai-svgrepo-com.vue";
 
 import Trash from "./svg/trash.vue";
+
+
+//PrimeVue OverlayPanel
+import OverlayPanel from 'primevue/overlaypanel';
+const op = ref();
+const toggle = (event) => {
+    op.value.toggle(event);
+}
 
 import Quill from 'quill';
 // // Or if you only need the core build
@@ -65,7 +74,7 @@ onMounted(() => {
 //         ]
 // ;
 
-
+// function addItem() {`
 
 import TieredMenu from 'primevue/tieredmenu';
 import Button from 'primevue/button';
@@ -167,10 +176,37 @@ const menuItems = ref([
       </div>
 
       <div
+      id="result_item"
         class="result_item w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4 bg-neutral-50 rounded-lg rounded-t-none p-4 md:p-8 relative overflow-hidden">
         <div class="icons flex md:flex-col gap-2 md:gap-4">
-          <Icon chevronLeft_icon />
-          <Icon chatBubbleLeftRight_icon />
+
+
+          <Icon OpenaiSvgrepoCom_icon class="rounded-lg" @click="toggle" />
+
+
+          <OverlayPanel ref="op" @onHide="onHide" > 
+            <div class=" gap-2 grid grid-cols-3  [&>*:nth-child(odd)]:text-right [&>*:nth-child(1)]:!text-left [&>*:nth-child(even)]:col-span-2  ">
+            <p class="col-span-3 pb-2 border-b border-neutral-500">GPT-4 128K (Azure)</p>
+
+            <p>Characters</p> <p>2049</p>
+            <p>Characters excluding spaces</p> <p>1968</p>
+            <p>Words</p> <p>153</p>
+              
+
+
+
+              <!-- <Button label="Copy to Clipboard" icon="pi pi-copy" />
+              <Button label="Post Processing" icon="pi pi-refresh" />
+              <Button label="Compare" icon="pi pi-chart-bar" />
+              <TieredMenu model="items" popup /> -->
+            </div>
+          </OverlayPanel>
+
+
+
+          <div class="flex flex-col gap-2">
+          
+            <Icon chatBubbleLeftRight_icon />
           <!-- @vue-ignore -->
           <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
 
@@ -188,6 +224,10 @@ const menuItems = ref([
               </a>
             </template>
           </TieredMenu>
+          
+          </div>
+
+
 
 
           <!-- <button

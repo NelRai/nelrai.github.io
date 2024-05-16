@@ -18,6 +18,7 @@ import documentText from './svg/document-text.vue'
 import ellipsisHorizontal from './svg/ellipsis-horizontal.vue'
 import linkSVG from './svg/link.vue'
 import magnifyingGlass from './svg/magnifying-glass.vue'
+import OpenaiSvgrepoCom from './svg/openai-svgrepo-com.vue'
 import plusCircleMini from './svg/plus-circle-mini.vue'
 import Squares2x2 from './svg/squares-2x2.vue'
 import Trash from './svg/trash.vue'
@@ -47,6 +48,7 @@ defineProps({
   ellipsisHorizontal_icon: Boolean,
   linkSVG_icon: Boolean,
   magnifyingGlass_icon: Boolean,
+  OpenaiSvgrepoCom_icon: Boolean,
   plusCircleMini_icon: Boolean,
   Squares2x2_icon: Boolean,
   Trash_icon: Boolean,
@@ -77,6 +79,7 @@ defineProps({
     <ellipsisHorizontal  v-if="ellipsisHorizontal_icon" class="svgIcon " />
     <linkSVG  v-if="linkSVG_icon" class="svgIcon " />
     <magnifyingGlass  v-if="magnifyingGlass_icon" class="svgIcon " />
+    <OpenaiSvgrepoCom  v-if="OpenaiSvgrepoCom_icon" class="svgIcon " />
     <plusCircleMini  v-if="plusCircleMini_icon" class="svgIcon " />
     <Squares2x2  v-if="Squares2x2_icon" class="svgIcon " />
     <Trash  v-if="Trash_icon" class="svgIcon " />
