@@ -6,18 +6,21 @@
 <template>
   <nav>
     <ul
-      class="flex  h-12 justify-center items-center  bg-transparent   w-auto text-neutral-700 ">
-      <li class="flex items-center px-8 h-full  border rounded-s-lg border-solid border-r-white border-neutral-200 hover:text-dc-400 hover:border-dc-400  ">
-        <a href="#home">Explore</a>
+      class="flex  h-12 justify-center items-center  bg-transparent   w-auto text-neutral-700 border border-neutral-200 rounded-lg   ">
+      <li class="h-[46px] "  v-ripple>
+        <a href="#home" class=" flex items-center px-8 h-full hover:border-neutral-200 rounded-s-lg hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Explore</a>
       </li>
-      <li class="active-nav-item flex items-center px-8 h-full  border  border-solid  border-dc-400 rounded-lg ">
-        <a href="#projects">Workspace</a>
+      <div class="vertical-line"></div>
+      <li class="navigation-active  "  v-ripple>
+        <a href="#projects"class="flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400 ">Workspace</a>
       </li>
-      <li class="flex items-center px-8 h-full  border  border-solid border-r-white border-neutral-200 hover:text-dc-400 hover:border-dc-400 ">
-        <a href="#contact">Storage</a>
+      <div class="vertical-line"></div>
+      <li class=""  v-ripple>
+        <a href="#contact"class="flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Storage</a>
       </li>
-      <li class="flex items-center px-8 h-full  border rounded-e-lg border-solid border-neutral-200 hover:text-dc-400 hover:border-dc-400 ">
-        <a href="#contact">Publish</a>
+      <div class="vertical-line"></div>
+      <li class="p-ripple " v-ripple>
+        <a href="#contact"class="flex items-center px-8 h-[46px]  rounded-e-lg  hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Publish</a>
       </li>
 
     </ul>
@@ -25,4 +28,36 @@
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.vertical-line {
+  border-left: 1px solid #e2e8f0;
+  height: 48px;
+  margin: 0 0px;
+}
+.navigation-active {
+ /* border: 1px solid #dc3545;
+border-radius: 4px;  */
+background-color: #DFE2EC;
+}
+
+/* .navigation-active a:hover {
+  border-radius: 12px;
+
+  cursor: pointer;
+} */
+
+/* .navigation-active {
+border: 1px solid #dc3545;
+border-radius: 12px;
+height: 50px;
+background-color: #e2e8f0;
+
+}
+
+
+.vertical-line ~ .navigation-active {
+  border-color: yellow;
+}
+ */
+
+</style>

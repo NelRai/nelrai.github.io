@@ -7,15 +7,19 @@ import PrimeVue from 'primevue/config';
 //@ts-ignore
 import Lara from './presets/lara';  //import preset
 import Tooltip from 'primevue/tooltip';
+import Ripple from 'primevue/ripple';
 
 
 const app = createApp(App);
 
 app.use(PrimeVue, {
+    ripple: true,
     unstyled: true,
     pt: Lara                            //apply preset        
 });
 app.directive('tooltip', Tooltip);
+app.directive('ripple', Ripple);
+
 
 app.mount('#app');
 // createApp(App).mount('#app')
