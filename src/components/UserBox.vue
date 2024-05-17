@@ -36,7 +36,7 @@ function showProjectsBTN() {
 
 <template>
   <div
-    class="user-box hidden lg:flex justify-between items-center p-4 gap-4 bg-[#F8F8FC] w-full fixed bottom-0 left-0 shadow-mdInvert md:shadow-none  lg:relative lg:rounded-lg z-50"
+    class="user-box hidden lg:flex justify-between items-center p-4 gap-4 bg-[#F8F8FC] w-full fixed bottom-0 left-0 shadow-mdInvert md:shadow-none  lg:relative lg:rounded-xl z-50"
   >
  <img src="/avatar-big.png" alt="" class="z-50">
 
@@ -47,7 +47,7 @@ function showProjectsBTN() {
 
     <Icon Squares2x2_icon class="h-10" />
 
-    <div class="overflow-hidden absolute top-0 left-0 w-full h-full">
+    <div class="overflow-hidden absolute top-0 left-0 w-full h-full rounded-lg">
       <Animation class="overflow-hidden"/>
     </div>
 

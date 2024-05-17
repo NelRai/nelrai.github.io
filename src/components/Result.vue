@@ -149,7 +149,7 @@ const menuItems = ref([
 
   <div class="result-wrapper-wrapper relative group/closeBTN   ">
     <div
-      class="result_wrapper w-full h-auto bg-white border border-solid border-neutral-200 rounded-xl shadow-xl relative cursor-pointer transition-0-3s">
+      class="result_wrapper w-full h-auto bg-white border border-solid border-neutral-200 rounded-lg shadow-xl relative cursor-pointer transition-0-3s">
       <div
         class="result_header flex justify-between items-center !mb-0 rounded-lg rounded-b-none p-4 md:p-8 relative overflow-hidden z-20">
         <div class="result_header-headline flex flex-col gap-2 items-start">

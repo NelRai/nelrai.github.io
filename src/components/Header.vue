@@ -38,7 +38,7 @@ function showProjectsBTN() {
     
     />
 
-    <div class="overflow-hidden absolute top-0 left-0 w-full h-full">
+    <div class="overflow-hidden absolute top-0 left-0 w-full h-full rounded-lg">
       <Animation class="overflow-hidden"/>
     </div>
 

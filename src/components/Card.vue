@@ -111,8 +111,6 @@ const image2 = ref("https://picsum.photos/id/237/536/354");
             <button
                 class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s "
                 @click="cardRemove"
-
-                
                 >
                 <Trash  alt=""  class="w-6 h-6" />
             </button>
