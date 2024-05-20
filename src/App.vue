@@ -241,7 +241,7 @@ onMounted(() => {
   <div class="tablet hidden lg:flex bg-neutral-50">
     <div class="whatever flex max-w-md w-full h-full fixed lg:max-w-md z-50">
       <div
-        class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh max-h-dvh p-4 bg-neutral-50 gap-4 md:shadow-xl"
+        class="sidebar md:min-w-md w-full flex flex-col justify-between content-between h-dvh max-h-dvh p-4 bg-neutral-50 gap-4 md:shadow-xl z-[99]"
         v-if="sidebarVisible"
       >
         <Header @showProjectsBTN="showProjects"
@@ -256,7 +256,7 @@ onMounted(() => {
       </div>
 
       <button
-        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border  border-neutral-200 hover:border-dc-100 hidden lg:flex transition-0-3s group/icon  " 
+        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border  border-neutral-200 hover:border-dc-100 hidden lg:flex transition-0-3s group/icon z-[100]  " 
         @click="sidebarHide"
         :class="{
           'right-auto left-0 rotate-180': !sidebarVisible,
