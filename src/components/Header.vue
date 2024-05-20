@@ -30,10 +30,10 @@ function showProjectsBTN() {
     <Icon bars2_icon class="md:hidden z-50"/>
     <Icon 
     adjustmentHorizontal_icon
-    class="hidden lg:flex z-50"  
+    class="hidden lg:flex 2xl:hidden z-50"  
     @click="showProjectsBTN" 
     :class="{
-          'text-dc-400 border-dc-400 hover:border-dc-400 *:!stroke-dc-400': projectsVisible
+          'text-dc-400 border-dc-400 hover:!border-dc-400 [&_path]:stroke-dc-400 icon_active': projectsVisible
         }"
     
     />
@@ -63,4 +63,8 @@ function showProjectsBTN() {
   </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+
+
+</style>

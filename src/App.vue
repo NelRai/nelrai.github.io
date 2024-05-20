@@ -10,6 +10,7 @@ import Navigation from "./components/Navigation.vue";
 import MobileNavBottom from "./components/MobileNavBottom.vue";
 import UserBox from "./components/UserBox.vue";
 
+import Icon from "./components/Icon.vue";
 import chevronLeft from "./components/svg/chevron-left.vue";
 import tag from "./components/atoms/tag.vue";
 import svgLink from "./components/svg/link.vue";
@@ -255,7 +256,17 @@ onMounted(() => {
         <UserBox />
       </div>
 
-      <button
+      <Icon chevron-left_icon 
+      class="  w-8 h-8 absolute top-1/2 -right-4 z-[100] [&_svg]:!w-5 [&_svg]:!h-5"
+      @click="sidebarHide"
+      :class="{
+          'right-auto left-0 rotate-180': !sidebarVisible,
+          'md:hidden lg:hidden 2xl:flex': visibleProjects,
+        }"
+      />
+
+
+      <!-- <button
         class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border  border-neutral-200 hover:border-dc-100 hidden lg:flex transition-0-3s group/icon z-[100]  " 
         @click="sidebarHide"
         :class="{
@@ -264,11 +275,8 @@ onMounted(() => {
         }"
       >
       <chevronLeft class=" w-5 h-5"  />
-
-        <!-- <img src="./assets/chevron-left.svg" alt="" class="w-5 h-5" /> -->
-
         
-      </button>
+      </button> -->
 
       <div
         class="ausklappbar w-full  bg-neutral-50 absolute left-full top-0 h-full 2xl:hidden z-[90]"
@@ -308,16 +316,18 @@ onMounted(() => {
       <Projects />
     </div>
 
-  <button 
-        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -left-4 items-center justify-center rounded-full bg-neutral-50 border border-neutral-200  hover:border-dc-100 hidden lg:flex z-50 rotate-180 transition-0-3s group/icon"
-        @click="projectHide"
-        :class="{
+
+    <Icon chevron-left_icon 
+      class="sidebar-close-btn   w-8 h-8 absolute top-1/2 -left-4 rotate-180  z-[100] [&_svg]:!w-5 [&_svg]:!h-5"
+      @click="projectHide"
+      :class="{
           'left-auto right-0 !rotate-0': !visibleProjects,
           'md:hidden lg:hidden 2xl:flex': visibleProjects,
         }"
-      >
-      <chevronLeft class=" w-5 h-5"  />
-      </button>
+      />
+
+
+
 </div>
 
   </div>
