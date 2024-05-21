@@ -10,6 +10,10 @@ import cardWinkel from "./svg/card-winkel.vue";
 
 import { defineProps } from 'vue';
 import ts from "typescript";
+import projects from "../data/projects.js";
+import { useProjectsStore } from '../stores/ProjectsStore'; 
+
+useProjectsStore();
 
 
 
@@ -81,8 +85,8 @@ const image2 = ref("https://picsum.photos/id/237/536/354");
 
             <div v-for="(result, index) in props.results" :key="index">
                 <div class="flex gap-2 align-top">
-                    <cardWinkel  :class="{ 'cardWinkel-active': activeIconBox === result}"  />
-                    <IconBox :id="result.id"  document-text_icon :text="result.infoBox" :anchor-link="result"  @click="iconBoxActive(result)"  :class="{ '!border-dc-400 cardWinkel-active': activeIconBox === result}"/>
+                    <cardWinkel  :class="{ 'cardWinkel-active': activeIconBox === result.id}"  />
+                    <IconBox :href="'/#'+ result.id" :id="result.id"  document-text_icon :text="result.infoBox" :anchor-link="result"  @click="iconBoxActive(result.id)"  :class="{ '!border-dc-400 cardWinkel-active': activeIconBox === result.id}"/>
                 </div>
             </div>
 

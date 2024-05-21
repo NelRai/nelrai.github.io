@@ -167,7 +167,7 @@ const contentRemove = () => {
 <template>
 
 
-  <div class="result-wrapper-wrapper relative group/closeBTN   ">
+  <div :id=props.id  class="result-wrapper-wrapper relative group/closeBTN   ">
     <div
       class="result_wrapper w-full h-auto bg-white border border-solid border-neutral-200 rounded-lg shadow-xl relative cursor-pointer transition-0-3s">
       <div
@@ -272,7 +272,7 @@ const contentRemove = () => {
             <p>
               {{ text }}
             
-              💡 Google launches "AI Opportunity Initiative for Europe" to boost
+              <!-- 💡 Google launches "AI Opportunity Initiative for Europe" to boost
               AI knowledge in the European workforce with a €25 million
               investment. <br /><br />
 
@@ -302,7 +302,7 @@ const contentRemove = () => {
               More: [URL]
               <br /><br />
               🔔 Follow me for more updates:
-              https://www.linkedin.com/in/benjamin-danneberg/
+              https://www.linkedin.com/in/benjamin-danneberg/ -->
             </p>
           </div>
 
