@@ -23,7 +23,12 @@ function cardActive(id) {
 }
 
 let cards = ref([
-    { id: 'card1', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago', image: false },
+    { id: 'card1', headline: 'Apple verwendet Apple GPT bereits intern', timeText: '16 hours ago aaa',  image: false, anchorLinks: ['AnchorLink01', 'AnchorLink02'],
+        results: [
+            { id: 'result1', headline: 'Apple verwendet Apple GPT bereits intern', infoBox: 'Lorem - LinkedIn', text: 'Text Beispiel', image: false },
+            { id: 'result2', headline: 'Apple already uses Apple GPT internally', infoBox: 'Ipsum - LinkedIn', text: 'Text Beispiel', image: false },
+        ]
+      },
     { id: 'card2', headline: 'Apple already uses Apple GPT internally Card02', timeText: '17 hours ago', image: false },
     { id: 'card3', headline: 'Google launches generative AI search', timeText: '2 days ago', image: false },
     { id: 'card4', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
@@ -40,14 +45,9 @@ let cards = ref([
 ]);
 
 function addCard() {
-    cards.value.push({ id: `card${cards.value.length + 1}`, headline: 'New Card', timeText: 'Just now', image: false });
+    cards.value.unshift({ id: `card${cards.value.length + 1}`, headline: 'New Card', timeText: 'Just now', image: false });
 }
 
-// function removeCard() {
-//     if (cards.value.length > 0) {
-//         cards.value.pop();
-//     }
-// }
 
 function removeCard(id: string) {
     cards.value = cards.value.filter(card => card.id !== id);
@@ -90,7 +90,7 @@ function removeCard(id: string) {
         <div class="w-full h-full flex flex-col md:pl-4 lg:pr-4 pb-8   gap-4 lg:overflow-y-scroll  ">
 
 
-        <Card v-for="card in cards" :key="card.id" :id="card.id" :headline="card.headline" :time-text="card.timeText" :image="card.image" @activeProject="cardActive" :cardRed="activeCard === card.id"
+        <Card v-for="card in cards" :key="card.id" :id="card.id" :headline="card.headline" :time-text="card.timeText" :image="card.image" :results="card.results" @activeProject="cardActive" :cardRed="activeCard === card.id"
         @cardRemove="() => removeCard(card.id)" />
       
         </div>

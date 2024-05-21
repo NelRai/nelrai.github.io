@@ -23,7 +23,9 @@ const props = defineProps({
     bgImage: String,
     image: Boolean,
     projectContentActive: Boolean,
-    cardRed: Boolean
+    cardRed: Boolean,
+    anchorLinks: Array,
+    results: Array
 })
 
 let activeIconBox = ref('iconBox1');
@@ -55,6 +57,8 @@ function iconBoxActive(id) {
 const image2 = ref("https://picsum.photos/id/237/536/354");
 
 
+
+
 </script>
 
 <template>
@@ -73,15 +77,26 @@ const image2 = ref("https://picsum.photos/id/237/536/354");
         </div> 
 
         <div class="project_content flex flex-col gap-2 " v-if="cardRed">
-            <div class="flex gap-2 align-top">
+
+
+            <div v-for="(result, index) in props.results" :key="index">
+                <div class="flex gap-2 align-top">
+                    <cardWinkel  :class="{ 'cardWinkel-active': activeIconBox === result}"  />
+                    <IconBox :id="result.id"  document-text_icon :text="result.infoBox" :anchor-link="result"  @click="iconBoxActive(result)"  :class="{ '!border-dc-400 cardWinkel-active': activeIconBox === result}"/>
+                </div>
+            </div>
+
+
+            <!-- <div class="flex gap-2 align-top">
             <cardWinkel  :class="{ 'cardWinkel-active': activeIconBox === 'iconBox1'}"  />
                 <IconBox id="iconBox1"  document-text_icon text="Ben - LinkedIn Post - All" @click="iconBoxActive('iconBox1')"  :class="{ '!border-dc-400 cardWinkel-active': activeIconBox === 'iconBox1'}"/>
             </div>
+
             <div class="flex gap-2 align-top">
                 <cardWinkel  :class="{ 'cardWinkel-active': activeIconBox === 'iconBox2'}"  />
                 <IconBox id="iconBox2"  document-text_icon text="Matthias - LinkedIn Post - All" @click="iconBoxActive('iconBox2')" :class="{ '!border-dc-400 cardWinkel-active': activeIconBox === 'iconBox2' }"  />
             </div>
-
+ -->
 
         </div>
 

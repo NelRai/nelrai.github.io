@@ -13,6 +13,15 @@ import openaiSvgrepoCom from "./svg/openai-svgrepo-com.vue";
 import Trash from "./svg/trash.vue";
 
 
+const props = defineProps({
+    id: String,
+    headline: String,
+    infoBox: String,
+    text: String
+})
+
+
+
 //PrimeVue OverlayPanel
 import OverlayPanel from 'primevue/overlaypanel';
 const op = ref();
@@ -139,7 +148,18 @@ const menuItems = ref([
 
 
 
+const emit = defineEmits(["activeProject", "contentRemove"]);
 
+const cardClicked = () => {
+   
+emit('activeProject', props.id)
+}
+
+const contentRemove = () => {
+   
+   emit('contentRemove', props.id)
+}
+   
 
 
 </script>
@@ -154,13 +174,13 @@ const menuItems = ref([
         class="result_header flex justify-between items-center !mb-0 rounded-lg rounded-b-none p-4 md:p-8 relative overflow-hidden z-20">
         <div class="result_header-headline flex flex-col gap-2 items-start">
           <div class="card-headline text-base font-normal z-20">
-            <h4>Google launches "AI Opportunity Initiative for Europe"</h4>
+            <h4>{{ headline }}</h4>
           </div>
 
           <div
             class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
             <div class="flex gap-1 justify-center items-center">
-              <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" /><span>Ben - LinkedIn - All</span>
+              <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" /><span>{{ infoBox }}</span>
 
 
             </div>
@@ -250,6 +270,8 @@ const menuItems = ref([
           <div class="result_item-content editor " id="editor">
 
             <p>
+              {{ text }}
+            
               💡 Google launches "AI Opportunity Initiative for Europe" to boost
               AI knowledge in the European workforce with a €25 million
               investment. <br /><br />
@@ -299,7 +321,12 @@ const menuItems = ref([
       </div>
 
       <div class="result-close opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s">
-        <Icon Trash_icon class="absolute -top-1 -right-1" />
+        <Icon Trash_icon class="absolute -top-1 -right-1"
+        @click="contentRemove"
+
+        
+        
+         />
       </div>
 
 

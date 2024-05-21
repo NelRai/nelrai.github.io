@@ -266,18 +266,6 @@ onMounted(() => {
       />
 
 
-      <!-- <button
-        class="sidebar-close-btn w-8 h-8 absolute top-1/2 -right-4 items-center justify-center rounded-full bg-neutral-50 border  border-neutral-200 hover:border-dc-100 hidden lg:flex transition-0-3s group/icon z-[100]  " 
-        @click="sidebarHide"
-        :class="{
-          'right-auto left-0 rotate-180': !sidebarVisible,
-          'md:hidden lg:hidden 2xl:flex': visibleProjects,
-        }"
-      >
-      <chevronLeft class=" w-5 h-5"  />
-        
-      </button> -->
-
       <div
         class="ausklappbar w-full  bg-neutral-50 absolute left-full top-0 h-full 2xl:hidden z-[90]"
         v-show="visibleProjects"

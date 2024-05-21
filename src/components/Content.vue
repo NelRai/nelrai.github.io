@@ -4,6 +4,11 @@ import Result from "./Result.vue";
 import IconBox from './IconBox.vue';
 
 
+const props = defineProps({
+    cards: Array
+})
+
+
 let newItem = '';
 
 let items =
@@ -19,9 +24,21 @@ function addItem() {
         newItem = '';
     }
 }
-// function removeItem() {
-//     items.splice(index, 1);
-// }
+
+
+let contents = ref([
+    { id: 'content', headline: 'Apple verwendet Apple GPT bereits intern', infoBox: 'Lorem - LinkedIn', text: 'Text Beispiel', image: false },
+    { id: 'content2', headline: 'Apple already uses Apple GPT internally content02', infoBox: 'Ipsum - LinkedIn', text: 'Text Beispiel',  image: false },
+
+]);
+
+function newContent() {
+    contents.value.unshift({ id: `content${contents.value.length + 1}`, headline: 'New content', infoBox: 'Just now', text: 'Text Beispiel', image: false });
+}
+
+function removeContents(id: string) {
+    contents.value = contents.value.filter(content => content.id !== id);
+}
 
 
 </script>
@@ -38,13 +55,21 @@ function addItem() {
                 </div>
             </div> -->
 
-            <IconBox  @click="addItem" plusCircleMini_icon text="New Content" />
+            <IconBox  @click="newContent" plusCircleMini_icon text="New Content" />
 
 
 <!-- @ts-ignore -->
+
+<Result v-for="content in contents" :key="content.id" :id="content.id" :headline="content.headline" :infoBox="content.infoBox" :text="content.text" :image="content.image" @activeProject="contentActive" :contentRed="activecontent === content.id"
+        @contentRemove="() => removeContents(content.id)" />
+<!-- 
             <div class="w-full" v-for="(item, index) in items">
+
+      
+
+
                 <Result />
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
