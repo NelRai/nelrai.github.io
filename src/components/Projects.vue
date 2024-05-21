@@ -1,17 +1,19 @@
 <script setup lang="ts">
 // @ts-nocheck 
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 import Card from './Card.vue';
 import Icon from './Icon.vue';
 import IconBox from './IconBox.vue';
 import bookmarkSquare from './svg/bookmark-square.vue'
-import projects from "../data/projects.js";
+// import projects from "../data/projects.js";
 import { useProjectsStore } from '../stores/ProjectsStore'; 
 
 useProjectsStore();
 
 const store = useProjectsStore();
+// Use a computed property to always get the latest value of the projects array
+const projects = computed(() => store.projects);
 
 let isActive = ref(false);
 let activeCard = ref(null);
@@ -52,14 +54,14 @@ let activeCard = ref(null);
 //     { id: 'card14', headline: 'Innovative Technology Too Expensive - Report on Meta\'s AR Glasses', timeText: '2 days ago', image: false },
 // ]);
 
-function addCard() {
-    projects.value.unshift({ id: `project${projects.value.length + 1}`, headline: 'New project', timeText: 'Just now', image: false });
-}
+// function addCard() {
+//     projects.value.unshift({ id: `project${projects.value.length + 1}`, headline: 'New project', timeText: 'Just now', image: false });
+// }
 
 
-function removeCard(id: string) {
-    projects.value = projects.value.filter(project => project.id !== id);
-}
+// function removeCard(id: string) {
+//     projects.value = projects.value.filter(project => project.id !== id);
+// }
 
 
 
@@ -99,7 +101,7 @@ function removeCard(id: string) {
 
 
         <Card v-for="project in projects" :key="project.id" :id="project.id" :headline="project.headline" :time-text="project.timeText" :image="project.image" :results="project.results" @activeProject="cardActive" :cardRed="store.activeCard === project.id"
-        @cardRemove="() => removeCard(project.id)"
+       
         
         @click="store.cardActive(project.id); console.log('activeCard:', store.activeCard)"
         
