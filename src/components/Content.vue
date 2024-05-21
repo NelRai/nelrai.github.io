@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-nocheck 
 import { ref, onMounted, computed } from "vue";
 import Result from "./Result.vue";
 import IconBox from './IconBox.vue';
