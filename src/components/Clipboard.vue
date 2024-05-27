@@ -6,6 +6,12 @@ import IconBox from './IconBox.vue';
 
 import clipboardDocument from './svg/clipboard-document.vue'
 import archiveBoxMini from './svg/archive-box-mini.vue'
+import Modal from './modal/Modal.vue';
+
+
+let modal3barsVisible = ref(false);
+let modalLinkVisible = ref(false);
+let modalFileVisible = ref(false);
 
 // let cards = ref([
 //     { headline: 'OpenAI_App-Store_AI-models.pdf', type: 'file-upload', imagePath: '/path/to/image1.png' },
@@ -41,9 +47,9 @@ emit('modalAddLink')
             </div>
 
             <div class="icons flex  gap-2 2xl:gap-2">
-                <Icon bars3_icon />
-                <Icon linkSVG_icon     @click="onModalAddLink" />
-                <Icon arrowUpTray_icon v-tooltip.top="'Upload File'" /> 
+                <Icon bars3_icon @click="modal3barsVisible = true" />
+                <Icon linkSVG_icon @click="modalLinkVisible = true" />
+                <Icon arrowUpTray_icon  @click="modalFileVisible = true"  v-tooltip.top="'Upload File'" /> 
             </div>
 
         </div>
@@ -84,6 +90,40 @@ emit('modalAddLink')
     </div>
 
 
+    <Teleport to="body">
+        <Modal 
+        v-if="modal3barsVisible" class="" @close="modal3barsVisible = false" 
+        
+        datasetButton
+        headline="New Text"
+        IconBoxText="Text"
+        />
+    </Teleport>
+
+    <Teleport to="body">
+        <Modal 
+        v-if="modalLinkVisible" class="" @close="modalLinkVisible = false" 
+        linkIcon
+        datasetButton
+        headline="Import URL"
+        />
+    </Teleport>
+
+
+    <Teleport to="body">
+        <Modal 
+        v-if="modalFileVisible" class="" @close="modalFileVisible = false" 
+        arrowUpTray_icon
+        headline="Upload File"
+        />
+    </Teleport>
+
+
+
 </template>
 
-<style scoped></style>
+<style scoped>
+
+
+
+</style>
