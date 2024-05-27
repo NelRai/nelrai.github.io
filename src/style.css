@@ -222,11 +222,11 @@ p {
 } */
 
 .resultItemHidden {
-  padding-bottom: 0;
+  /* padding-bottom: 0; */
   /* height: 200px; */
   max-height: 200px;
   transition: all 0.3s;
-  overflow: hidden;
+  /* overflow: hidden; */
 
 }
 /* 
@@ -246,6 +246,7 @@ p {
   top:0;
   background:linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,1) 100%);
   transition: all 0.3s;
+  border-radius: 0.5rem;
 
 }
 
