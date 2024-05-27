@@ -7,7 +7,7 @@ let projects = ref([
     {
         "id": "card1",
         "headline": "Apple verwendet Apple GPT bereits intern JS",
-        "timeText": "16 hours ago aaa",
+        "timeText": "16 hours ago",
         "image": false,
         "anchorLinks": ["AnchorLink01", "AnchorLink02"],
         "results": [
@@ -15,7 +15,7 @@ let projects = ref([
             "id": "result1",
             "headline": "Apple verwendet Apple GPT bereits intern RESULTS",
             "infoBox": "Lorem - LinkedIn JS",
-            "text": "Text Beispiel JS RESULT LALA",
+            "text": "Text Beispiel JS RESULT",
             "image": false
           },
           {
@@ -29,7 +29,7 @@ let projects = ref([
             "id": "result3",
             "headline": "Apple verwendet Apple GPT bereits intern RESULTS",
             "infoBox": "Lorem - LinkedIn JS",
-            "text": "Text Beispiel JS RESULT LALA",
+            "text": "Text Beispiel JS RESULT ",
             "image": false
           },
           {
@@ -43,7 +43,7 @@ let projects = ref([
             "id": "result5",
             "headline": "Apple verwendet Apple GPT bereits intern RESULTS",
             "infoBox": "Lorem - LinkedIn JS",
-            "text": "Text Beispiel JS RESULT LALA",
+            "text": "Text Beispiel JS RESULT ",
             "image": false
           },
           {
