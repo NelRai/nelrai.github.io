@@ -64,12 +64,13 @@ const modalAddlink_modeMarkdown_function = () => {
 
             <div class="flex gap-2 ">
                 <Icon magnifyingGlass_icon  v-if="datasetButton" />
-                <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
+                <Icon ellipsisHorizontal_icon  />
             </div>
 
 
 
         </div>
+
 
         <div class="modal-addLink-body p-8 flex flex-col gap-4 bg-neutral-50  border-neutral-200 border-x border-b rounded-b-xl">
             <input class="p-4 w-full border-neutral-200 border rounded-lg" type="text" placeholder="Enter URL" />
@@ -83,6 +84,9 @@ const modalAddlink_modeMarkdown_function = () => {
                 </div>
             </div>
         </div>
+
+
+
     </div>
 
     <div @click="$emit('close')" class="white-overlay"></div>

@@ -7,6 +7,8 @@ import linkSVG from './svg/link.vue'
 import Trash from './svg/trash.vue'
 import IconBox from './IconBox.vue';
 import cardWinkel from "./svg/card-winkel.vue";
+
+// @ts-ignore
 import { useProjectsStore } from '../stores/ProjectsStore'; 
 
 

@@ -11,6 +11,7 @@ import Sparkles from "./svg/sparkles.vue";
 import openaiSvgrepoCom from "./svg/openai-svgrepo-com.vue";
 
 import Trash from "./svg/trash.vue";
+// @ts-ignore
 import { useProjectsStore } from '../stores/ProjectsStore'; 
 
 
@@ -166,7 +167,7 @@ const contentRemove = () => {
 }
    
 
-const handleInput = (resultID, newInfoBox) => {
+const handleInput = (resultID: any, newInfoBox: any) => {
     store.updateInfoBox(resultID, newInfoBox);
 };
 
@@ -189,7 +190,7 @@ const handleInput = (resultID, newInfoBox) => {
             class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
             <div class="flex gap-1 justify-center items-center">
               <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" />
-                <input type="text" v-model="props.infoBox" @input="handleInput(props.id, $event.target.value)">
+                <input type="text" v-model="props.infoBox" @input="handleInput(props.id, ($event?.target as HTMLInputElement)?.value)">
                            
 
 
