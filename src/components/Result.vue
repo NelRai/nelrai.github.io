@@ -11,6 +11,11 @@ import Sparkles from "./svg/sparkles.vue";
 import openaiSvgrepoCom from "./svg/openai-svgrepo-com.vue";
 
 import Trash from "./svg/trash.vue";
+import { useProjectsStore } from '../stores/ProjectsStore'; 
+
+
+const store = useProjectsStore();
+
 
 
 const props = defineProps({
@@ -18,7 +23,7 @@ const props = defineProps({
     headline: String,
     infoBox: String,
     text: String
-})
+  })
 
 
 
@@ -161,6 +166,9 @@ const contentRemove = () => {
 }
    
 
+const handleInput = (resultID, newInfoBox) => {
+    store.updateInfoBox(resultID, newInfoBox);
+};
 
 </script>
 
@@ -180,7 +188,9 @@ const contentRemove = () => {
           <div
             class="card-tag p-2 bg-neutral-50 border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20">
             <div class="flex gap-1 justify-center items-center">
-              <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" /><span>{{ infoBox }}</span>
+              <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" />
+                <input type="text" v-model="props.infoBox" @input="handleInput(props.id, $event.target.value)">
+                           
 
 
             </div>
@@ -322,10 +332,7 @@ const contentRemove = () => {
 
       <div class="result-close opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s">
         <Icon Trash_icon class="absolute -top-1 -right-1"
-        @click="contentRemove"
-
-        
-        
+        @click="store.removeResult(id); console.log('removeResult:', store.removeResult)"
          />
       </div>
 

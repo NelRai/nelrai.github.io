@@ -6,6 +6,12 @@ import IconBox from './IconBox.vue';
 import projects from "../data/projects.js";
 import { useProjectsStore } from '../stores/ProjectsStore'; 
 
+const props = defineProps({
+    id: String,
+    cards: Array
+})
+
+
 useProjectsStore();
 
 const store = useProjectsStore();
@@ -22,14 +28,20 @@ onMounted(() => {
 
 
 
-
+const addResult = () => {
+    const newResult = {
+        id: `result${store.projects.find(project => project.id === store.activeCard).results.length + 1}`,
+        headline: 'New result',
+        infoBox: 'New infoBox',
+        text: 'New text',
+        image: false
+    };
+    store.addResult(newResult);
+};
 // const results = (projects as { id: string; headline: string; timeText: string; image: boolean; anchorLinks: string[]; results: { id: string; headline: string; infoBox: string; text: string; image: boolean; }[]; }[]).results;
 // console.log('projects', projects.results);
 
 
-const props = defineProps({
-    cards: Array
-})
 
 
 // let newItem = '';
@@ -77,7 +89,7 @@ function removeContents(id: string) {
                 </div>
             </div> -->
 
-            <IconBox  @click="newContent" plusCircleMini_icon text="New Content" />
+            <IconBox  @click="addResult" plusCircleMini_icon text="New Content" />
 
 
 

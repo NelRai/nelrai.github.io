@@ -83,7 +83,6 @@ defineProps({
     <plusCircleMini  v-if="plusCircleMini_icon" class="svgIcon " />
     <Squares2x2  v-if="Squares2x2_icon" class="svgIcon " />
     <Trash  v-if="Trash_icon" class="svgIcon " />
-
     <xMark  v-if="xMark_icon" class="svgIcon " />
 
 

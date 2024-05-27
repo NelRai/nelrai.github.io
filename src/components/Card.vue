@@ -18,6 +18,7 @@ import ts from "typescript";
 useProjectsStore();
 
 
+
 const props = defineProps({
     id: String,
     headline: String,

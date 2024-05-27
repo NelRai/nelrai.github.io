@@ -82,13 +82,17 @@ let projects = ref([
         "id": "card3",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card4",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card5",
@@ -100,55 +104,73 @@ let projects = ref([
         "id": "card6",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card7",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card8",
         "headline": "Apple verwendet Apple GPT bereits intern",
         "timeText": "16 hours ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card9",
         "headline": "Apple already uses Apple GPT internally ",
         "timeText": "17 hours ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card10",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card11",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card12",
         "headline": "Apple already uses Apple GPT internally",
         "timeText": "17 hours ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card13",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       },
       {
         "id": "card14",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
-        "image": false
+        "image": false,
+        "results": [
+        ] 
       }
 ]);
 
@@ -158,7 +180,8 @@ export const useProjectsStore = defineStore('ProjectsStore', {
 
         return {
             projects: reactive(projects),
-            activeCard: null,       
+            activeCard: null,   
+            activeResult: null,           
          }
     
     },
@@ -169,7 +192,7 @@ export const useProjectsStore = defineStore('ProjectsStore', {
         },
         
         addCard() {
-            this.projects.unshift({ id: `project${this.projects.length + 1}`, headline: 'New project', timeText: 'Just now', image: false });
+            this.projects.unshift({ id: `project${this.projects.length + 1}`, headline: 'New project', timeText: 'Just now', image: false, results: []});
         },
         
         removeCard(id) {
@@ -178,7 +201,37 @@ export const useProjectsStore = defineStore('ProjectsStore', {
                 this.projects.splice(index, 1);
             }
             console.log('removeCard im STORE!', id);
+        },
+        addResult(result) {
+            const project = this.projects.find(project => project.id === this.activeCard);
+            if (project) {
+                project.results.push(result);
+            }
+            console.log('addResult im STORE!', this.activeCard);
+        },
+
+        removeResult(resultId) {
+            const project = this.projects.find(project => project.id === this.activeCard);
+            if (project) {
+                const index = project.results.findIndex(result => result.id === resultId);
+                if (index !== -1) {
+                    project.results.splice(index, 1);
+                }
+            }
+            console.log('removeResult im STORE!', resultId);
+        },
+
+        updateInfoBox(resultID, newInfoBox) {
+            const project = this.projects.find(project => project.id === this.activeCard);
+          
+                const result = resultID ? project.results.find(result => result.id === resultID) : project.results[0];
+                if (result) {
+                    result.infoBox = newInfoBox;
+                }
+             
+            console.log('updateInfoBox in STORE!', this.activeCard, this.activeResult, newInfoBox, this.project, result); 
         }
+
     },
 
 

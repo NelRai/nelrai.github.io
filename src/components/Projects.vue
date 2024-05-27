@@ -92,7 +92,11 @@ let activeCard = ref(null);
 
             </div>
 
-            <IconBox plus-circle-mini_icon text="New Project" @click="addCard" />
+            <IconBox plus-circle-mini_icon text="New Project" 
+            @click="store.addCard(); console.log('addCard:', store.addCard)"
+            
+            
+            />
 
             
         </div>
