@@ -77,7 +77,7 @@ let activeCard = ref(null);
 
                 <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
                     <bookmarkSquare alt="" class="w-6 h-6 "  />
-                    <h4>Projects</h4>
+                    <h4 class="text-lg blinker">Projects</h4>
                 </div>
 
                 <div class="icons flex md:flex-col gap-2 md:gap-4" id="search">

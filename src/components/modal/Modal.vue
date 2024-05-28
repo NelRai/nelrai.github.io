@@ -4,10 +4,12 @@ import { ref } from "vue";
 import Tag from '../atoms/tag.vue';
 import svgLink from '../svg/link.vue';
 import arrowUpTray from '../svg/arrow-up-tray.vue'
+import arrowDownTray from '../svg/arrow-down-tray.vue'
 import Icon from '../Icon.vue';
 import IconBox from "../IconBox.vue";
 import pillButton from "../atoms/pillButton.vue";
 import plusCircleMini from '../svg/plus-circle-mini.vue'
+import questionMark from "../svg/question-mark.vue";
 import FileUpload from 'primevue/fileupload';
 
 
@@ -61,11 +63,11 @@ const modalAddlink_modeMarkdown_function = () => {
                 class="modal-addLink-header px-8 py-6 flex justify-between items-center bg-neutral-50 border-neutral-200 border-x border-t rounded-t-xl border-b">
 
                 <div class="flex flex-col gap-2 items-start ">
-                    <div class="flex gap-2">
+                    <div class="flex gap-1">
                         <svgLink v-if="linkIcon" class="w-6 h-6" />
                         <arrowUpTray v-if="arrowUpTray_icon" class="w-6 h-6" />
 
-                        <h2 class="text-lg">{{ headline }}</h2>
+                        <h2 class="text-lg blinker">{{ headline }}</h2>
                     </div>
                     <IconBox bars3_icon :text="IconBoxText" v-if="IconBoxText" />
                 </div>
@@ -74,8 +76,6 @@ const modalAddlink_modeMarkdown_function = () => {
                     <Icon magnifyingGlass_icon v-if="datasetButton" />
                     <Icon ellipsisHorizontal_icon />
                 </div>
-
-
 
             </div>
 
@@ -101,9 +101,6 @@ const modalAddlink_modeMarkdown_function = () => {
                     </div>
 
                 </div>
-
-
-
 
             </div>
 
@@ -135,11 +132,11 @@ const modalAddlink_modeMarkdown_function = () => {
                 v-if="importURL">
 
                 <button class="user-guide flex gap-[6px] items-center">
-                    <plusCircleMini class="w-5 h-5 !fill-neutral-500" />
+                    <questionMark class="w-5 h-5 !fill-neutral-500" />
                     <span class="text-neutral-500 text-xs">User Guide</span>
                 </button>
 
-                <pillButton text="Import&nbsp;URLs" />
+                <pillButton arrowDownTray_icon text="Import&nbsp;URLs" />
 
             </div>
 
@@ -149,11 +146,15 @@ const modalAddlink_modeMarkdown_function = () => {
             <div class="modal-addLink-body p-8  bg-neutral-50  border-neutral-200 border-x  " v-if="uploadFiles">
 
                 <div class="modal-uploadFiles-content flex flex-col gap-4">
+
+                    
                     <FileUpload name="demo[]" url="/api/upload" @upload="onAdvancedUpload($event)" :multiple="true" accept="image/*" :maxFileSize="1000000">
                         <template #empty>
                             <p>Drag and drop files to here to upload.</p>
                         </template>
                     </FileUpload>
+
+
                     <div class="tags">
                         <h3 class="text-neutral-500 text-xs mb-1">Include markup</h3>
                         <div class="flex gap-1">
@@ -175,7 +176,7 @@ const modalAddlink_modeMarkdown_function = () => {
                     <span class="text-neutral-500 text-xs">User Guide</span>
                 </button>
 
-                <pillButton text="Upload&nbsp;Files" />
+                <pillButton arrowUpTray_icon text="Upload&nbsp;Files" />
 
             </div>
 

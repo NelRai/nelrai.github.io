@@ -6,21 +6,21 @@
 <template>
   <nav>
     <ul
-      class="flex  h-12 justify-center items-center  bg-transparent   w-auto text-neutral-700 border border-neutral-200 rounded-lg   ">
+      class="flex  h-12 justify-center items-center  bg-transparent   w-auto text-neutral-700 border border-neutral-200 rounded-lg  text-lg  ">
       <li class="h-[46px] "  v-ripple>
-        <a href="#home" class=" flex items-center px-8 h-full hover:border-neutral-200 rounded-s-lg hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Explore</a>
+        <a href="#home" class="blinker flex items-center px-8 h-full hover:border-neutral-200 rounded-s-lg hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Explore</a>
       </li>
       <div class="vertical-line"></div>
       <li class="navigation-active  "  v-ripple>
-        <a href="#projects"class="flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400 ">Workspace</a>
+        <a href="#projects"class="blinker flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400 ">Workspace</a>
       </li>
       <div class="vertical-line"></div>
       <li class=""  v-ripple>
-        <a href="#contact"class="flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Storage</a>
+        <a href="#contact"class="blinker flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Storage</a>
       </li>
       <div class="vertical-line"></div>
       <li class="p-ripple " v-ripple>
-        <a href="#contact"class="flex items-center px-8 h-[46px]  rounded-e-lg  hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Publish</a>
+        <a href="#contact"class="blinker flex items-center px-8 h-[46px]  rounded-e-lg  hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Publish</a>
       </li>
 
     </ul>

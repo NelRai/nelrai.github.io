@@ -194,11 +194,19 @@ button:focus-visible {
 
 * {
    /* transition: all 0.3s; */
-   font-family: 'Blinker';
+   font-family: 'Inter';
   }
 
 p {
   font-family: 'Inter';
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.blinker {
+  font-family: 'Blinker', sans-serif;
 }
 
 .result_item-content-wrapper {

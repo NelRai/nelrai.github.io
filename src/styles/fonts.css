@@ -1,0 +1,48 @@
+.headline-18 {
+    font-family: 'Blinker', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+
+.headline-16 {
+    font-family: 'Blinker', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+
+.headline-26 {
+    font-family: 'Blinker', sans-serif;
+    font-size: 3.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+
+.copy-12 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+
+.copy-15 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+
+
+.inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.blinker {
+    font-family: 'Blinker', sans-serif;
+}

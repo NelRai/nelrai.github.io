@@ -87,7 +87,7 @@ const removeCard = () => {
     >
 
         <div class="card-headline text-base font-normal z-10 pr-[30%]   ">
-           <h4>{{ headline }}</h4>
+           <h4 class="text-base blinker">{{ headline }}</h4>
         </div> 
 
         <div class="project_content flex flex-col gap-2 " v-if="cardRed">

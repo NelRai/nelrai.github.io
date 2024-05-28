@@ -183,7 +183,7 @@ const handleInput = (resultID: any, newInfoBox: any) => {
         class="result_header flex justify-between items-center !mb-0 rounded-lg rounded-b-none p-4 md:p-8 relative overflow-hidden z-20">
         <div class="result_header-headline flex flex-col gap-2 items-start">
           <div class="card-headline text-base font-normal z-20">
-            <h4>{{ headline }}</h4>
+            <h4 class="text-lg blinker">{{ headline }}</h4>
           </div>
 
           <div
@@ -278,9 +278,9 @@ const handleInput = (resultID: any, newInfoBox: any) => {
 
         <div
           class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative resultItemHidden quill">
-          <div class="result_item-content editor " id="editor">
+          <div class="result_item-content editor text-base " id="editor">
 
-            <p>
+            <p class="text-base">
               {{ text }}
             
               <!-- 💡 Google launches "AI Opportunity Initiative for Europe" to boost

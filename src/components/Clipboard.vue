@@ -42,7 +42,7 @@ emit('modalAddLink')
 
             <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
                 <clipboardDocument  alt="" class="w-6 h-6 " />
-                <h4>Clipboard</h4>
+                <h4 class="text-lg blinker">Clipboard</h4>
 
             </div>
 
