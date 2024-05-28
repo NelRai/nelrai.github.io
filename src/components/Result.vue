@@ -331,8 +331,8 @@ const handleInput = (resultID: any, newInfoBox: any) => {
         </div>
       </div>
 
-      <div class="result-close opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s">
-        <Icon Trash_icon class="absolute -top-1 -right-1"
+      <div class="result-close absolute -top-1 -right-1 opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s z-50">
+        <Icon Trash_icon 
         @click="store.removeResult(id); console.log('removeResult:', store.removeResult)"
          />
       </div>
