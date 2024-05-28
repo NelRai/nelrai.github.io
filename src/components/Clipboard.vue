@@ -93,7 +93,7 @@ emit('modalAddLink')
     <Teleport to="body">
         <Modal 
         v-if="modal3barsVisible" class="" @close="modal3barsVisible = false" 
-        
+        newText
         datasetButton
         headline="New Text"
         IconBoxText="Text"
@@ -103,8 +103,9 @@ emit('modalAddLink')
     <Teleport to="body">
         <Modal 
         v-if="modalLinkVisible" class="" @close="modalLinkVisible = false" 
+        importURL
         linkIcon
-        datasetButton
+        
         headline="Import URL"
         />
     </Teleport>
@@ -113,8 +114,9 @@ emit('modalAddLink')
     <Teleport to="body">
         <Modal 
         v-if="modalFileVisible" class="" @close="modalFileVisible = false" 
+        uploadFiles
         arrowUpTray_icon
-        headline="Upload File"
+        headline="Upload Files"
         />
     </Teleport>
 
