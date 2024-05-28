@@ -35,7 +35,7 @@ function showProjectsBTN() {
     :class="{
           'text-dc-400 border-dc-400 hover:!border-dc-400 [&_path]:stroke-dc-400 icon_active': projectsVisible
         }"
-    
+     v-tooltip.top="'Workspace Settings'"
     />
 
     <div class="overflow-hidden absolute top-0 left-0 w-full h-full rounded-lg">

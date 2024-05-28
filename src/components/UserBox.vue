@@ -45,7 +45,7 @@ function showProjectsBTN() {
       <p class="text-neutral-500">Deep Content GmbH</p>
     </div>
 
-    <Icon Squares2x2_icon class="h-10" />
+    <Icon Squares2x2_icon class="h-10"  v-tooltip.top="'Launcher'" />
 
     <div class="overflow-hidden absolute top-0 left-0 w-full h-full rounded-lg">
       <Animation class="overflow-hidden"/>

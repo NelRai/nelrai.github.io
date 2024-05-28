@@ -199,7 +199,7 @@ const handleInput = (resultID: any, newInfoBox: any) => {
         </div>
 
         <div class="result_header-icons flex gap-2 z-20">
-          <Icon cubeTransparent_icon />
+          <Icon cubeTransparent_icon v-tooltip.top="'AI Model'" />
           <Icon ellipsisHorizontal_icon class="hidden md:flex" />
           <!-- 
                 <button
@@ -221,7 +221,7 @@ const handleInput = (resultID: any, newInfoBox: any) => {
         <div class="icons flex md:flex-col gap-2 md:gap-4">
 
 
-          <Icon OpenaiSvgrepoCom_icon class="rounded-lg" @click="toggle" />
+          <Icon OpenaiSvgrepoCom_icon class="rounded-lg" @click="toggle"   />
 
 
           <OverlayPanel ref="op" > 
@@ -237,7 +237,7 @@ const handleInput = (resultID: any, newInfoBox: any) => {
 
           <div class="flex flex-col gap-2">
           
-            <Icon chatBubbleLeftRight_icon />
+            <Icon chatBubbleLeftRight_icon v-tooltip.top="'Chat'" />
            <!-- @vue-ignore -->
             <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
 

@@ -47,9 +47,9 @@ emit('modalAddLink')
             </div>
 
             <div class="icons flex  gap-2 2xl:gap-2">
-                <Icon bars3_icon @click="modal3barsVisible = true" />
-                <Icon linkSVG_icon @click="modalLinkVisible = true" />
-                <Icon arrowUpTray_icon  @click="modalFileVisible = true"  v-tooltip.top="'Upload File'" /> 
+                <Icon bars3_icon @click="modal3barsVisible = true"  v-tooltip.top="'Create Text'" />
+                <Icon linkSVG_icon @click="modalLinkVisible = true"  v-tooltip.top="'Import URLs'" />
+                <Icon arrowUpTray_icon  @click="modalFileVisible = true"  v-tooltip.top="'Upload Files'" /> 
             </div>
 
         </div>
