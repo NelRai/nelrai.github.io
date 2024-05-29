@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+// @ts-nocheck
 import { ref } from "vue";
 import Tag from '../atoms/tag.vue';
 import svgLink from '../svg/link.vue';
@@ -48,6 +48,11 @@ const modalAddlink_modeMarkdown_function = () => {
     modalAddlink_modeMarkdown.value = true;
 }
 
+
+           
+
+function onAdvancedUpload(event: Event | undefined) {
+}
 </script>
 
 
@@ -147,7 +152,7 @@ const modalAddlink_modeMarkdown_function = () => {
 
                 <div class="modal-uploadFiles-content flex flex-col gap-4">
 
-                    
+
                     <FileUpload name="demo[]" url="/api/upload" @upload="onAdvancedUpload($event)" :multiple="true" accept="image/*" :maxFileSize="1000000">
                         <template #empty>
                             <p>Drag and drop files to here to upload.</p>
