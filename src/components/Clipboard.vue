@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue";
+// @ts-nocheck 
+import { ref, computed } from "vue";
 import Card from './Card.vue';
 import Icon from './Icon.vue';
 import IconBox from './IconBox.vue';
@@ -19,7 +20,14 @@ let modalFileVisible = ref(false);
 //     { headline: 'Earth Virtualization Engines are the future of climate research', type: 'url', imagePath: '/path/to/image3.png' },
 //     // Add more card data here...
 // ]);
+import { useClipboardsStore } from '../stores/ClipboardsStore'; 
 
+
+useClipboardsStore();
+
+const store = useClipboardsStore();
+// Use a computed property to always get the latest value of the clipboards array
+const clipboards = computed(() => store.clipboards);
 
 
 const emit = defineEmits(["modalAddLink"]);
@@ -69,7 +77,7 @@ emit('modalAddLink')
 
             <!-- <Card v-for="card in cards" :key="card.headline" :headline="card.headline" :type="card.type" :image-path="card.imagePath" /> -->
         
-            <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
+            <!-- <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
             <Card headline="Apple already uses Apple GPT internally" linked-in  />
             <Card headline="Earth Virtualization Engines are the future of climate research" url image />
             <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  />
@@ -82,7 +90,12 @@ emit('modalAddLink')
             <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
             <Card headline="Apple already uses Apple GPT internally" linked-in  />
             <Card headline="Earth Virtualization Engines are the future of climate research" url />
-            <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  />
+            <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  /> -->
+
+            <Card 
+            v-for="clipboard in clipboards" :key="clipboard.id" :id="clipboard.id" :headline="clipboard.headline" :fileUpload="clipboard.fileUpload" :linkedIn="clipboard.linkedIn" :url="clipboard.url" :image="clipboard.image" :content="clipboard.content" @activeProject="cardActive" :cardRed="store.activeCard === clipboard.id"
+            @click="store.cardActive(clipboard.id); console.log('activeCard:', store.activeCard)"
+         />
 
         </div>
 
