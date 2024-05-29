@@ -15,11 +15,12 @@ export default {
             'dark:text-white/80',
 
             // Spacing
-            'p-5',
+            'p-0',
             'gap-2',
+            'mb-2',
 
             // Borders
-            'border',
+            'border-none',
             'border-solid',
             'border-surface-200',
             'dark:border-surface-700',
@@ -82,16 +83,16 @@ export default {
             'relative',
 
             // Colors
-            'bg-surface-0',
+            'bg-neutral-50',
             'dark:bg-surface-900',
             'text-surface-700',
             'dark:text-white/80',
 
             // Spacing
-            'p-8',
+            'p-0',
 
             // Borders
-            'border',
+            'border-none',
             'border-surface-200',
             'dark:border-surface-700',
 
