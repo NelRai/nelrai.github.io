@@ -6,19 +6,19 @@
 <template>
   <nav>
     <ul
-      class="flex  h-12 justify-center items-center  bg-transparent   w-auto text-neutral-700 border border-neutral-200 rounded-lg  text-lg  ">
+      class="flex  h-12 justify-center items-center  bg-transparent   w-auto text-neutral-700 border border-neutral-200 rounded-lg  text-lg  divide-x divide-neutral-200 ">
       <li class="h-[46px] "  v-ripple>
         <a href="#home" class="blinker flex items-center px-8 h-full hover:border-neutral-200 rounded-s-lg hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Explore</a>
       </li>
-      <div class="vertical-line"></div>
+      <!-- <div class="vertical-line"></div> -->
       <li class="navigation-active  "  v-ripple>
         <a href="#projects"class="blinker flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400 ">Workspace</a>
       </li>
-      <div class="vertical-line"></div>
+      <!-- <div class="vertical-line"></div> -->
       <li class=""  v-ripple>
         <a href="#contact"class="blinker flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Storage</a>
       </li>
-      <div class="vertical-line"></div>
+      <!-- <div class="vertical-line"></div> -->
       <li class="p-ripple " v-ripple>
         <a href="#contact"class="blinker flex items-center px-8 h-[46px]  rounded-e-lg  hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Publish</a>
       </li>

@@ -90,7 +90,7 @@ export default {
             'dark:text-white/80',
 
             // Spacing
-            'p-[1.125rem]',
+            'p-[0]',
 
             // Borders
             'border border-t-0',
