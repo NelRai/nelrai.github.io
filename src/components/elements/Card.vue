@@ -10,6 +10,7 @@ import cardWinkel from "../svg/card-winkel.vue";
 
 // @ts-ignore
 import { useProjectsStore } from '../../stores/ProjectsStore'; 
+// @ts-ignore
 import { useClipboardsStore } from '../../stores/ClipboardsStore'; 
 
 

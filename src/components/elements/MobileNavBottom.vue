@@ -44,7 +44,7 @@ function showProjectsBTN() {
         }"
     >
       <div class="flex gap-1 justify-center items-center">
-        <img src="../assets/clipboard.svg" alt="" class="w-4 h-4" /><span
+        <img src="../../assets/clipboard.svg" alt="" class="w-4 h-4" /><span
           >Clipboard</span
         >
       </div>
@@ -57,7 +57,7 @@ function showProjectsBTN() {
         }"
     >
       <div class="flex gap-1 justify-center items-center">
-        <img src="../assets/bookmark-square.svg" alt="" class="w-4 h-4" /><span
+        <img src="../../assets/bookmark-square.svg" alt="" class="w-4 h-4" /><span
           >Projects</span
         >
       </div>
