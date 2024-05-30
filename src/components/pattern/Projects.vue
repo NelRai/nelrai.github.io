@@ -2,12 +2,12 @@
 // @ts-nocheck 
 import { ref, computed } from "vue";
 
-import Card from './Card.vue';
-import Icon from './Icon.vue';
-import IconBox from './IconBox.vue';
-import bookmarkSquare from './svg/bookmark-square.vue'
+import Card from '../elements/Card.vue';
+import Icon from '../buttons/buttonRound40.vue';
+import IconBox from '../buttons/button32.vue';
+import bookmarkSquare from '../svg/bookmark-square.vue'
 // import projects from "../data/projects.js";
-import { useProjectsStore } from '../stores/ProjectsStore'; 
+import { useProjectsStore } from '../../stores/ProjectsStore'; 
 
 useProjectsStore();
 
@@ -21,7 +21,7 @@ let activeCard = ref(null);
 //     isActive.value = !isActive.value;
 //     console.log('cardActive');
 
-// }
+// }  
 // @ts-ignore
 // function cardActive(id) {
 //     activeCard.value = id;
@@ -104,11 +104,9 @@ let activeCard = ref(null);
         <div class="w-full h-full flex flex-col md:pl-4 lg:pr-4 pb-8   gap-4 lg:overflow-y-scroll  ">
 
 
-        <Card v-for="project in projects" :key="project.id" :id="project.id" :headline="project.headline" :time-text="project.timeText" :image="project.image" :results="project.results" @activeProject="cardActive" :cardRed="store.activeCard === project.id"
-       
-        
-        @click="store.cardActive(project.id); console.log('activeCard:', store.activeCard)"
-        
+        <Card 
+            v-for="project in projects" :key="project.id" :id="project.id" :headline="project.headline" :time-text="project.timeText" :image="project.image" :results="project.results" @activeProject="cardActive" :cardRed="store.activeCard === project.id"
+            @click="store.cardActive(project.id); console.log('activeCard:', store.activeCard)"
          />
       
         </div>

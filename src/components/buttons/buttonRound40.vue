@@ -1,35 +1,26 @@
 <script setup lang="ts">
 // defineProps<{ image: string }>()
-
-
-
-import adjustmentHorizontal from './svg/adjustment-horizontal.vue'
-import archiveBoxMini from './svg/archive-box-mini.vue'
-import arrowUpTray from './svg/arrow-up-tray.vue'
-import bars2 from './svg/bars-2.vue'
-import bars3 from './svg/bars-3.vue'
-import bookmarkSquare from './svg/bookmark-square.vue'
-import chatBubbleLeftRight from './svg/chat-bubble-left-right.vue'
-import chevronLeft from './svg/chevron-left.vue'
-import clipboardDocument from './svg/clipboard-document.vue'
-import clipboard from './svg/clipboard.vue'
-import cubeTransparent from './svg/cube-transparent.vue'
-import documentText from './svg/document-text.vue'
-import ellipsisHorizontal from './svg/ellipsis-horizontal.vue'
-import linkSVG from './svg/link.vue'
-import magnifyingGlass from './svg/magnifying-glass.vue'
-import OpenaiSvgrepoCom from './svg/openai-svgrepo-com.vue'
-import plusCircleMini from './svg/plus-circle-mini.vue'
-import Squares2x2 from './svg/squares-2x2.vue'
-import Trash from './svg/trash.vue'
-import xMark from './svg/x-mark.vue'
-
-
+import adjustmentHorizontal from '../svg/adjustment-horizontal.vue'
+import archiveBoxMini from '../svg/archive-box-mini.vue'
+import arrowUpTray from '../svg/arrow-up-tray.vue'
+import bars2 from '../svg/bars-2.vue'
+import bars3 from '../svg/bars-3.vue'
+import bookmarkSquare from '../svg/bookmark-square.vue'
+import chatBubbleLeftRight from '../svg/chat-bubble-left-right.vue'
+import chevronLeft from '../svg/chevron-left.vue'
+import clipboardDocument from '../svg/clipboard-document.vue'
+import clipboard from '../svg/clipboard.vue'
+import cubeTransparent from '../svg/cube-transparent.vue'
+import documentText from '../svg/document-text.vue'
+import ellipsisHorizontal from '../svg/ellipsis-horizontal.vue'
+import linkSVG from '../svg/link.vue'
+import magnifyingGlass from '../svg/magnifying-glass.vue'
+import OpenaiSvgrepoCom from '../svg/openai-svgrepo-com.vue'
+import plusCircleMini from '../svg/plus-circle-mini.vue'
+import Squares2x2 from '../svg/squares-2x2.vue'
+import Trash from '../svg/trash.vue'
+import xMark from '../svg/x-mark.vue'
 // import linkSVG from './svg/link.vue'
-
-
-
-
 
 defineProps({
   image: String,

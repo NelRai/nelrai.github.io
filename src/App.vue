@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue"; 
-import Header from "./components/Header.vue";
+import Header from "./components/elements/Header.vue";
 // import Navigation from './components/Navigation.vue'
-import Content from "./components/Content.vue";
-import Clipboard from "./components/Clipboard.vue";
-import Projects from "./components/Projects.vue";
-import Navigation from "./components/Navigation.vue";
+import Content from "./components/pattern/Content.vue";
+import Clipboard from "./components/pattern/Clipboard.vue";
+import Projects from "./components/pattern/Projects.vue";
+import Navigation from "./components/pattern/Navigation.vue";
 
-import MobileNavBottom from "./components/MobileNavBottom.vue";
-import UserBox from "./components/UserBox.vue";
+import MobileNavBottom from "./components/elements/MobileNavBottom.vue";
+import UserBox from "./components/elements/UserBox.vue";
 
-import Icon from "./components/Icon.vue";
+import Icon from "./components/buttons/buttonRound40.vue";
 import chevronLeft from "./components/svg/chevron-left.vue";
-import tag from "./components/atoms/tag.vue";
+import tag from "./components/buttons/button24.vue";
 import svgLink from "./components/svg/link.vue";
 
 
@@ -362,7 +362,7 @@ onMounted(() => {
 
       <div class="modal-addLink-header  p-8 flex gap-2  bg-neutral-50 border-neutral-200 border-x border-t rounded-t-xl  ">
         <svgLink class="w-6 h-6" />
-        <h2 class="text-lg" >Import URL</h2>
+        <h2 class="text-lg blinker" >Import URL</h2>
         
       </div>
 

@@ -1,13 +1,11 @@
 <script setup lang="ts">
-
-import Icon from './Icon.vue';
-import Animation from './Animation.vue';
+import Icon from '../buttons/buttonRound40.vue';
+import Animation from '../Animation.vue';
 
 defineProps({
   clipboardVisible: Boolean,
   projectsVisible: Boolean
 })
-
 
 
 const emit = defineEmits(["showProjectsBTN"]);

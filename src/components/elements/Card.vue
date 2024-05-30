@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import arrowUpTray from './svg/arrow-up-tray.vue'
-import documentText from './svg/document-text.vue'
-import linkSVG from './svg/link.vue'
-import Trash from './svg/trash.vue'
-import IconBox from './IconBox.vue';
-import cardWinkel from "./svg/card-winkel.vue";
+import arrowUpTray from '../svg/arrow-up-tray.vue'
+import documentText from '../svg/document-text.vue'
+import linkSVG from '../svg/link.vue'
+import Trash from '../svg/trash.vue'
+import IconBox from '../buttons/button32.vue';
+import cardWinkel from "../svg/card-winkel.vue";
 
 // @ts-ignore
-import { useProjectsStore } from '../stores/ProjectsStore'; 
+import { useProjectsStore } from '../../stores/ProjectsStore'; 
 
 
 import { defineProps } from 'vue';

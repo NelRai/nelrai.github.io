@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // @ts-nocheck 
 import { ref, onMounted, computed } from "vue";
-import Result from "./Result.vue";
-import IconBox from './IconBox.vue';
-import projects from "../data/projects.js";
-import { useProjectsStore } from '../stores/ProjectsStore'; 
+import Result from "../elements/Result.vue";
+import IconBox from '../buttons/button32.vue';
+import projects from "../../data/projects.js";
+import { useProjectsStore } from '../../stores/ProjectsStore.js'; 
 
 const props = defineProps({
     id: String,

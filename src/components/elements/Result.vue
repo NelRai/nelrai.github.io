@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue";
 
-import Animation from "./Animation.vue";
-import Icon from "./Icon.vue";
-import documentText from "./svg/document-text.vue";
-import chevronLeft from "./svg/chevron-left.vue";
-import chevronRight from "./svg/chevron-right.vue";
-import clipboardDocumentMini from "./svg/clipboard-document-mini.vue";
-import Sparkles from "./svg/sparkles.vue";
-import openaiSvgrepoCom from "./svg/openai-svgrepo-com.vue";
+import Animation from "../Animation.vue";
+import Icon from "../buttons/buttonRound40.vue";
+import documentText from "../svg/document-text.vue";
+import chevronLeft from "../svg/chevron-left.vue";
+import chevronRight from "../svg/chevron-right.vue";
+import clipboardDocumentMini from "../svg/clipboard-document-mini.vue";
+import Sparkles from "../svg/sparkles.vue";
+import openaiSvgrepoCom from "../svg/openai-svgrepo-com.vue";
 
-import Trash from "./svg/trash.vue";
+import Trash from "../svg/trash.vue";
 // @ts-ignore
-import { useProjectsStore } from '../stores/ProjectsStore'; 
+import { useProjectsStore } from '../../stores/ProjectsStore'; 
 
 
 const store = useProjectsStore();
@@ -96,8 +96,8 @@ onMounted(() => {
 
 import TieredMenu from 'primevue/tieredmenu';
 import Button from 'primevue/button';
-import Square2Stack from "./svg/square-2-stack.vue";
-import ArrowDownTrayMini from "./svg/arrow-down-tray-mini.vue";
+import Square2Stack from "../svg/square-2-stack.vue";
+import ArrowDownTrayMini from "../svg/arrow-down-tray-mini.vue";
 
 const menu = ref(null);
 

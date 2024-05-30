@@ -1,13 +1,13 @@
 <script setup lang="ts">
 // @ts-nocheck 
 import { ref, computed } from "vue";
-import Card from './Card.vue';
-import Icon from './Icon.vue';
-import IconBox from './IconBox.vue';
+import Card from '../elements/Card.vue';
+import Icon from '../buttons/buttonRound40.vue';
+import IconBox from '../buttons/button32.vue';
 
-import clipboardDocument from './svg/clipboard-document.vue'
-import archiveBoxMini from './svg/archive-box-mini.vue'
-import Modal from './modal/Modal.vue';
+import clipboardDocument from '../svg/clipboard-document.vue'
+import archiveBoxMini from '../svg/archive-box-mini.vue'
+import Modal from '../pattern/Modal.vue';
 
 
 let modal3barsVisible = ref(false);
@@ -20,7 +20,7 @@ let modalFileVisible = ref(false);
 //     { headline: 'Earth Virtualization Engines are the future of climate research', type: 'url', imagePath: '/path/to/image3.png' },
 //     // Add more card data here...
 // ]);
-import { useClipboardsStore } from '../stores/ClipboardsStore'; 
+import { useClipboardsStore } from '../../stores/ClipboardsStore'; 
 
 
 useClipboardsStore();

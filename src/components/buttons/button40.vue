@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import Icon from '../Icon.vue';
+bu<script setup lang="ts">
+import Icon from '../buttons/buttonRound40.vue';
 import arrowUpTray from '../svg/arrow-up-tray.vue'
 import arrowDownTray from '../svg/arrow-down-tray.vue'
 

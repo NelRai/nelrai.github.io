@@ -1,13 +1,13 @@
 <script setup lang="ts">
 // @ts-nocheck
 import { ref } from "vue";
-import Tag from '../atoms/tag.vue';
+import selectButton24 from '../buttons/button24.vue';
 import svgLink from '../svg/link.vue';
 import arrowUpTray from '../svg/arrow-up-tray.vue'
 import arrowDownTray from '../svg/arrow-down-tray.vue'
-import Icon from '../Icon.vue';
-import IconBox from "../IconBox.vue";
-import pillButton from "../atoms/pillButton.vue";
+import Icon from '../buttons/button40.vue';
+import IconBox from "../buttons/button32.vue";
+import button40 from "../buttons/button40.vue";
 import plusCircleMini from '../svg/plus-circle-mini.vue'
 import questionMark from "../svg/question-mark.vue";
 import FileUpload from 'primevue/fileupload';
@@ -175,11 +175,11 @@ const formatSize = (bytes) => {
                     <div class="tags">
                         <h3 class="text-neutral-500 text-xs mb-1">Import as</h3>
                         <div class="flex gap-1">
-                            <tag text="Text" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeText }"
+                            <selectButton24 text="Text" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeText }"
                                 @click="modalAddlink_modeText_function" />
-                            <tag text="HTML" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeHTML }"
+                            <selectButton24 text="HTML" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeHTML }"
                                 @click="modalAddlink_modeHTML_function" />
-                            <tag text="Markdown" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeMarkdown }"
+                            <selectButton24 text="Markdown" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeMarkdown }"
                                 @click="modalAddlink_modeMarkdown_function" />
                         </div>
                     </div>
@@ -195,7 +195,7 @@ const formatSize = (bytes) => {
                     <span class="text-neutral-500 text-xs">User Guide</span>
                 </button>
 
-                <pillButton arrowDownTray_icon text="Import&nbsp;URLs" />
+                <button40 arrowDownTray_icon text="Import&nbsp;URLs" />
 
             </div>
 
@@ -227,7 +227,7 @@ const formatSize = (bytes) => {
                                 <button @click="chooseCallback()">  <IconBox plusCircleMini_icon text="Browse files" /></button>
                             </div>
 
-                            <pillButton  arrowUpTray_icon text="Upload&nbsp;Files" @click="uploadEvent(uploadCallback)" class="absolute bottom-4 right-8" />
+                            <button40  arrowUpTray_icon text="Upload&nbsp;Files" @click="uploadEvent(uploadCallback)" class="absolute bottom-4 right-8" />
 
 
                         </template>
@@ -316,9 +316,9 @@ const formatSize = (bytes) => {
                     <div class="tags">
                         <h3 class="text-neutral-500 text-xs mb-1">Include markup</h3>
                         <div class="flex gap-1">
-                            <tag text="Metadata" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeText }"
+                            <selectButton24 text="Metadata" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeText }"
                                 @click="modalAddlink_modeText_function" />
-                            <tag text="Page numbers" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeHTML }"
+                            <selectButton24 text="Page numbers" :class="{ '!border-dc-400 text-dc-400': modalAddlink_modeHTML }"
                                 @click="modalAddlink_modeHTML_function" />
                         </div>
                     </div>
@@ -335,7 +335,7 @@ const formatSize = (bytes) => {
                 </button>
 
 
-                <!-- <pillButton  arrowUpTray_icon text="Upload&nbsp;Files" @click="uploadEvent(uploadCallback)" /> -->
+                <!-- <button40  arrowUpTray_icon text="Upload&nbsp;Files" @click="uploadEvent(uploadCallback)" /> -->
 
             </div>
 
