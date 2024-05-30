@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icon from '../buttons/buttonRound40.vue';
+import Icon from "../buttons/buttonRound40.vue";
 import Animation from '../Animation.vue';
 
 defineProps({
@@ -23,7 +23,7 @@ function showProjectsBTN() {
   <header
     class="flex justify-between items-center p-4  bg-[#F8F8FC] w-full fixed top-0 left-0 shadow-lg md:shadow-none lg:relative lg:rounded-lg z-50 "
   >
-    <img src="../assets/dcio-logo.svg" alt="" class="z-50">
+    <img src="../../assets/dcio-logo.svg" alt="" class="z-50">
 
     <Icon bars2_icon class="md:hidden z-50"/>
     <Icon 

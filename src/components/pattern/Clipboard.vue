@@ -37,12 +37,16 @@ const clipboards = computed(() => store.clipboards);
 // emit('modalAddLink')
 // }
 
+const removeAllCards = () => {
+    store.removeAllCards();
+    console.log('removeAllCards');
+};
 
 </script>
 
 <template>
 
-    <div id="clipboard" class="clipboard w-full flex flex-col gap-4 md:p-4 md:pl-0  bg-neutral-50 rounded-lg md:shadow-none md:w-full overflow-hidden" >
+    <div id="clipboard" class="clipboard w-full h-full flex flex-col gap-4 md:p-4 md:pl-0  bg-neutral-50 rounded-lg md:shadow-none md:w-full overflow-hidden" >
 
         <div class="clipboard_header flex justify-between items-center md:pl-4">
 
@@ -62,7 +66,7 @@ const clipboards = computed(() => store.clipboards);
 
         </div>
 
-            <IconBox archive-box-mini_icon text="Clear" />
+            <IconBox archive-box-mini_icon text="Clear" @click="removeAllCards"/>
 
 
             <!-- <div class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:cursor-pointer hover:bg-neutral-100 active:border-dc-400   group/icon transition-0-3s  ">

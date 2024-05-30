@@ -171,6 +171,10 @@ export const useClipboardsStore = defineStore('ClipboardsStore', {
             }
             console.log('removeCard im STORE!', id);
         },
+        removeAllCards() {
+          this.clipboards = [];
+          console.log('All cards removed from the store!');
+      },  
         addResult(result) {
             const clipboard = this.clipboards.find(clipboard => clipboard.id === this.activeCard);
             if (clipboard) {
