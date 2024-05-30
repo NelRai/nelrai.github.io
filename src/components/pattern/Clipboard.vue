@@ -30,12 +30,12 @@ const store = useClipboardsStore();
 const clipboards = computed(() => store.clipboards);
 
 
-const emit = defineEmits(["modalAddLink"]);
+// const emit = defineEmits(["modalAddLink"]);
 
-const onModalAddLink = () => {
+// const onModalAddLink = () => {
    
-emit('modalAddLink')
-}
+// emit('modalAddLink')
+// }
 
 
 </script>
@@ -92,9 +92,9 @@ emit('modalAddLink')
             <Card headline="Earth Virtualization Engines are the future of climate research" url />
             <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  /> -->
 
-            <Card 
+            <Card clipboard
             v-for="clipboard in clipboards" :key="clipboard.id" :id="clipboard.id" :headline="clipboard.headline" :fileUpload="clipboard.fileUpload" :linkedIn="clipboard.linkedIn" :url="clipboard.url" :image="clipboard.image" :content="clipboard.content" @activeProject="cardActive" :cardRed="store.activeCard === clipboard.id"
-            @click="store.cardActive(clipboard.id); console.log('activeCard:', store.activeCard)"
+            @click="store.clipboardActive(clipboard.id); console.log('activeCard:', store.activeCard)"
          />
 
         </div>

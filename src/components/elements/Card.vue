@@ -10,6 +10,8 @@ import cardWinkel from "../svg/card-winkel.vue";
 
 // @ts-ignore
 import { useProjectsStore } from '../../stores/ProjectsStore'; 
+import { useClipboardsStore } from '../../stores/ClipboardsStore'; 
+
 
 
 import { defineProps } from 'vue';
@@ -18,6 +20,7 @@ import ts from "typescript";
 // @ts-ignore
 
 useProjectsStore();
+useClipboardsStore();
 
 
 
@@ -33,7 +36,9 @@ const props = defineProps({
     projectContentActive: Boolean,
     cardRed: Boolean,
     anchorLinks: Array,
-    results: Array
+    results: Array,
+    clipboard: Boolean,
+    project: Boolean,
 })
 
 let activeIconBox = ref('iconBox1');
@@ -65,11 +70,20 @@ function iconBoxActive(id) {
 const image2 = ref("https://picsum.photos/id/237/536/354");
 
 
-const store = useProjectsStore();
+const storeProject = useProjectsStore();
 
-const removeCard = () => {
-    store.removeCard(props.id);
+const removeCardProject = () => {
+    storeProject.removeCard(props.id);
     console.log('removeCard', props.id);
+};
+
+
+
+const storeClipboard = useClipboardsStore();
+
+const removeCardClipboard = () => {
+    storeClipboard.removeCard(props.id);
+    console.log('removeCard CLIPBOARD', props.id);
 };
 
 
@@ -137,9 +151,16 @@ const removeCard = () => {
 
 
     <div class="result-close  opacity-0 group-hover/cardwrap:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
-            <button
+            <button v-if="project"
                 class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s "
-                @click="removeCard"
+                @click="removeCardProject"
+                >
+                <Trash  alt=""  class="w-6 h-6" />
+            </button>
+
+            <button v-if="clipboard"
+                class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s "
+                @click="removeCardClipboard"
                 >
                 <Trash  alt=""  class="w-6 h-6" />
             </button>

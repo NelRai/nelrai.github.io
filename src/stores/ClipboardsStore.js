@@ -5,7 +5,7 @@ import { defineStore } from 'pinia';
 
 let clipboards = ref([
     {
-        "id": "card1",
+        "id": "clipboard1",
         "headline": "OpenAI_App-Store_AI-models.pdf",
         "fileUpload": true,
         "linkedIn": false,
@@ -21,7 +21,7 @@ let clipboards = ref([
         ]
       },
       {
-        "id": "card2",
+        "id": "clipboard2",
         "headline": "Apple already uses Apple GPT internally Card02",
         "fileUpload": false,
         "linkedIn": true,
@@ -46,7 +46,7 @@ let clipboards = ref([
         ]
       },
       {
-        "id": "card3",
+        "id": "clipboard3",
         "headline": "Google launches generative AI search",
         "fileUpload": false,
         "linkedIn": false,
@@ -56,7 +56,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card4",
+        "id": "clipboard4",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
         "image": false,
@@ -64,13 +64,13 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card5",
+        "id": "clipboard5",
         "headline": "Apple already uses Apple GPT internally",
         "timeText": "17 hours ago",
         "image": false
       },
       {
-        "id": "card6",
+        "id": "clipboard6",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
         "image": false,
@@ -78,7 +78,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card7",
+        "id": "clipboard7",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
         "image": false,
@@ -86,7 +86,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card8",
+        "id": "clipboard8",
         "headline": "Apple verwendet Apple GPT bereits intern",
         "timeText": "16 hours ago",
         "image": false,
@@ -94,7 +94,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card9",
+        "id": "clipboard9",
         "headline": "Apple already uses Apple GPT internally ",
         "timeText": "17 hours ago",
         "image": false,
@@ -102,7 +102,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card10",
+        "id": "clipboard10",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
         "image": false,
@@ -110,7 +110,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card11",
+        "id": "clipboard11",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
         "image": false,
@@ -118,7 +118,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card12",
+        "id": "clipboard12",
         "headline": "Apple already uses Apple GPT internally",
         "timeText": "17 hours ago",
         "image": false,
@@ -126,7 +126,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card13",
+        "id": "clipboard13",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
         "image": false,
@@ -134,7 +134,7 @@ let clipboards = ref([
         ] 
       },
       {
-        "id": "card14",
+        "id": "clipboard14",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
         "image": false,
@@ -155,9 +155,9 @@ export const useClipboardsStore = defineStore('ClipboardsStore', {
     
     },
     actions: {  
-        cardActive(id) {
+        clipboardActive(id) {
             this.activeCard = id;
-            console.log('cardActive IM STORE?', id);
+            console.log('clipboardActive IM STORE?', id);
         },
         
         addCard() {
