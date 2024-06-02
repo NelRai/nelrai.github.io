@@ -12,6 +12,26 @@ import Ripple from 'primevue/ripple';
 import ConfirmPopup from 'primevue/confirmpopup';
 import ConfirmationService from 'primevue/confirmationservice';
 
+//https://vue-i18n.intlify.dev/guide/installation.html
+import { createI18n } from 'vue-i18n'
+const i18n = createI18n({
+    locale: 'ja',
+    fallbackLocale: 'en',
+    messages: {
+      en: {
+        message: {
+          hello: 'hello world'
+        }
+      },
+      ja: {
+        message: {
+          hello: 'こんにちは、世界'
+        }
+      }
+    }
+  })
+  
+
 
 const pinia = createPinia()
 
@@ -23,13 +43,12 @@ app.use(
     ripple: true,
     unstyled: true,
     pt: Lara                            //apply preset        
-    }, 
-    pinia
+    }
     
 );
-app.use(pinia)
-app.use(ConfirmationService)
-
+app.use(pinia);
+app.use(ConfirmationService);
+app.use(i18n);
 
 app.directive('tooltip', Tooltip);
 app.directive('ripple', Ripple);

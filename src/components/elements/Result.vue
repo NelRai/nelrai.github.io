@@ -137,7 +137,7 @@ const handleInput = (resultID: any, newInfoBox: any) => {
 const text = ref(props.text); // replace this with your actual text property
 
 const wordCount = computed(() => {
-  return text.value.split(/\s+/).filter(function(word) {
+  return (text.value ?? '').split(/\s+/).filter(function(word) {
     return word.length > 0;
   }).length;
 });

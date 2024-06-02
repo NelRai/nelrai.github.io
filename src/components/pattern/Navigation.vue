@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 
+
 </script>
 
 <template>
@@ -8,7 +9,9 @@
     <ul
       class="flex  h-12 justify-center items-center  bg-transparent   w-auto text-neutral-700 border border-neutral-200 rounded-lg  text-lg  divide-x divide-neutral-200 ">
       <li class="h-[46px] "  v-ripple>
-        <a href="#home" class="blinker flex items-center px-8 h-full hover:border-neutral-200 rounded-s-lg hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">Explore</a>
+        <a href="#home" class="blinker flex items-center px-8 h-full hover:border-neutral-200 rounded-s-lg hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400">
+          Explore {{ $t('message.hello') }}
+        </a>
       </li>
       <li class="navigation-active  "  v-ripple>
         <a href="#projects"class="blinker flex items-center px-8 h-[46px]   hover:border-neutral-200 hover:bg-neutral-100 hover:text-neutral-950 active:border-dc-400 ">Workspace</a>
