@@ -10,7 +10,6 @@ import archiveBoxMini from '../svg/archive-box-mini.vue'
 import Modal from '../pattern/Modal.vue';
 
 
-
 //ConfirmPopup for clearing the clipboard https://primevue.org/confirmpopup/
 //CSS fixed employed to keep the popup in view
 import ConfirmPopup from 'primevue/confirmpopup';
@@ -43,12 +42,7 @@ let modal3barsVisible = ref(false);
 let modalLinkVisible = ref(false);
 let modalFileVisible = ref(false);
 
-// let cards = ref([
-//     { headline: 'OpenAI_App-Store_AI-models.pdf', type: 'file-upload', imagePath: '/path/to/image1.png' },
-//     { headline: 'Apple already uses Apple GPT internally', type: 'linked-in', imagePath: '/path/to/image2.png' },
-//     { headline: 'Earth Virtualization Engines are the future of climate research', type: 'url', imagePath: '/path/to/image3.png' },
-//     // Add more card data here...
-// ]);
+
 import { useClipboardsStore } from '../../stores/ClipboardsStore'; 
 
 
@@ -60,14 +54,9 @@ const clipboards = computed(() => store.clipboards);
 
 
 // const emit = defineEmits(["modalAddLink"]);
-
-// const onModalAddLink = () => {
-   
+// const onModalAddLink = () => {   
 // emit('modalAddLink')
 // }
-
-
-
 </script>
 
 <template>
@@ -106,33 +95,9 @@ const clipboards = computed(() => store.clipboards);
                 </template>
             </ConfirmPopup>
 
-
-            <!-- <div class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:cursor-pointer hover:bg-neutral-100 active:border-dc-400   group/icon transition-0-3s  ">
-                <div class="flex gap-1 justify-center items-center">
-                    <archiveBoxMini  alt=""  class="w-5 h-5" /><span>Clear</span>
-                </div>
-            </div> -->
-
         </div>
         
         <div id="asdf"  class="w-full  h-full flex flex-col md:pl-4 lg:pr-4 pb-8  gap-4 lg:overflow-y-scroll">
-
-            <!-- <Card v-for="card in cards" :key="card.headline" :headline="card.headline" :type="card.type" :image-path="card.imagePath" /> -->
-        
-            <!-- <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
-            <Card headline="Apple already uses Apple GPT internally" linked-in  />
-            <Card headline="Earth Virtualization Engines are the future of climate research" url image />
-            <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  />
-        
-            <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
-            <Card headline="Apple already uses Apple GPT internally" linked-in  />
-            <Card headline="Earth Virtualization Engines are the future of climate research" url />
-            <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url image  />
-
-            <Card headline="OpenAI_App-Store_AI-models.pdf" file-upload  />
-            <Card headline="Apple already uses Apple GPT internally" linked-in  />
-            <Card headline="Earth Virtualization Engines are the future of climate research" url />
-            <Card headline="Google will KI in Europa mit 25 Millionen Euro fördern" url  /> -->
 
             <Card clipboard
             v-for="clipboard in clipboards" :key="clipboard.id" :id="clipboard.id" :headline="clipboard.headline" :fileUpload="clipboard.fileUpload" :linkedIn="clipboard.linkedIn" :url="clipboard.url" :image="clipboard.image" :content="clipboard.content" @activeProject="cardActive" :cardRed="store.activeCard === clipboard.id"
@@ -140,7 +105,6 @@ const clipboards = computed(() => store.clipboards);
          />
 
         </div>
-
 
     </div>
 

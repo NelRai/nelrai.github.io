@@ -2,26 +2,10 @@
 import Icon from '../buttons/buttonRound40.vue';
 import Animation from '../Animation.vue';
 
-
-// const show = "hello"
-// const emit = defineEmits({
-//   option1: Boolean
-// })
-
-// function first() {
-//   console.log(option1);
-//   option1 = !option1;
-//   console.log(option1);
-// }
-
-// import { defineEmits } from 'vue'
-// defineProps<{ clipboardVisible: Boolean }>()
 defineProps({
   clipboardVisible: Boolean,
   projectsVisible: Boolean
 })
-
-// import { option1 } from "/App.vue";  
 
 const emit = defineEmits(["showClipboardBTN", "showProjectsBTN"]);
 

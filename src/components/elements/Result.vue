@@ -37,39 +37,8 @@ const toggle = (event) => {
 }
 
 import Quill from 'quill';
-// // Or if you only need the core build
-// // import Quill from 'quill/core';
-
-// // const quill = new Quill('#editor');
 const showResult = ref(true);
 console.log(showResult.value);
-
-// function resultClosed() {
-//   const elements = document.querySelectorAll(".result_header, .result_item");
-
-//   for (let i = 0; i < elements.length; i++) {
-//     elements[i].addEventListener("click", function (event) {
-//       if (showResult.value === true) {
-//         // This function will be called when the element is clicked
-//         console.log("Element clicked:", event.target);
-//         showResult.value = false;
-//         console.log(showResult.value);
-//       } else {
-//         console.log("Number is not greater than 10");
-//       }
-//     });
-//   }
-// }
-
-//  onMounted(resultClosed);
-
-// function handleClick() {
-//     if (showResult.value) {
-//         console.log('Button clicked');
-//         showResult.value = false;
-//         // Add your desired action here
-//     }
-// }
 
 
 
@@ -85,14 +54,6 @@ onMounted(() => {
   });
 });
 
-// let items =
-//     [
-//         'item 1',
-//         'item 1'
-//         ]
-// ;
-
-// function addItem() {`
 
 import TieredMenu from 'primevue/tieredmenu';
 import Button from 'primevue/button';
@@ -201,15 +162,6 @@ const handleInput = (resultID: any, newInfoBox: any) => {
         <div class="result_header-icons flex gap-2 z-20">
           <Icon cubeTransparent_icon v-tooltip.top="'AI Model'" />
           <Icon ellipsisHorizontal_icon class="hidden md:flex" />
-          <!-- 
-                <button
-                    class="  w-10 h-10 md:w-8 md:h-8  items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40">
-                    <img src="../assets/cube-transparent.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button>
-                <button
-                    class="  w-10 h-10 md:w-8 md:h-8  items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200  z-40 hidden md:flex">
-                    <img src="../assets/ellipsis-horizontal.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button> -->
         </div>
 
         <Animation />
@@ -258,22 +210,6 @@ const handleInput = (resultID: any, newInfoBox: any) => {
           
           </div>
 
-
-
-
-          <!-- <button
-                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
-                    <img src="../assets/chevron-left.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button>
-                <button
-                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
-                    <img src="../assets/chat-bubble-left-right.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button>
-
-                <button
-                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 ">
-                    <img src="../assets/ellipsis-horizontal.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button> -->
         </div>
 
         <div
@@ -323,12 +259,8 @@ const handleInput = (resultID: any, newInfoBox: any) => {
 
         <div class="result_item-copy absolute top-3 right-3 opacity-0 group-hover/closeBTN:opacity-100 transition-0-3s">
           <Icon clipboardDocument_icon />
-
-          <!-- <button
-                    class="sidebar-close-btn  w-10 h-10 md:w-8 md:h-8 absolute -top-1 -right-1  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 flex z-40">
-                    <img src="../assets/clipboard-document.svg" alt=""  class="w-5 h-5 md:w-4 md:h-4" />
-                </button> -->
         </div>
+        
       </div>
 
       <div class="result-close absolute -top-1 -right-1 opacity-0 group-hover/closeBTN:opacity-100 group/icon transition-0-3s z-50">

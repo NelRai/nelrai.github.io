@@ -53,8 +53,7 @@ defineProps({
   <button
     class="icon-btn  w-10 h-10 items-center justify-center rounded-full  bg-neutral-50 border border-neutral-200 flex z-40 hover:border-neutral-200 hover:bg-neutral-100 active:border-dc-400 group/icon transition-0-3s">
     <!-- <img :src="image"  alt="" class="w-5 h-5 md:w-4 md:h-4" /> -->
-
-
+    
     <adjustmentHorizontal  v-if="adjustmentHorizontal_icon" class="svgIcon " />
     <archiveBoxMini  v-if="archiveBoxMini_icon" class="svgIcon " />
     <arrowUpTray  v-if="arrowUpTray_icon" class="svgIcon " />
@@ -75,11 +74,6 @@ defineProps({
     <Squares2x2  v-if="Squares2x2_icon" class="svgIcon " />
     <Trash  v-if="Trash_icon" class="svgIcon " />
     <xMark  v-if="xMark_icon" class="svgIcon " />
-
-
-    <!-- <arrowUpTray  v-if="svgArrowUpTray_show" class="svgIcon " /> -->
-
-
 
   </button>
 

@@ -368,7 +368,6 @@ onMounted(() => {
 
       <div class="modal-addLink-body  p-8 flex flex-col gap-4 bg-neutral-50  border-neutral-200 border-x border-b rounded-b-xl   ">
         <input class="p-4 w-full border-neutral-200 border rounded-lg" type="text" placeholder="Enter URL" />
-        <!-- <button>Add</button> -->
 
         <div class="tags">
           <h3 class="text-neutral-500 text-xs mb-1">Mode</h3>
@@ -382,8 +381,6 @@ onMounted(() => {
         </div>
 
       </div>
-
- 
 
     </div>
 
