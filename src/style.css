@@ -397,3 +397,43 @@ height: 105%;
   transition: all 0.3s;
 
 }
+
+
+.confirmPopup:after, .confirmPopup:before {
+  bottom: 100% !important;
+  left: calc(var(--overlayArrowLeft, 0) + 1.25rem) !important;
+  content: " " !important;
+  height: 0 !important;
+  width: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+}
+
+.confirmPopup:after {
+  border-width: 10px !important;
+  margin-left: -10px !important;
+}
+
+.confirmPopup:after {
+  border-style: solid !important;
+  border-color: rgba(255, 255, 255, 0) !important;
+  border-bottom-color: #ffffff !important;
+}
+
+.confirmPopup:before {
+  border-width: 10px !important;
+  margin-left: -10px !important;
+  top: -1.25rem !important;
+  filter: blur(0px);
+}
+
+.confirmPopup:before {
+  border-style: solid !important;
+  border-color: rgba(226, 232, 240, 0) !important;
+  border-bottom-color: #DFE2EC !important;
+}
+
+.fixedImportant {
+  position: fixed !important;
+  display: block !important;
+}

@@ -9,6 +9,9 @@ import PrimeVue from 'primevue/config';
 import Lara from './presets/lara';  //import preset
 import Tooltip from 'primevue/tooltip';
 import Ripple from 'primevue/ripple';
+import ConfirmPopup from 'primevue/confirmpopup';
+import ConfirmationService from 'primevue/confirmationservice';
+
 
 const pinia = createPinia()
 
@@ -22,8 +25,10 @@ app.use(
     pt: Lara                            //apply preset        
     }, 
     pinia
+    
 );
 app.use(pinia)
+app.use(ConfirmationService)
 
 
 app.directive('tooltip', Tooltip);

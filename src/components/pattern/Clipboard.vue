@@ -10,6 +10,35 @@ import archiveBoxMini from '../svg/archive-box-mini.vue'
 import Modal from '../pattern/Modal.vue';
 
 
+
+//ConfirmPopup for clearing the clipboard https://primevue.org/confirmpopup/
+//CSS fixed employed to keep the popup in view
+import ConfirmPopup from 'primevue/confirmpopup';
+import { useConfirm } from "primevue/useconfirm";
+const confirm = useConfirm();
+
+const isFixed = ref(false);
+
+const requireConfirmation = (event) => {
+    confirm.require({
+        target: event.currentTarget,
+        group: 'headless',
+        message: 'Wollen sie das Clipboard wirklich leeren?',
+        onShow : () => { isFixed.value = true 
+        },
+        accept: () => {
+        },
+        reject: () => { 
+        }
+    });
+}
+
+const removeAllCards = () => {
+    store.removeAllCards();
+    console.log('removeAllCards');
+};
+
+
 let modal3barsVisible = ref(false);
 let modalLinkVisible = ref(false);
 let modalFileVisible = ref(false);
@@ -37,10 +66,7 @@ const clipboards = computed(() => store.clipboards);
 // emit('modalAddLink')
 // }
 
-const removeAllCards = () => {
-    store.removeAllCards();
-    console.log('removeAllCards');
-};
+
 
 </script>
 
@@ -66,7 +92,19 @@ const removeAllCards = () => {
 
         </div>
 
-            <IconBox archive-box-mini_icon text="Clear" @click="removeAllCards"/>
+            <IconBox archive-box-mini_icon text="Clear" @click="requireConfirmation($event)" />
+
+            <ConfirmPopup group="headless" class="confirmPopup " :class="{ fixedImportant : isFixed }">
+                <template #container="{ message, acceptCallback, rejectCallback }">
+                    <div class=" border-round p-3">
+                        <span class="text-xs">{{ message.message }}</span>
+                        <div class="flex align-items-center gap-2 mt-3">
+                            <IconBox  @click="rejectCallback" text="Abbruch"></IconBox>
+                            <IconBox  outlined @click="(event) => { acceptCallback(event); removeAllCards(event) }"  text="Leeren" class="!bg-dc-600 text-neutral-50 hover:!bg-dc-700 hover:text-neutral-50"></IconBox>
+                        </div>
+                    </div>
+                </template>
+            </ConfirmPopup>
 
 
             <!-- <div class="card-tag px-2 py-[6px] bg-neutral-50  border border-solid border-neutral-200 rounded-lg text-xs font-normal z-20 hover:cursor-pointer hover:bg-neutral-100 active:border-dc-400   group/icon transition-0-3s  ">

@@ -329,7 +329,7 @@ onMounted(() => {
       <!-- <Navigation />  -->
 
       <div class="px-4 my-4 w-full h-full" v-show="option1">
-        <Clipboard   @modalAddLink="modalAddLinkFunction" />
+        <!-- <Clipboard   @modalAddLink="modalAddLinkFunction" /> -->
       </div>
       <div class="px-4 my-4 w-full h-full" v-show="visibleProjects">
         <Projects />
