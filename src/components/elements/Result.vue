@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from "vue";
+import { ref, onMounted, nextTick, computed } from "vue";
 
 import Animation from "../Animation.vue";
 import Icon from "../buttons/buttonRound40.vue";
@@ -132,6 +132,16 @@ const handleInput = (resultID: any, newInfoBox: any) => {
     store.updateInfoBox(resultID, newInfoBox);
 };
 
+
+// Word Count Test
+const text = ref(props.text); // replace this with your actual text property
+
+const wordCount = computed(() => {
+  return text.value.split(/\s+/).filter(function(word) {
+    return word.length > 0;
+  }).length;
+});
+
 </script>
 
 <template>
@@ -181,7 +191,8 @@ const handleInput = (resultID: any, newInfoBox: any) => {
             <p class="col-span-3 pb-2 border-b border-neutral-500">GPT-4 128K (Azure)</p>
             <p>Characters</p> <p>2049</p>
             <p>Characters excluding spaces</p> <p>1968</p>
-            <p>Words</p> <p>153</p>
+            <p>Words</p> <p>{{ wordCount }}</p>
+
             </div>
           </OverlayPanel>
 
