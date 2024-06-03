@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick, computed } from "vue";
+import { useI18n } from 'vue-i18n';
+
 
 import Animation from "../Animation.vue";
 import Icon from "../buttons/buttonRound40.vue";
@@ -60,30 +62,33 @@ import Button from 'primevue/button';
 import Square2Stack from "../svg/square-2-stack.vue";
 import ArrowDownTrayMini from "../svg/arrow-down-tray-mini.vue";
 
+const { t } = useI18n();
+
+
 const menu = ref(null);
 
 const menuItems = ref([
 
-  {
-    label: 'Copy to Clipboard',
+  { 
+    label: t('workspace.ActionMenu.CopyToClipboard'),
     component: clipboardDocumentMini,
   },
   {
         separator: true
     },
   {
-    label: 'Post Processing',
+    label: t('workspace.ActionMenu.PostProcessing'),
     component: Sparkles,
   },
   {
-    label: 'Compare',
+    label: t('workspace.ActionMenu.Compare'),
     component: Square2Stack,
   },
   {
         separator: true
     },
   {
-    label: 'Save as',
+    label: t('workspace.ActionMenu.SaveAs'),
     component: ArrowDownTrayMini,
     hasSubmenu: true,
     items: [
@@ -170,7 +175,7 @@ const wordCount = computed(() => {
         </div>
 
         <div class="result_header-icons flex gap-2 z-20">
-          <Icon cubeTransparent_icon v-tooltip.top="'AI Model'" />
+          <Icon cubeTransparent_icon v-tooltip.top="$t('tooltips.AiModel')" />
           <Icon ellipsisHorizontal_icon class="hidden md:flex" />
         </div>
 
@@ -200,7 +205,7 @@ const wordCount = computed(() => {
 
           <div class="flex flex-col gap-2">
           
-            <Icon chatBubbleLeftRight_icon v-tooltip.top="'Chat'" />
+            <Icon chatBubbleLeftRight_icon v-tooltip.top="$t('tooltips.Chat')" />
            <!-- @vue-ignore -->
             <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
 

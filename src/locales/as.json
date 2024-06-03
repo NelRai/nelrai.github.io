@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "explore": "Explore",
+    "workspace": "Workspace",
+    "storage": "Storage",
+    "publish": "Publish"
+  },
+  "project": {
+    "Projects": "Projects",
+    "NewProject": "New Project",
+    "HoursAgo": "hours ago"
+  },
+  "clipboard": {
+    "Clipboard": "Clipboard",
+    "Clear": {
+      "title": "Clear",
+      "message": "Are you sure you want to clear the clipboard?",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "FileUpload": "File Upload",
+    "LinkedInPost": "LinkedIn Post",
+    "URL": "URL"
+  },
+  "tooltips": {
+    "WorkSpaceSettings": "Workspace Settings",
+    "CreateText": "Create Text",
+    "ImportURLs": "Import URLs",
+    "UploadFiles": "Upload Files",
+    "Launcher": "Launcher",
+    "search": "Search",
+    "AiModel": "AI Model",
+    "Chat": "Chat"
+  },
+  "workspace": {
+    "NewContent": "New Content",
+    "ActionMenu": {
+      "CopyToClipboard": "Copy to Clipboard",
+      "PostProcessing": "Post Processing",
+      "Compare": "Compare",
+      "SaveAs": "Save As"
+    }
+  }
+}

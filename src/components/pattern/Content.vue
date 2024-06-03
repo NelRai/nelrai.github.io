@@ -89,7 +89,7 @@ function removeContents(id: string) {
                 </div>
             </div> -->
 
-            <IconBox  @click="addResult" plusCircleMini_icon text="New Content" />
+            <IconBox  @click="addResult" plusCircleMini_icon :text="$t('workspace.NewContent')"  />
 
 
 

@@ -30,18 +30,18 @@ let activeCard = ref(null);
 
                 <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
                     <bookmarkSquare alt="" class="w-6 h-6 "  />
-                    <h4 class="text-lg blinker">Projects</h4>
+                    <h4 class="text-lg blinker">{{$t('project.Projects')}}</h4>
                 </div>
 
                 <div class="icons flex md:flex-col gap-2 md:gap-4" id="search">
                     <span class="  z-index-999 "   >
-                        <Icon magnifyingGlass_icon v-tooltip.top="'Search'"   /> 
+                        <Icon magnifyingGlass_icon v-tooltip.top="$t('tooltips.search')" /> 
                     </span>  
                 </div>
 
             </div>
 
-            <IconBox plus-circle-mini_icon text="New Project" 
+            <IconBox plus-circle-mini_icon :text="$t('project.NewProject')" 
                 @click="store.addCard(); console.log('addCard:', store.addCard)"       
             />
         </div>
@@ -50,7 +50,7 @@ let activeCard = ref(null);
 
 
         <Card project
-            v-for="project in projects" :key="project.id" :id="project.id" :headline="project.headline" :time-text="project.timeText" :image="project.image" :results="project.results" @activeProject="cardActive" :cardRed="store.activeCard === project.id"
+            v-for="project in projects" :key="project.id" :id="project.id" :headline="project.headline" :time-text=" project.timeText + ' ' + $t('project.HoursAgo')" :image="project.image" :results="project.results" @activeProject="cardActive" :cardRed="store.activeCard === project.id"
             @click="store.cardActive(project.id); console.log('activeCard:', store.activeCard)"
          />
       

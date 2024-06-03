@@ -69,27 +69,27 @@ const clipboards = computed(() => store.clipboards);
 
             <div class="clipboard_headline hidden md:flex justify-center items-center gap-1"> 
                 <clipboardDocument  alt="" class="w-6 h-6 " />
-                <h4 class="text-lg blinker">Clipboard</h4>
+                <h4 class="text-lg blinker">{{$t('clipboard.Clipboard')}}</h4>
 
             </div>
 
             <div class="icons flex  gap-2 2xl:gap-2">
-                <Icon bars3_icon @click="modal3barsVisible = true"  v-tooltip.top="'Create Text'" />
-                <Icon linkSVG_icon @click="modalLinkVisible = true"  v-tooltip.top="'Import URLs'" />
-                <Icon arrowUpTray_icon  @click="modalFileVisible = true"  v-tooltip.top="'Upload Files'" /> 
+                <Icon bars3_icon @click="modal3barsVisible = true"  v-tooltip.top="$t('tooltips.CreateText')" />
+                <Icon linkSVG_icon @click="modalLinkVisible = true"  v-tooltip.top="$t('tooltips.ImportURLs')" />
+                <Icon arrowUpTray_icon  @click="modalFileVisible = true"  v-tooltip.top="$t('tooltips.UploadFiles')" /> 
             </div>
 
         </div>
 
-            <IconBox archive-box-mini_icon text="Clear" @click="requireConfirmation($event)" />
+            <IconBox archive-box-mini_icon :text="$t('clipboard.Clear.title')" @click="requireConfirmation($event)" />
 
             <ConfirmPopup group="headless" class="confirmPopup " :class="{ fixedImportant : isFixed }">
                 <template #container="{ message, acceptCallback, rejectCallback }">
                     <div class=" border-round p-3">
-                        <span class="text-xs">{{ message.message }}</span>
+                        <span class="text-xs">{{ $t('clipboard.Clear.message') }}</span>
                         <div class="flex align-items-center gap-2 mt-3">
-                            <IconBox  @click="rejectCallback" text="Abbruch"></IconBox>
-                            <IconBox  outlined @click="(event) => { acceptCallback(event); removeAllCards(event) }"  text="Leeren" class="!bg-dc-600 text-neutral-50 hover:!bg-dc-700 hover:text-neutral-50"></IconBox>
+                            <IconBox  @click="rejectCallback" :text="$t('clipboard.Clear.cancel')"></IconBox>
+                            <IconBox  outlined @click="(event) => { acceptCallback(event); removeAllCards(event) }"  :text="$t('clipboard.Clear.delete')" class="!bg-dc-600 text-neutral-50 hover:!bg-dc-700 hover:text-neutral-50"></IconBox>
                         </div>
                     </div>
                 </template>

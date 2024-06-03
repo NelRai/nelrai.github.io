@@ -1,0 +1,39 @@
+{
+  "nav": {
+    "explore": "Erkunden",
+    "workspace": "Arbeitsbereich",
+    "storage": "Speicher",
+    "publish": "Veröffentlichen"
+  },
+  "project": {
+    "Projects": "Projekte",
+    "NewProject": "Neues Projekt",
+    "HoursAgo": "Stunden her"
+  },
+  "clipboard": {
+    "Clipboard": "Zwischenablage",
+    "Clear": "Löschen",
+    "FileUpload": "Datei hochladen",
+    "LinkedInPost": "LinkedIn Beitrag",
+    "URL": "URL"
+  },
+  "tooltips": {
+    "WorkSpaceSettings": "Arbeitsbereichseinstellungen",
+    "CreateText": "Text erstellen",
+    "ImportURLs": "URLs importieren",
+    "UploadFiles": "Dateien hochladen",
+    "Launcher": "Starter",
+    "Search": "Suche",
+    "AiModel": "KI-Modell",
+    "Chat": "Chat"
+  },
+  "workspace": {
+    "NewContent": "Neuer Inhalt",
+    "ActionMenu": {
+      "CopyToClipboard": "In die Zwischenablage kopieren",
+      "PostProcessing": "Nachbearbeitung",
+      "Compare": "Vergleichen",
+      "SaveAs": "Speichern unter"
+    }
+  }
+}

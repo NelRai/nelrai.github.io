@@ -7,12 +7,12 @@ let projects = ref([
     {
         "id": "card1",
         "headline": "Apple verwendet Apple GPT bereits intern JS",
-        "timeText": "16 hours ago",
+        "timeText": "16",
         "image": false,
         "anchorLinks": ["AnchorLink01", "AnchorLink02"],
         "results": [
           {
-            "id": "result1",
+            "id": "card1.result1",
             "headline": "Apple verwendet Apple GPT bereits intern RESULTS",
             "infoBox": "Lorem - LinkedIn JS",
             "text": "Text Beispiel JS RESULT",
@@ -58,7 +58,7 @@ let projects = ref([
       {
         "id": "card2",
         "headline": "Apple already uses Apple GPT internally Card02",
-        "timeText": "17 hours ago",
+        "timeText": "17",
         "image": false,
         "anchorLinks": ["AnchorLink01", "AnchorLink02"],
         "results": [
@@ -97,7 +97,7 @@ let projects = ref([
       {
         "id": "card5",
         "headline": "Apple already uses Apple GPT internally",
-        "timeText": "17 hours ago",
+        "timeText": "17",
         "image": false
       },
       {
@@ -119,7 +119,7 @@ let projects = ref([
       {
         "id": "card8",
         "headline": "Apple verwendet Apple GPT bereits intern",
-        "timeText": "16 hours ago",
+        "timeText": "16",
         "image": false,
         "results": [
         ] 
@@ -127,7 +127,7 @@ let projects = ref([
       {
         "id": "card9",
         "headline": "Apple already uses Apple GPT internally ",
-        "timeText": "17 hours ago",
+        "timeText": "17",
         "image": false,
         "results": [
         ] 
@@ -151,7 +151,7 @@ let projects = ref([
       {
         "id": "card12",
         "headline": "Apple already uses Apple GPT internally",
-        "timeText": "17 hours ago",
+        "timeText": "17",
         "image": false,
         "results": [
         ] 

@@ -13,21 +13,18 @@ import ConfirmPopup from 'primevue/confirmpopup';
 import ConfirmationService from 'primevue/confirmationservice';
 
 //https://vue-i18n.intlify.dev/guide/installation.html
-import { createI18n } from 'vue-i18n'
+import { createI18n } from 'vue-i18n';
+import de from "./locales/de.json";
+import en from "./locales/as.json";
+
 const i18n = createI18n({
-    locale: 'ja',
-    fallbackLocale: 'en',
+    locale: 'en',
+    fallbackLocale: 'de',
+    globalInjection: true,
+    legacy: false,
     messages: {
-      en: {
-        message: {
-          hello: 'hello world'
-        }
-      },
-      ja: {
-        message: {
-          hello: 'こんにちは、世界'
-        }
-      }
+      en,
+      de
     }
   })
   

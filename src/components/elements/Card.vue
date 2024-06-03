@@ -131,9 +131,9 @@ const removeCardClipboard = () => {
 
         <div class="card-tag p-2 bg-neutral-50  border border-solid border-neutral-200 group-hover/card:border-neutral-300 group-hover/card:bg-neutral-100  rounded-lg  text-xs font-normal z-10  transition-0-3s " v-if="fileUpload || linkedIn || url">
 
-            <div class="flex gap-1 justify-center items-center z-10" v-if="fileUpload"> <arrowUpTray class="w-4 h-4"  /> <span>File Upload</span></div>
-            <div class="flex gap-1 justify-center items-center z-10" v-if="linkedIn"><documentText class="w-4 h-4" /><span>LinkedIn Post</span></div>
-            <div class="flex gap-1 justify-center items-center z-10" v-if="url"><linkSVG class="w-4 h-4" /><span>URL</span></div>
+            <div class="flex gap-1 justify-center items-center z-10" v-if="fileUpload"> <arrowUpTray class="w-4 h-4"  /> <span>{{$t('clipboard.FileUpload')}}</span></div>
+            <div class="flex gap-1 justify-center items-center z-10" v-if="linkedIn"><documentText class="w-4 h-4" /><span>{{$t('clipboard.LinkedInPost')}}</span></div>
+            <div class="flex gap-1 justify-center items-center z-10" v-if="url"><linkSVG class="w-4 h-4" /><span>{{$t('clipboard.URL')}}</span></div>
 
         </div>
 
