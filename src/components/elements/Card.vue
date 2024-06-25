@@ -7,6 +7,7 @@ import linkSVG from '../svg/link.vue'
 import Trash from '../svg/trash.vue'
 import IconBox from '../buttons/button32.vue';
 import cardWinkel from "../svg/card-winkel.vue";
+import ClipboardModal from "../pattern/ClipboardModal.vue";
 
 // @ts-ignore
 import { useProjectsStore } from '../../stores/ProjectsStore'; 
@@ -28,6 +29,7 @@ useClipboardsStore();
 const props = defineProps({
     id: String,
     headline: String,
+    content: String,
     fileUpload: Boolean,
     linkedIn: Boolean,
     url: Boolean,
@@ -42,14 +44,26 @@ const props = defineProps({
     project: Boolean,
 })
 
+let ClipboardModalVisible = ref(false);
+
 let activeIconBox = ref('iconBox1');
 
 const emit = defineEmits(["activeProject", "cardRemove"]);
 
 const cardClicked = () => {
-   
+
+    console.log('cardClicked', props.clipboard, props.project);
+
+    if (props.clipboard === true) {
+        ClipboardModalVisible.value = true;
+    } else {
+    
+    }
+    
 emit('activeProject', props.id)
 }
+
+
 
 const cardRemove = () => {
    
@@ -88,6 +102,7 @@ const removeCardClipboard = () => {
 };
 
 
+
 </script>
 
 <template>
@@ -102,7 +117,7 @@ const removeCardClipboard = () => {
     >
 
         <div class="card-headline text-base font-normal z-10 pr-[30%]   ">
-           <h4 class="text-base blinker">{{ headline }}</h4>
+           <h4 class="text-base blinker">{{ headline }} </h4>
         </div> 
 
         <div class="project_content flex flex-col gap-2 " v-if="cardRed">
@@ -151,7 +166,7 @@ const removeCardClipboard = () => {
 
 
 
-    <div class="result-close  opacity-0 group-hover/cardwrap:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
+         <div class="result-close  opacity-0 group-hover/cardwrap:opacity-100 group/icon absolute -bottom-2 -right-2 transition-0-3s ">
             <button v-if="project"
                 class="sidebar-close-btn  w-10 h-10  items-center justify-center rounded-full bg-neutral-50 border border-neutral-200 hover:border-dc-100 hover:bg-neutral-100 flex z-40 transition-0-3s "
                 @click="removeCardProject"
@@ -166,7 +181,19 @@ const removeCardClipboard = () => {
                 <Trash  alt=""  class="w-6 h-6" />
             </button>
         </div>
-
+        
+        <Teleport to="body">
+            <ClipboardModal 
+            v-if="ClipboardModalVisible" class="" @close="ClipboardModalVisible = false" 
+            newText
+            datasetButton
+            :headline=props.headline
+            :content=props.content
+            :fileUpload=props.fileUpload
+            :linkedIn=props.linkedIn
+            :url=props.url
+            />
+        </Teleport>
 
     </div>
 </template>

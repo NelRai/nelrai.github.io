@@ -10,15 +10,18 @@ let clipboards = ref([
         "fileUpload": true,
         "linkedIn": false,
         "url": false,
-        "iconContent": "fileUpload", 
         "image": false,
-        "content": [
-          {
-            "id": "result1",
-            "content": "Apple verwendet Apple GPT bereits intern RESULTS",
-            "contentIcon": "Lorem - LinkedIn JS"
-          }
-        ]
+        "content": `💡 Google launches "AI Opportunity Initiative for Europe" to boost AI knowledge in the European workforce with a €25 million investment. 🌍 Empowering European workers<br> Google's initiative allocates €10 million of the total €25 million from Google.org to equip workers with essential skills to prevent them from being "left behind." In collaboration with the Centre for Public Impact, Google is specifically seeking applications from social enterprises, non-profit organizations, and "vulnerable" communities.\n\n
+        🚀 Google for Start-ups Growth Academies\n\n The initiative includes a new series of "Google for Start-ups Growth Academies" across Europe, the Middle East, and Africa.
+These academies focus on start-ups using AI to address major societal challenges in health, education, and cybersecurity.
+Google launches "Growth Academy: AI for Health," now accepting applications.
+
+🔚 Investing in Europe's AI future
+Google's "AI Opportunity Initiative for Europe" aims to strengthen the European workforce's AI knowledge and foster innovation. While benefiting from Google's resources, it's essential to remember the value of networking and seeking knowledge from various sources. The future is AI, and Europe is getting ready.
+
+More: [URL]
+
+🔔 Follow me for more updates: https://www.linkedin.com/in/benjamin-danneberg/'`
       },
       {
         "id": "clipboard2",
