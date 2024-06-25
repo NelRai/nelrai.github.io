@@ -5,7 +5,7 @@ import selectButton24 from '../buttons/button24.vue';
 import svgLink from '../svg/link.vue';
 import arrowUpTray from '../svg/arrow-up-tray.vue'
 import arrowDownTray from '../svg/arrow-down-tray.vue'
-import Icon from '../buttons/button40.vue';
+import Icon from '../buttons/buttonRound40.vue';
 import IconBox from "../buttons/button32.vue";
 import button40 from "../buttons/button40.vue";
 import plusCircleMini from '../svg/plus-circle-mini.vue'
