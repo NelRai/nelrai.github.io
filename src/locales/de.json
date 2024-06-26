@@ -15,7 +15,11 @@
     "Clear": "Löschen",
     "FileUpload": "Datei hochladen",
     "LinkedInPost": "LinkedIn Beitrag",
-    "URL": "URL"
+    "URL": "URL",
+    "ActionMenu": {
+      "RequestUrlOptimization": "URL-Optimierung anfordern",
+      "SaveAs": "Speichern unter"
+    }
   },
   "tooltips": {
     "WorkSpaceSettings": "Arbeitsbereichseinstellungen",
@@ -25,7 +29,8 @@
     "Launcher": "Starter",
     "Search": "Suche",
     "AiModel": "KI-Modell",
-    "Chat": "Chat"
+    "Chat": "Chat",
+    "CreateDataset": "Datensatz erstellen"
   },
   "workspace": {
     "NewContent": "Neuer Inhalt",

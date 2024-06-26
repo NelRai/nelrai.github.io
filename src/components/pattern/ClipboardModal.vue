@@ -12,6 +12,11 @@ import plusCircleMini from '../svg/plus-circle-mini.vue'
 import questionMark from "../svg/question-mark.vue";
 import FileUpload from 'primevue/fileupload';
 
+//i18n
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
+
 
 const props = defineProps({
     headline: String,
@@ -38,42 +43,42 @@ console.log('imageLink geht?', props.image);
 const image2 = ref(props.image);
 
 
-const modal3barsVisible = ref(true);
+// const modal3barsVisible = ref(true);
 
-const modalAddlink_modeText = ref(true);
-const modalAddlink_modeHTML = ref(false);
-const modalAddlink_modeMarkdown = ref(false);
+// const modalAddlink_modeText = ref(true);
+// const modalAddlink_modeHTML = ref(false);
+// const modalAddlink_modeMarkdown = ref(false);
 
-const modalAddlink_modeText_function = () => {
-    modalAddlink_modeText.value = true;
-    modalAddlink_modeHTML.value = false;
-    modalAddlink_modeMarkdown.value = false;
-}
+// const modalAddlink_modeText_function = () => {
+//     modalAddlink_modeText.value = true;
+//     modalAddlink_modeHTML.value = false;
+//     modalAddlink_modeMarkdown.value = false;
+// }
 
-const modalAddlink_modeHTML_function = () => {
-    modalAddlink_modeText.value = false;
-    modalAddlink_modeHTML.value = true;
-    modalAddlink_modeMarkdown.value = false;
-}
+// const modalAddlink_modeHTML_function = () => {
+//     modalAddlink_modeText.value = false;
+//     modalAddlink_modeHTML.value = true;
+//     modalAddlink_modeMarkdown.value = false;
+// }
 
-const modalAddlink_modeMarkdown_function = () => {
-    modalAddlink_modeText.value = false;
-    modalAddlink_modeHTML.value = false;
-    modalAddlink_modeMarkdown.value = true;
-}
+// const modalAddlink_modeMarkdown_function = () => {
+//     modalAddlink_modeText.value = false;
+//     modalAddlink_modeHTML.value = false;
+//     modalAddlink_modeMarkdown.value = true;
+// }
            
 
 function onAdvancedUpload(event: Event | undefined) {
 }
 
 import { usePrimeVue } from 'primevue/config';
-import Content from "./Content.vue";
+// import Content from "./Content.vue";
 // import { useToast } from "primevue/usetoast";
 
 const $primevue = usePrimeVue();
 
 
-
+// Quill 
 import Quill from 'quill';
 
 
@@ -90,6 +95,54 @@ onMounted(() => {
 });
 
 
+//Action (3dot) Menu
+import TieredMenu from 'primevue/tieredmenu';
+import Button from 'primevue/button';
+// import Square2Stack from "../svg/square-2-stack.vue";
+import ArrowDownTrayMini from "../svg/arrow-down-tray-mini.vue";
+import clipboardDocumentMini from "../svg/clipboard-document-mini.vue";
+// import Sparkles from "../svg/sparkles.vue";
+import chevronRight from "../svg/chevron-right.vue";
+
+
+const menu = ref(null);
+
+
+const menuItems2 = ref([
+
+  { 
+    label: t('clipboard.ActionMenu.RequestUrlOptimization'),
+    component: clipboardDocumentMini,
+  },
+  {
+    label: t('clipboard.ActionMenu.SaveAs'),
+    component: ArrowDownTrayMini,
+    hasSubmenu: true,
+    items: [
+      {
+        label: 'PDF',
+        icon: 'pi pi-fw pi-copy',
+        command: () => {
+          console.log('Copy clicked');
+        }
+      },
+      {
+        label: 'Word',
+        icon: 'pi pi-fw pi-copy',
+        command: () => {
+          console.log('Copy clicked');
+        }
+      },
+      {
+        label: 'TXT',
+        icon: 'pi pi-fw pi-copy',
+        command: () => {
+          console.log('Copy clicked');
+        }
+      }
+    ]
+  }
+]);
 </script>
 
 
@@ -123,8 +176,22 @@ onMounted(() => {
                 </div>
 
                 <div class="flex gap-4 ">
-                    <Icon circleStack_icon v-if="datasetButton" />
-                    <Icon ellipsisHorizontal_icon />
+                    <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
+                    <TieredMenu ref="menu" :model="menuItems2" popup>
+                        <template #item="{ item, props, hasSubmenu }">
+                            <a class="flex align-items-center font-body" v-bind="props.action">
+                                <component :is="item.component" />
+                                <!-- <span  >{{item.icon}} </span>  -->
+                                <span class="ml-1 font-body">{{ item.label }}</span>
+                                <!-- <Badge v-if="item.badge" class="ml-auto" :value="item.badge" /> -->
+                                <!-- <span v-if="item.shortcut" class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{{ item.shortcut }}</span> -->
+                                <i v-if="hasSubmenu" class="pi pi-angle-right ml-auto ">
+                                    <chevronRight class="!w-5 !h-5" />
+                                </i>
+                            </a>
+                        </template>
+                    </TieredMenu>
+          
                 </div>
 
                 <div class="white_gradient absolute left-0 w-full h-full " v-if="image">
@@ -151,9 +218,6 @@ onMounted(() => {
                         <Icon speakerWave_icon class="rounded-lg" v-if="audioUpload" />
                         <Icon speakerWave_icon class="rounded-lg" v-if="linkedIn" />
                         <Icon speakerWave_icon class="rounded-lg" v-if="url" />
-
-
-
                     </div>
 
                     <div
