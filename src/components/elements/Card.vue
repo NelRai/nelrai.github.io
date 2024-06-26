@@ -33,9 +33,10 @@ const props = defineProps({
     fileUpload: Boolean,
     linkedIn: Boolean,
     url: Boolean,
+    urlLink: String,
     timeText: String,
     bgImage: String,
-    image: Boolean,
+    image: String,
     projectContentActive: Boolean,
     cardRed: Boolean,
     anchorLinks: Array,
@@ -82,7 +83,8 @@ function iconBoxActive(id) {
 }
 
 
-const image2 = ref("https://picsum.photos/id/237/536/354");
+// const image2 = ref("https://picsum.photos/id/237/536/354");
+const image2 = ref(props.image);
 
 
 const storeProject = useProjectsStore();
@@ -156,8 +158,7 @@ const removeCardClipboard = () => {
         
 
 
-        <div class="white_gradient" v-if="image"
->
+        <div class="white_gradient" v-if="image">
           <!-- <img src="../assets/bg-image-01.png"  alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% "> -->
         </div>
 
@@ -192,6 +193,8 @@ const removeCardClipboard = () => {
             :fileUpload=props.fileUpload
             :linkedIn=props.linkedIn
             :url=props.url
+            :urlLink=props.urlLink
+            :image=props.image
             />
         </Teleport>
 

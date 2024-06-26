@@ -130,18 +130,45 @@ const formatSize = (bytes) => {
                     <IconBox bars3_icon :text="IconBoxText" v-if="IconBoxText" />
                 </div>
 
-                <div class="flex gap-2 ">
-                    <Icon magnifyingGlass_icon v-if="datasetButton" />
+                <div class="flex gap-4 ">
+                    <Icon circleStack_icon v-if="datasetButton" />
                     <Icon ellipsisHorizontal_icon />
                 </div>
 
             </div>
 
+            
+             <!-- Clipboard Text content -->
+              
+             <div class="modal-addLink-body p-8  bg-neutral-50  border-neutral-200 border-x border-b rounded-b-xl"
+                v-if="clipBoardText">
+
+                <div
+                    class="modal-newText-content w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4 bg-neutral-50 rounded-lg rounded-t-none  relative overflow-hidden">
+
+                    <div class="icons flex md:flex-col gap-2 md:gap-4">
+                        <Icon OpenaiSvgrepoCom_icon class="rounded-lg" />
+                    </div>
+
+                    <div
+                        class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative resultItemHidden quill">
+                        <div class="result_item-content editor " id="editor">
+                            <p>
+                                Lorem Ipsum
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+             <!-- New Text content -->
 
             <div class="modal-addLink-body p-8  bg-neutral-50  border-neutral-200 border-x border-b rounded-b-xl"
                 v-if="newText">
-
-                <!-- New Text content -->
 
                 <div
                     class="modal-newText-content w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4 bg-neutral-50 rounded-lg rounded-t-none  relative overflow-hidden">

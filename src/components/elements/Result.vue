@@ -167,9 +167,6 @@ const wordCount = computed(() => {
             <div class="flex gap-1 justify-center items-center">
               <documentText alt="" class="w-5 h-5 md:w-4 md:h-4" />
                 <input type="text" v-model="props.infoBox" @input="handleInput(props.id, ($event?.target as HTMLInputElement)?.value)">
-                           
-
-
             </div>
           </div>
         </div>

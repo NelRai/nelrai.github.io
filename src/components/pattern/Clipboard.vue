@@ -100,7 +100,7 @@ const clipboards = computed(() => store.clipboards);
         <div id="asdf"  class="w-full  h-full flex flex-col md:pl-4 lg:pr-4 pb-8  gap-4 lg:overflow-y-scroll">
 
             <Card clipboard
-            v-for="clipboard in clipboards" :key="clipboard.id" :id="clipboard.id" :headline="clipboard.headline" :fileUpload="clipboard.fileUpload" :linkedIn="clipboard.linkedIn" :url="clipboard.url" :image="clipboard.image" :content="clipboard.content" @activeProject="cardActive" :cardRed="store.activeCard === clipboard.id"
+            v-for="clipboard in clipboards" :key="clipboard.id" :id="clipboard.id" :headline="clipboard.headline" :fileUpload="clipboard.fileUpload" :linkedIn="clipboard.linkedIn" :url="clipboard.url" :image="clipboard.image" :urlLink="clipboard.urlLink" :content="clipboard.content" @activeProject="cardActive" :cardRed="store.activeCard === clipboard.id"
             @click="store.clipboardActive(clipboard.id); console.log('activeCard:', store.activeCard)"
          />
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-nocheck
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import selectButton24 from '../buttons/button24.vue';
 import svgLink from '../svg/link.vue';
 import arrowUpTray from '../svg/arrow-up-tray.vue'
@@ -13,7 +13,7 @@ import questionMark from "../svg/question-mark.vue";
 import FileUpload from 'primevue/fileupload';
 
 
-defineProps({
+const props = defineProps({
     headline: String,
     content: String,
     IconBoxText: String,
@@ -24,10 +24,19 @@ defineProps({
     importURL: Boolean,
     uploadFiles: Boolean,
     fileUpload: Boolean,
+    imageUpload: Boolean,
+    videoUpload: Boolean,
+    audioUpload: Boolean,
     linkedIn: Boolean,
     url: Boolean,
+    urlLink: String,
     text: Boolean,
+    image: String,
 })
+
+console.log('imageLink geht?', props.image);
+const image2 = ref(props.image);
+
 
 const modal3barsVisible = ref(true);
 
@@ -62,7 +71,24 @@ import Content from "./Content.vue";
 // import { useToast } from "primevue/usetoast";
 
 const $primevue = usePrimeVue();
-// const toast = useToast();
+
+
+
+import Quill from 'quill';
+
+
+onMounted(() => {
+  const editors = document.querySelectorAll('.editor');
+  
+  editors.forEach((editor) => {
+    //@ts-ignore
+
+    const quill = new Quill(editor, {
+      theme: 'bubble'
+    });
+  });
+});
+
 
 </script>
 
@@ -76,13 +102,18 @@ const $primevue = usePrimeVue();
             <Icon xMark_icon @click="$emit('close')" class="absolute -top-4 -right-4 " />
 
             <div
-                class="modal-addLink-header px-8 py-6 flex justify-between items-center bg-neutral-50 border-neutral-200 border-x border-t rounded-t-xl border-b">
+                class="modal-addLink-header px-8 py-8 flex justify-between items-center bg-neutral-50 border-neutral-200 border-x border-t rounded-t-xl border-b bg-no-repeat	bg-cover bg-center relative overflow-hidden"
+                v-bind:style="[image ?  { backgroundImage: 'url(' + image2 + ')' } : { backgroundImage: 'url(' + bgImage + ')' }]"
 
-                <div class="flex flex-col gap-2 items-start ">
-                    <div class="flex gap-1">
+
+                >
+
+                <div class="flex flex-col gap-2 items-start z-10">
+                    <div class="flex flex-col gap-1">
                         <!-- <svgLink v-if="linkIcon" class="w-6 h-6" />
                         <arrowUpTray v-if="arrowUpTray_icon" class="w-6 h-6" /> -->
-                        <h2 class="text-lg blinker">{{ headline }}</h2>
+                        <h3 class="text-xs leading-4 text-neutral-500" v-if="url" >{{urlLink}}</h3>
+                        <h2 class="text-lg leading-[1.375rem] blinker">{{ headline }}</h2>
                     </div>
                     <IconBox bars3_icon text="Text" v-if="text" />
                     <IconBox arrowUpTray_icon text="File Upload" v-if="fileUpload" />
@@ -91,10 +122,15 @@ const $primevue = usePrimeVue();
 
                 </div>
 
-                <div class="flex gap-2 ">
-                    <Icon magnifyingGlass_icon v-if="datasetButton" />
+                <div class="flex gap-4 ">
+                    <Icon circleStack_icon v-if="datasetButton" />
                     <Icon ellipsisHorizontal_icon />
                 </div>
+
+                <div class="white_gradient absolute left-0 w-full h-full " v-if="image">
+                <!-- <img src="../assets/bg-image-01.png"  alt="" class="h-full w-full object-cover absolute z-0 top-0 left-0 rounded-lg   after:h-full after:w-full after:top-0 after:left-0 after:rounded-lg  after:bg-gradient-to-r after:from-white after:from-30% "> -->
+                </div>
+
 
             </div>
 
@@ -108,7 +144,16 @@ const $primevue = usePrimeVue();
                     class="modal-newText-content w-full flex flex-col md:flex-row justify-between items-start gap-2 md:gap-4 bg-neutral-50 rounded-lg rounded-t-none  relative overflow-hidden">
 
                     <div class="icons flex md:flex-col gap-2 md:gap-4">
-                        <Icon OpenaiSvgrepoCom_icon class="rounded-lg" />
+                        <!-- <Icon OpenaiSvgrepoCom_icon class="rounded-lg" /> -->
+                        <Icon document_icon class="rounded-lg" v-if="fileUpload" />
+                        <Icon photo_icon class="rounded-lg" v-if="imageUpload" />
+                        <Icon videoCamera_icon class="rounded-lg" v-if="videoUpload" />
+                        <Icon speakerWave_icon class="rounded-lg" v-if="audioUpload" />
+                        <Icon speakerWave_icon class="rounded-lg" v-if="linkedIn" />
+                        <Icon speakerWave_icon class="rounded-lg" v-if="url" />
+
+
+
                     </div>
 
                     <div
@@ -148,14 +193,37 @@ const $primevue = usePrimeVue();
     /* backdrop-filter: blur(10px); */
 }
 
+/* .modal-addLink-header div {
+    z-index: 1;
+} */
+
 .white-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
-    z-index: 10;
+    z-index: 0;
 }
+
+.white_gradient::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(252,252,253);
+    background: linear-gradient(90deg, rgba(252,252,253,1) 0%, rgba(252,252,253,0.9) 50%, rgba(252,252,253,0) 100%);
+    z-index: 0;
+    /* border-radius: 0.4rem; */
+}
+
+.cardWinkel-active  * {
+    fill: #FF646F !important;
+}
+
+
 </style>
