@@ -8,17 +8,22 @@ import bars3 from '../svg/bars-3.vue'
 import bookmarkSquare from '../svg/bookmark-square.vue'
 import chatBubbleLeftRight from '../svg/chat-bubble-left-right.vue'
 import chevronLeft from '../svg/chevron-left.vue'
+import circleStack from '../svg/circle-stack.vue'
 import clipboardDocument from '../svg/clipboard-document.vue'
 import clipboard from '../svg/clipboard.vue'
 import cubeTransparent from '../svg/cube-transparent.vue'
+import document from '../svg/document.vue'
 import documentText from '../svg/document-text.vue'
 import ellipsisHorizontal from '../svg/ellipsis-horizontal.vue'
 import linkSVG from '../svg/link.vue'
 import magnifyingGlass from '../svg/magnifying-glass.vue'
 import OpenaiSvgrepoCom from '../svg/openai-svgrepo-com.vue'
+import photo from '../svg/photo.vue'
 import plusCircleMini from '../svg/plus-circle-mini.vue'
+import speakerWave from '../svg/speaker-wave.vue'
 import Squares2x2 from '../svg/squares-2x2.vue'
 import Trash from '../svg/trash.vue'
+import videoCamera from '../svg/video-camera.vue'
 import xMark from '../svg/x-mark.vue'
 // import linkSVG from './svg/link.vue'
 
@@ -32,17 +37,22 @@ defineProps({
   bookmarkSquare_icon: Boolean,
   chatBubbleLeftRight_icon: Boolean,
   chevronLeft_icon: Boolean,
+  circleStack_icon: Boolean,
   clipboardDocument_icon: Boolean,
   clipboard_icon: Boolean,
   cubeTransparent_icon: Boolean,
+  document_icon: Boolean,
   documentText_icon: Boolean,
   ellipsisHorizontal_icon: Boolean,
   linkSVG_icon: Boolean,
   magnifyingGlass_icon: Boolean,
   OpenaiSvgrepoCom_icon: Boolean,
+  photo_icon: Boolean,
   plusCircleMini_icon: Boolean,
+  speakerWave_icon: Boolean,
   Squares2x2_icon: Boolean,
   Trash_icon: Boolean,
+  videoCamera_icon: Boolean,
   xMark_icon: Boolean,
 })
 
@@ -62,17 +72,22 @@ defineProps({
     <bookmarkSquare  v-if="bookmarkSquare_icon" class="svgIcon " />
     <chatBubbleLeftRight  v-if="chatBubbleLeftRight_icon" class="svgIcon " />
     <chevronLeft  v-if="chevronLeft_icon" class="svgIcon " />
+    <circleStack  v-if="circleStack_icon" class="svgIcon " />
     <clipboardDocument  v-if="clipboardDocument_icon" class="svgIcon " />
     <clipboard  v-if="clipboard_icon" class="svgIcon " />
     <cubeTransparent  v-if="cubeTransparent_icon" class="svgIcon " />
+    <document  v-if="document_icon" class="svgIcon " />
     <documentText  v-if="documentText_icon" class="svgIcon " />
     <ellipsisHorizontal  v-if="ellipsisHorizontal_icon" class="svgIcon " />
     <linkSVG  v-if="linkSVG_icon" class="svgIcon " />
     <magnifyingGlass  v-if="magnifyingGlass_icon" class="svgIcon " />
     <OpenaiSvgrepoCom  v-if="OpenaiSvgrepoCom_icon" class="svgIcon " />
+    <photo  v-if="photo_icon" class="svgIcon " />
     <plusCircleMini  v-if="plusCircleMini_icon" class="svgIcon " />
+    <speakerWave  v-if="speakerWave_icon" class="svgIcon " />
     <Squares2x2  v-if="Squares2x2_icon" class="svgIcon " />
     <Trash  v-if="Trash_icon" class="svgIcon " />
+    <videoCamera  v-if="videoCamera_icon" class="svgIcon " />
     <xMark  v-if="xMark_icon" class="svgIcon " />
 
   </button>
