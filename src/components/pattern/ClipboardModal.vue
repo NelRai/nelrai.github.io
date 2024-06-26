@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-nocheck
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import selectButton24 from '../buttons/button24.vue';
 import svgLink from '../svg/link.vue';
 import arrowUpTray from '../svg/arrow-up-tray.vue'
@@ -95,7 +95,16 @@ onMounted(() => {
 });
 
 
-//Action (3dot) Menu
+//PrimeVue OverlayPanel
+import OverlayPanel from 'primevue/overlaypanel';
+const op = ref();
+//@ts-ignore
+const toggle = (event) => {
+    op.value.toggle(event);
+}
+
+
+//PrimeVue TieredMenu (3dot)
 import TieredMenu from 'primevue/tieredmenu';
 import Button from 'primevue/button';
 // import Square2Stack from "../svg/square-2-stack.vue";
@@ -104,11 +113,8 @@ import clipboardDocumentMini from "../svg/clipboard-document-mini.vue";
 // import Sparkles from "../svg/sparkles.vue";
 import chevronRight from "../svg/chevron-right.vue";
 
-
 const menu = ref(null);
-
-
-const menuItems2 = ref([
+const menuItems = ref([
 
   { 
     label: t('clipboard.ActionMenu.RequestUrlOptimization'),
@@ -143,6 +149,23 @@ const menuItems2 = ref([
     ]
   }
 ]);
+
+// Word Count Test
+const content = ref(props.content); // replace this with your actual text property
+
+const characterCount = computed(() => {
+  return (content.value ?? '').length;
+});
+
+const characterCountWithoutSpaces = computed(() => {
+  return (content.value ?? '').replace(/\s/g, '').length;
+});
+
+const wordCount = computed(() => {
+  return (content.value ?? '').split(/\s+/).filter(function(word) {
+    return word.length > 0;
+  }).length;
+});
 </script>
 
 
@@ -157,9 +180,7 @@ const menuItems2 = ref([
             <div
                 class="modal-addLink-header px-8 py-8 flex justify-between items-center bg-neutral-50 border-neutral-200 border-x border-t rounded-t-xl border-b bg-no-repeat	bg-cover bg-center relative overflow-hidden"
                 v-bind:style="[image ?  { backgroundImage: 'url(' + image2 + ')' } : { backgroundImage: 'url(' + bgImage + ')' }]"
-
-
-                >
+            >
 
                 <div class="flex flex-col gap-2 items-start z-10">
                     <div class="flex flex-col gap-1">
@@ -178,7 +199,7 @@ const menuItems2 = ref([
                 <div class="flex gap-4 ">
                     <Icon circleStack_icon v-if="datasetButton" v-tooltip.top="$t('tooltips.CreateDataset')"  />
                     <Icon ellipsisHorizontal_icon v-on:click="menu.show($event)" />
-                    <TieredMenu ref="menu" :model="menuItems2" popup>
+                    <TieredMenu ref="menu" :model="menuItems" popup>
                         <template #item="{ item, props, hasSubmenu }">
                             <a class="flex align-items-center font-body" v-bind="props.action">
                                 <component :is="item.component" />
@@ -213,12 +234,25 @@ const menuItems2 = ref([
 
                     <div class="icons flex md:flex-col gap-2 md:gap-4">
                         <!-- <Icon OpenaiSvgrepoCom_icon class="rounded-lg" /> -->
-                        <Icon document_icon class="rounded-lg" v-if="fileUpload" />
+                        <!-- <Icon document_icon class="rounded-lg" v-if="fileUpload" /> -->
                         <Icon photo_icon class="rounded-lg" v-if="imageUpload" />
                         <Icon videoCamera_icon class="rounded-lg" v-if="videoUpload" />
                         <Icon speakerWave_icon class="rounded-lg" v-if="audioUpload" />
                         <Icon speakerWave_icon class="rounded-lg" v-if="linkedIn" />
                         <Icon speakerWave_icon class="rounded-lg" v-if="url" />
+
+                        
+                        <Icon OpenaiSvgrepoCom_icon class="rounded-lg" @click="toggle"  v-if="fileUpload"  />
+
+                        <OverlayPanel ref="op" > 
+                            <div class=" gap-2 grid grid-cols-3  [&>*:nth-child(even)]:text-right [&>*:nth-child(0)]:!text-left [&>*:nth-child(odd)]:col-span-2  ">
+                                <!-- <p class="col-span-3 pb-2 border-b border-neutral-500">GPT-4 128K (Azure)</p> -->
+                                <p>Characters</p> <p>{{characterCount}}</p>
+                                <p>Characters excluding spaces</p> <p>{{ characterCountWithoutSpaces}}</p>
+                                <p>Words</p> <p>{{ wordCount }}</p>
+                            </div>
+                        </OverlayPanel>
+
                     </div>
 
                     <div

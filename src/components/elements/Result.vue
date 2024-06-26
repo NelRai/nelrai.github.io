@@ -15,8 +15,6 @@ import openaiSvgrepoCom from "../svg/openai-svgrepo-com.vue";
 import Trash from "../svg/trash.vue";
 // @ts-ignore
 import { useProjectsStore } from '../../stores/ProjectsStore'; 
-
-
 const store = useProjectsStore();
 
 
@@ -141,6 +139,14 @@ const handleInput = (resultID: any, newInfoBox: any) => {
 // Word Count Test
 const text = ref(props.text); // replace this with your actual text property
 
+const characterCount = computed(() => {
+  return (text.value ?? '').length;
+});
+
+const characterCountWithoutSpaces = computed(() => {
+  return (text.value ?? '').replace(/\s/g, '').length;
+});
+
 const wordCount = computed(() => {
   return (text.value ?? '').split(/\s+/).filter(function(word) {
     return word.length > 0;
@@ -190,11 +196,10 @@ const wordCount = computed(() => {
 
           <OverlayPanel ref="op" > 
             <div class=" gap-2 grid grid-cols-3  [&>*:nth-child(odd)]:text-right [&>*:nth-child(1)]:!text-left [&>*:nth-child(even)]:col-span-2  ">
-            <p class="col-span-3 pb-2 border-b border-neutral-500">GPT-4 128K (Azure)</p>
-            <p>Characters</p> <p>2049</p>
-            <p>Characters excluding spaces</p> <p>1968</p>
-            <p>Words</p> <p>{{ wordCount }}</p>
-
+              <p class="col-span-3 pb-2 border-b border-neutral-500">GPT-4 128K (Azure)</p>
+              <p>Characters</p> <p>{{characterCount}}</p>
+              <p>Characters excluding spaces</p> <p>{{ characterCountWithoutSpaces}}</p>
+              <p>Words</p> <p>{{ wordCount }}</p>
             </div>
           </OverlayPanel>
 
