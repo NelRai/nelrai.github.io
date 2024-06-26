@@ -256,7 +256,7 @@ const wordCount = computed(() => {
                     </div>
 
                     <div
-                        class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative  quill">
+                        class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative  quill !max-h-96 overflow-y-scroll">
                         <div class="result_item-content editor " id="editor">
                             <p>
                                {{ content }}
