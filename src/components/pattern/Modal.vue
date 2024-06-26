@@ -131,7 +131,7 @@ const formatSize = (bytes) => {
                 </div>
 
                 <div class="flex gap-4 ">
-                    <Icon circleStack_icon v-if="datasetButton" />
+                    <Icon circleStack_icon v-if="datasetButton" v-tooltip.top="$t('tooltips.CreateDataset')"  />
                     <Icon ellipsisHorizontal_icon />
                 </div>
 
