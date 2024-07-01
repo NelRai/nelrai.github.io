@@ -17,6 +17,9 @@ import Trash from "../svg/trash.vue";
 import { useProjectsStore } from '../../stores/ProjectsStore'; 
 const store = useProjectsStore();
 
+// @ts-ignore
+import { useClipboardsStore } from '../../stores/ClipboardsStore'; 
+const clipboardStore = useClipboardsStore();
 
 
 const props = defineProps({
@@ -275,8 +278,12 @@ const wordCount = computed(() => {
 
         </div>
 
-        <div class="result_item-copy absolute top-3 right-3 opacity-0 group-hover/closeBTN:opacity-100 transition-0-3s">
-          <Icon clipboardDocument_icon />
+        <div class="result_item-copy absolute top-3 right-3 opacity-0 group-hover/closeBTN:opacity-100 transition-0-3s" >
+          <Icon 
+            clipboardDocument_icon
+            @click="clipboardStore.addCard(id, headline, text, infoBox); console.log('clipboardStore addCard:', clipboardStore.addCard)"     
+          
+          />
         </div>
         
       </div>

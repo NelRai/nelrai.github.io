@@ -186,8 +186,8 @@ export const useClipboardsStore = defineStore('ClipboardsStore', {
             console.log('clipboardActive IM STORE?', id);
         },
         
-        addCard() {
-            this.clipboards.unshift({ id: `clipboard${this.clipboards.length + 1}`, headline: 'New clipboard', timeText: 'Just now', image: false, results: []});
+        addCard(id, headline, text, infoBox) {
+            this.clipboards.unshift({ id: `clipboard${this.clipboards.length + 1}`, id: id, headline: headline, content: text, image: false, textTag: infoBox, results: []});
         },
         
         removeCard(id) {
