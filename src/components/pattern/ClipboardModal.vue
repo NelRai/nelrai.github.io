@@ -26,6 +26,7 @@ const props = defineProps({
     arrowUpTray_icon: Boolean,
     datasetButton: Boolean,
     newText: Boolean,
+    textTag: Boolean,
     importURL: Boolean,
     uploadFiles: Boolean,
     fileUpload: Boolean,
@@ -190,6 +191,8 @@ const wordCount = computed(() => {
                         <h2 class="text-lg leading-[1.375rem] blinker">{{ headline }}</h2>
                     </div>
                     <IconBox bars3_icon text="Text" v-if="text" />
+                    <IconBox bars3_icon text="Text" v-if="textTag" />
+
                     <IconBox arrowUpTray_icon text="File Upload" v-if="fileUpload" />
                     <IconBox documentText_icon text="LinkedIn" v-if="linkedIn" />
                     <IconBox linkSVG_icon text="URL" v-if="url" />

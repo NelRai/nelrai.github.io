@@ -16,6 +16,7 @@
     "FileUpload": "Datei hochladen",
     "LinkedInPost": "LinkedIn Beitrag",
     "URL": "URL",
+    "textTag": "Text",
     "ActionMenu": {
       "RequestUrlOptimization": "URL-Optimierung anfordern",
       "SaveAs": "Speichern unter"

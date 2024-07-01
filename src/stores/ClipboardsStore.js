@@ -71,7 +71,10 @@ More: [URL]
       {
         "id": "clipboard4",
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
-        "timeText": "2 days ago",
+        "textTag": true,
+        "fileUpload": false,
+        "linkedIn": false,
+        "url": false,
         "image": "false",
         "results": [
         ] 
@@ -80,13 +83,15 @@ More: [URL]
         "id": "clipboard5",
         "headline": "Apple already uses Apple GPT internally",
         "timeText": "17 hours ago",
-        "image": "false"
+        "image": "false",
+        "textTag": true,
       },
       {
         "id": "clipboard6",
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -95,6 +100,7 @@ More: [URL]
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -103,6 +109,7 @@ More: [URL]
         "headline": "Apple verwendet Apple GPT bereits intern",
         "timeText": "16 hours ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -111,6 +118,7 @@ More: [URL]
         "headline": "Apple already uses Apple GPT internally ",
         "timeText": "17 hours ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -119,6 +127,7 @@ More: [URL]
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -127,6 +136,7 @@ More: [URL]
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -135,6 +145,7 @@ More: [URL]
         "headline": "Apple already uses Apple GPT internally",
         "timeText": "17 hours ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -143,6 +154,7 @@ More: [URL]
         "headline": "Google launches generative AI search",
         "timeText": "2 days ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       },
@@ -151,6 +163,7 @@ More: [URL]
         "headline": "Innovative Technology Too Expensive - Report on Meta's AR Glasses",
         "timeText": "2 days ago",
         "image": "false",
+        "textTag": true,
         "results": [
         ] 
       }

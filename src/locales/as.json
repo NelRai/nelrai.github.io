@@ -20,7 +20,8 @@
     },
     "FileUpload": "File Upload",
     "LinkedInPost": "LinkedIn Post",
-    "URL": "URL"
+    "URL": "URL",
+    "textTag": "Text"
   },
   "tooltips": {
     "WorkSpaceSettings": "Workspace Settings",
