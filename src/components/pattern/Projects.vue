@@ -17,7 +17,7 @@ const projects = computed(() => store.projects);
 let isActive = ref(false);
 let activeCard = ref(null);
 
-
+//https://primevue.org/iconfield/ &  https://primevue.org/popover/
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
@@ -29,27 +29,6 @@ const op = ref();
 const toggle = (event) => {
     op.value.toggle(event);
 }
-
-
-// import ConfirmPopup from 'primevue/confirmpopup';
-// import { useConfirm } from "primevue/useconfirm";
-// const confirm = useConfirm();
-
-// const isFixed = ref(false);
-
-// const requireConfirmation = (event) => {
-//     confirm.require({
-//         target: event.currentTarget,
-//         group: 'headless',
-//         message: 'Suche',
-//         onShow : () => { isFixed.value = true 
-//         },
-//         accept: () => {
-//         },
-//         reject: () => { 
-//         }
-//     });
-// }
 
 </script>
 
