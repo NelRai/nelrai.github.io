@@ -17,6 +17,40 @@ const projects = computed(() => store.projects);
 let isActive = ref(false);
 let activeCard = ref(null);
 
+
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
+import InputText from 'primevue/inputtext';
+import magnifyingGlass from "../svg/magnifying-glass.vue";
+
+
+import Popover from 'primevue/popover';
+const op = ref();
+const toggle = (event) => {
+    op.value.toggle(event);
+}
+
+
+// import ConfirmPopup from 'primevue/confirmpopup';
+// import { useConfirm } from "primevue/useconfirm";
+// const confirm = useConfirm();
+
+// const isFixed = ref(false);
+
+// const requireConfirmation = (event) => {
+//     confirm.require({
+//         target: event.currentTarget,
+//         group: 'headless',
+//         message: 'Suche',
+//         onShow : () => { isFixed.value = true 
+//         },
+//         accept: () => {
+//         },
+//         reject: () => { 
+//         }
+//     });
+// }
+
 </script>
 
 <template>
@@ -35,8 +69,24 @@ let activeCard = ref(null);
 
                 <div class="icons flex md:flex-col gap-2 md:gap-4" id="search">
                     <span class="  z-index-999 "   >
-                        <Icon magnifyingGlass_icon v-tooltip.top="$t('tooltips.search')" /> 
+                        <Icon magnifyingGlass_icon v-tooltip.top="$t('tooltips.search')"  @click="toggle"   /> 
                     </span>  
+
+                    <Popover ref="op" class=" 	">
+                        <div class="flex flex-col gap-4 w-[25rem] p-popover-content	 confirmPopup  rounded-lg shadow-lg border-0 z-40 transform origin-center mt-3 absolute left-0 top-0 dark:border dark:border-surface-700 bg-surface-0 dark:bg-surface-800 text-surface-700 dark:text-surface-0/80 before:absolute before:w-0 before:-top-3 before:h-0 before:border-transparent before:border-solid before:ml-6 before:border-x-[0.75rem] before:border-b-[0.75rem] before:border-t-0 before:border-b-surface-0 dark:before:border-b-surface-800">
+                            <div class=" " >
+                                <!-- <span class="font-medium block mb-2">Share this document</span> -->
+      
+                                <IconField>
+                                    <InputIcon> <magnifyingGlass class="w-4 h-4 ml-2" /> </InputIcon>
+                                    <InputText v-model="value1" placeholder="Search" class="pl-7" />
+                                </IconField>
+                            </div>
+                        </div> 
+                    </Popover>
+
+
+        
                 </div>
 
             </div>
