@@ -230,7 +230,19 @@ export const useProjectsStore = defineStore('ProjectsStore', {
                 }
              
             console.log('updateInfoBox in STORE!', this.activeCard, this.activeResult, newInfoBox, this.project, result); 
-        }
+        },
+
+        updateContent(resultID, updateContent) {
+          const project = this.projects.find(project => project.id === this.activeCard);
+        
+              const result = resultID ? project.results.find(result => result.id === resultID) : project.results[0];
+              if (result) {
+                  result.text = updateContent;
+              }
+           
+          console.log('updateContent in STORE!', this.activeCard, this.activeResult, updateContent, this.project, result); 
+      }
+
 
     },
 

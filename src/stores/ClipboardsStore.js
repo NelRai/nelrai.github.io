@@ -218,17 +218,6 @@ export const useClipboardsStore = defineStore('ClipboardsStore', {
                 }
             }
             console.log('removeResult im STORE!', resultId);
-        },
-
-        updateInfoBox(resultID, newInfoBox) {
-            const clipboard = this.clipboards.find(clipboard => clipboard.id === this.activeCard);
-          
-                const result = resultID ? clipboard.results.find(result => result.id === resultID) : clipboard.results[0];
-                if (result) {
-                    result.infoBox = newInfoBox;
-                }
-             
-            console.log('updateInfoBox in STORE!', this.activeCard, this.activeResult, newInfoBox, this.clipboard, result); 
         }
 
     },

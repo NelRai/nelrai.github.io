@@ -138,6 +138,11 @@ const handleInput = (resultID: any, newInfoBox: any) => {
     store.updateInfoBox(resultID, newInfoBox);
 };
 
+const updateContent = (resultID: any, updateContent: any) => {
+  store.updateContent(resultID, updateContent);
+};
+
+
 
 // Word Count Test
 const text = ref(props.text); // replace this with your actual text property
@@ -234,44 +239,13 @@ const wordCount = computed(() => {
         </div>
 
         <div
-          class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg p-4 pb-10 break-words relative resultItemHidden quill">
-          <div class="result_item-content editor text-base " id="editor">
+          class="result_item-content-wrapper w-full border border-neutral-200 rounded-lg break-words relative  quill">
+          <div class="result_item-content  text-base " >
 
-            <p class="text-base">
-              {{ text }}
+            <div id="editor" class="text-base w-full p-4 pb-10 rounded-lg editor editorjs" @input="updateContent(props.id, ($event?.target as HTMLInputElement)?.value)">
             
-              <!-- 💡 Google launches "AI Opportunity Initiative for Europe" to boost
-              AI knowledge in the European workforce with a €25 million
-              investment. <br /><br />
-
-              🌍 Empowering European workers<br />
-              Google's initiative allocates €10 million of the total €25 million
-              from Google.org to equip workers with essential skills to prevent
-              them from being "left behind."<br />
-              In collaboration with the Centre for Public Impact, Google is
-              specifically seeking applications from social enterprises,
-              non-profit organizations, and "vulnerable" communities.<br /><br />
-
-              🚀 Google for Start-ups Growth Academies<br />
-              The initiative includes a new series of "Google for Start-ups Growth
-              Academies" across Europe, the Middle East, and Africa.<br />
-              These academies focus on start-ups using AI to address major
-              societal challenges in health, education, and cybersecurity.<br />
-              Google launches "Growth Academy: AI for Health," now accepting
-              applications.<br /><br />
-
-              🔚 Investing in Europe's AI future<br />
-              Google's "AI Opportunity Initiative for Europe" aims to strengthen
-              the European workforce's AI knowledge and foster innovation. While
-              benefiting from Google's resources, it's essential to remember the
-              value of networking and seeking knowledge from various sources. The
-              future is AI, and Europe is getting ready.
-              <br /><br />
-              More: [URL]
-              <br /><br />
-              🔔 Follow me for more updates:
-              https://www.linkedin.com/in/benjamin-danneberg/ -->
-            </p>
+    
+            </div>
           </div>
 
 
@@ -281,7 +255,7 @@ const wordCount = computed(() => {
         <div class="result_item-copy absolute top-3 right-3 opacity-0 group-hover/closeBTN:opacity-100 transition-0-3s" >
           <Icon 
             clipboardDocument_icon
-            @click="clipboardStore.addCard(id, headline, text, infoBox); console.log('clipboardStore addCard:', clipboardStore.addCard)"     
+            @click="clipboardStore.addCard(id, headline, $props.text, infoBox); console.log('clipboardStore addCard:', clipboardStore.addCard)"     
           
           />
         </div>
